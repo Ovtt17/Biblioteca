@@ -1,14 +1,14 @@
 ﻿Imports MySql.Data.MySqlClient
 Imports Mysqlx
 
-Public Class AuthorDao
+Public Class AuthorDAO
     Inherits Conexion
     Public dataSet As New DataSet
 
     ''' <summary>
     ''' Method for consult all the authors in database.
     ''' </summary>
-    Public Sub Consult()
+    Public Sub ConsultAuthor()
         Try
             ' create sql query
             Dim sql As String = "call seleccionar_autores();"
@@ -124,7 +124,6 @@ Public Class AuthorDao
 
                     ' Execute query
                     command.ExecuteNonQuery()
-                    MessageBox.Show("Data saved!")
                 End Using
             End Using
         Catch ex As MySqlException
@@ -150,7 +149,6 @@ Public Class AuthorDao
 
                     ' Execute query
                     command.ExecuteNonQuery()
-                    MessageBox.Show("Data saved!")
                 End Using
             End Using
         Catch ex As MySqlException
@@ -160,4 +158,32 @@ Public Class AuthorDao
         End Try
     End Sub
 
+    Public Sub DeleteAuthor(ByVal code As Integer)
+        Try
+            Using cx As MySqlConnection = Me.Connect()
+                ' sql script only contains the name, then put the parameters 
+                Dim sql As String = "borrar_autor"
+
+                ' Create a MySqlCommand object with the SQL query and the database connection.
+                Using command As New MySqlCommand(sql, cx)
+                    ' Specify command type
+                    command.CommandType = CommandType.StoredProcedure
+                    ' Add Parameters for borrar_autor
+                    command.Parameters.AddWithValue("@autor", code)
+                    ' Execute query
+                    command.ExecuteNonQuery()
+                    MessageBox.Show("Author Deleted!")
+                End Using
+                Dim query As String = "ALTER TABLE autor AUTO_INCREMENT = " & code
+                Using command As New MySqlCommand(query, cx)
+                    ' Execute query
+                    command.ExecuteNonQuery()
+                End Using
+            End Using
+        Catch ex As MySqlException
+            MessageBox.Show("Error executing SQL query: " & ex.Message)
+        Catch ex As Exception
+            MessageBox.Show("General error: " & ex.Message)
+        End Try
+    End Sub
 End Class

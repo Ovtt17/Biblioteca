@@ -1,15 +1,10 @@
 ﻿Imports System.Drawing.Text
+Imports System.Security.Permissions
 Imports MySql.Data
 Imports MySql.Data.MySqlClient
 
 Public Class FormAuthor
     Private authorEditable As Author
-
-    ''' <summary>
-    ''' Event handler that is triggered when the form is loaded.
-    ''' </summary>
-    ''' <param nameAuthor="sender"></param>
-    ''' <param nameAuthor="e"></param>
 
     Private Sub FormActor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Show data on the form
@@ -21,7 +16,7 @@ Public Class FormAuthor
     Private Sub LoadCombobox()
         ' Define and execute the SQL query to select countries
         Try
-            Dim authorDao As New AuthorDao()
+            Dim authorDao As New AuthorDAO()
             authorDao.LoadComboBox()
             If authorDao.dataSet.Tables(0).Rows.Count > 0 Then
                 ' Configure the ComboBox with the query results
@@ -45,8 +40,8 @@ Public Class FormAuthor
     ''' </summary>
     Private Sub Showdata()
         Try
-            Dim authorDao As New AuthorDao()
-            authorDao.Consult()
+            Dim authorDao As New AuthorDAO()
+            authorDao.ConsultAuthor()
             GridAutor.DataSource = authorDao.dataSet.Tables(0)
             For Each column As DataGridViewColumn In GridAutor.Columns
                 column.Width = 145.5
@@ -69,8 +64,7 @@ Public Class FormAuthor
     End Sub
 
     Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
-        Dim code As Integer
-
+        Dim rot As String
         ' Check if the NameTxt TextBox is empty or null.
         ' If it is, display an error message instructing the user to input the author's nameAuthor.
         If String.IsNullOrEmpty(NameTxt.Text.Trim()) Then
@@ -90,18 +84,25 @@ Public Class FormAuthor
             Exit Sub
         End If
 
-
         Try
-            Dim authorDao As New AuthorDao()
+            ' Create DAO instance
+            Dim authorDao As New AuthorDAO()
+            ' Verify if author is editable or not
             If (BtnSave.Text = "Edit") Then
                 authorEditable.Name = Me.NameTxt.Text
                 authorEditable.Country = Me.CountryCmb.SelectedIndex + 1
                 authorDao.ModifyAuthor(authorEditable)
+                rot = "Modified"
             Else
+                ' In Case it's not editable, insert a new one
                 Dim author As New Author(NameTxt.Text, CountryCmb.SelectedIndex + 1)
                 authorDao.InsertAuthor(author)
+                rot = "Saved"
             End If
+            MessageBox.Show($"Author {rot} Corretly.")
+            ' Load table again
             Showdata()
+            ' Clean all the fields to add new authors
             CleanField()
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message)
@@ -109,11 +110,39 @@ Public Class FormAuthor
 
     End Sub
 
-    Private Sub GridAutor_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles GridAutor.CellContentClick
-        Dim codigo As String = GridAutor.Rows(e.RowIndex).Cells(0).Value
+
+    Private Sub BtnDelete_Click(sender As Object, e As EventArgs) Handles BtnDelete.Click
+        Dim currentRow As Integer = GridAutor.CurrentRow.Cells(0).Value
+        If NameTxt.Text Is Nothing Or CountryCmb.SelectedIndex = -1 Then
+            MessageBox.Show("Select an author to delete it")
+            Exit Sub
+        End If
+        If MessageBox.Show("Do you want to delete the record?", "Library System",
+                           MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+                           MessageBoxDefaultButton.Button1) = Windows.Forms.DialogResult.No Then
+            Exit Sub
+        End If
+
+        Dim authorDao As New AuthorDAO()
+        Try
+            authorDao.DeleteAuthor(currentRow)
+            ' Load table again
+            Showdata()
+            ' Clean all the fields to add new authors
+            CleanField()
+        Catch ex As MySqlException
+            MessageBox.Show("SQL Error: " & ex.Message)
+        Catch ex As Exception
+            MessageBox.Show("General Error: " & ex.Message)
+        End Try
+
+    End Sub
+
+    Private Sub GridAutor_Click(sender As Object, e As EventArgs) Handles GridAutor.Click
+        Dim codigo As Integer = GridAutor.CurrentRow.Cells(0).Value
 
         Try
-            Dim authorDAO As New AuthorDao()
+            Dim authorDAO As New AuthorDAO()
             authorEditable = authorDAO.Row(codigo)
             If authorEditable IsNot Nothing Then
                 Me.NameTxt.Text = authorEditable.Name
@@ -126,6 +155,17 @@ Public Class FormAuthor
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message)
         End Try
+    End Sub
 
+    Private Sub BtnClose_Click(sender As Object, e As EventArgs) Handles BtnClose.Click
+        Me.Close()
+    End Sub
+
+    Private Sub FormAuthor_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        If MessageBox.Show("Do you want to close the app?", "Librery System",
+                           MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+                           MessageBoxDefaultButton.Button1) = Windows.Forms.DialogResult.No Then
+            Exit Sub
+        End If
     End Sub
 End Class
