@@ -77,7 +77,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAO\AuthorDao.vb" />
+    <Compile Include="DAO\AuthorDAO.vb" />
     <Compile Include="DB\Conexion.vb" />
     <Compile Include="FormAutor.vb">
       <SubType>Form</SubType>
