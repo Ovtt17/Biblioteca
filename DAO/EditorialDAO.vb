@@ -14,7 +14,7 @@ Public Class EditorialDAO
         Try
             Using cx As MySqlConnection = Me.Connect()
                 ' sql script only contains the name, then put the parameters 
-                Dim sql As String = "insertar_"
+                Dim sql As String = "insertar_editorial"
 
                 ' Create a MySqlCommand object with the SQL query and the database connection.
                 Using command As New MySqlCommand(sql, cx)

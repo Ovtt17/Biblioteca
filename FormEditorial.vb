@@ -1,29 +1,24 @@
-﻿Imports System.Drawing.Text
-Imports System.Security.Permissions
-Imports MySql.Data
-Imports MySql.Data.MySqlClient
+﻿Imports MySql.Data.MySqlClient
 
-Public Class FormAuthor
-    Private authorEditable As Author
-
-    Private Sub FormActor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+Public Class FormEditorial
+    Private editorialEditable As Editorial
+    Private Sub FormEditorial_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Show data on the form
         Showdata()
         LoadCombobox()
-
     End Sub
 
     Private Sub LoadCombobox()
         ' Define and execute the SQL query to select countries
         Try
-            Dim authorDao As New AuthorDAO()
-            authorDao.LoadComboBox()
-            If authorDao.dataSet.Tables(0).Rows.Count > 0 Then
+            Dim editorialDao As New EditorialDAO()
+            editorialDao.LoadComboBox()
+            If editorialDao.dataSet.Tables(0).Rows.Count > 0 Then
                 ' Configure the ComboBox with the query results
                 With Me.CountryCmb
                     .DataSource = Nothing
                     .Items.Clear()
-                    .DataSource = authorDao.dataSet.Tables(0)
+                    .DataSource = editorialDao.dataSet.Tables(0)
                     .DisplayMember = "nombre_pais"
                     .ValueMember = "cod_pais"
                     .SelectedIndex = -1
@@ -36,14 +31,14 @@ Public Class FormAuthor
     End Sub
 
     ''' <summary>
-    ''' A method for displaying all the authors in the DataGridView based on the author.
+    ''' A method for displaying all the editorials in the DataGridView based on the editorial.
     ''' </summary>
     Private Sub Showdata()
         Try
-            Dim authorDao As New AuthorDAO()
-            authorDao.ConsultAuthor()
-            GridAutor.DataSource = authorDao.dataSet.Tables(0)
-            For Each column As DataGridViewColumn In GridAutor.Columns
+            Dim editorialDao As New EditorialDAO()
+            editorialDao.ConsultEditorial()
+            GridEditorial.DataSource = editorialDao.dataSet.Tables(0)
+            For Each column As DataGridViewColumn In GridEditorial.Columns
                 column.Width = 145.5
             Next
         Catch ex As Exception
@@ -55,7 +50,6 @@ Public Class FormAuthor
     Private Sub BtnNew_Click(sender As Object, e As EventArgs) Handles BtnNew.Click
         CleanField()
     End Sub
-
     Private Sub CleanField()
         Me.NameTxt.Text = ""
         Me.CountryCmb.SelectedIndex = -1
@@ -66,13 +60,13 @@ Public Class FormAuthor
     Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
         Dim rot As String
         ' Check if the NameTxt TextBox is empty or null.
-        ' If it is, display an error message instructing the user to input the author's nameAuthor.
+        ' If it is, display an error message instructing the user to input the editorial's name.
         If String.IsNullOrEmpty(NameTxt.Text.Trim()) Then
-            MessageBox.Show("Please enter the author's name.")
+            MessageBox.Show("Please enter the editorial's name.")
             NameTxt.Focus()
             Exit Sub
         ElseIf CountryCmb.SelectedIndex = -1 Then
-            MessageBox.Show("Please select a country for the author")
+            MessageBox.Show("Please select a country for the editorial")
             CountryCmb.Focus()
             Exit Sub
         End If
@@ -86,35 +80,52 @@ Public Class FormAuthor
 
         Try
             ' Create DAO instance
-            Dim authorDao As New AuthorDAO()
-            ' Verify if author is editable or not
+            Dim editorialDao As New EditorialDAO()
+            ' Verify if editorial is editable or not
             If (BtnSave.Text = "Edit") Then
-                authorEditable.Name = Me.NameTxt.Text
-                authorEditable.Country = Me.CountryCmb.SelectedIndex + 1
-                authorDao.ModifyAuthor(authorEditable)
+                editorialEditable.Name = Me.NameTxt.Text
+                editorialEditable.Country = Me.CountryCmb.SelectedIndex + 1
+                editorialDao.ModifyEditorial(editorialEditable)
                 rot = "Modified"
             Else
                 ' In Case it's not editable, insert a new one
-                Dim author As New Author(NameTxt.Text, CountryCmb.SelectedIndex + 1)
-                authorDao.InsertAuthor(author)
+                Dim editorial As New Editorial(NameTxt.Text, CountryCmb.SelectedIndex + 1)
+                editorialDao.InsertEditorial(editorial)
                 rot = "Saved"
             End If
-            MessageBox.Show($"Author {rot} Corretly.")
+            MessageBox.Show($"Editorial {rot} Corretly.")
             ' Load table again
             Showdata()
-            ' Clean all the fields to add new authors
+            ' Clean all the fields to add new editorials
             CleanField()
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message)
         End Try
-
     End Sub
 
+    Private Sub GridEditorial_Click(sender As Object, e As EventArgs) Handles GridEditorial.Click
+        Dim code As Integer = GridEditorial.CurrentRow.Cells(0).Value
+
+        Try
+            Dim editorialDAO As New EditorialDAO()
+            editorialEditable = editorialDAO.Row(code)
+            If editorialEditable IsNot Nothing Then
+                Me.NameTxt.Text = editorialEditable.Name
+                Me.CountryCmb.SelectedValue = editorialEditable.Country
+                Me.BtnSave.Text = "Edit"
+            Else
+                MessageBox.Show("The editorial with the provided code was not found.")
+            End If
+
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message)
+        End Try
+    End Sub
 
     Private Sub BtnDelete_Click(sender As Object, e As EventArgs) Handles BtnDelete.Click
-        Dim currentRow As Integer = GridAutor.CurrentRow.Cells(0).Value
+        Dim currentRow As Integer = GridEditorial.CurrentRow.Cells(0).Value
         If NameTxt.Text Is Nothing Or CountryCmb.SelectedIndex = -1 Then
-            MessageBox.Show("Select an author to delete it")
+            MessageBox.Show("Select an editorial to delete it")
             Exit Sub
         End If
         If MessageBox.Show("Do you want to delete the record?", "Library System",
@@ -123,9 +134,9 @@ Public Class FormAuthor
             Exit Sub
         End If
 
-        Dim authorDao As New AuthorDAO()
+        Dim editorialDao As New EditorialDAO()
         Try
-            authorDao.DeleteAuthor(currentRow)
+            editorialDao.DeleteEditorial(currentRow)
             ' Load table again
             Showdata()
             ' Clean all the fields to add new authors
@@ -135,37 +146,26 @@ Public Class FormAuthor
         Catch ex As Exception
             MessageBox.Show("General Error: " & ex.Message)
         End Try
-
-    End Sub
-
-    Private Sub GridAutor_Click(sender As Object, e As EventArgs) Handles GridAutor.Click
-        Dim codigo As Integer = GridAutor.CurrentRow.Cells(0).Value
-
-        Try
-            Dim authorDAO As New AuthorDAO()
-            authorEditable = authorDAO.Row(codigo)
-            If authorEditable IsNot Nothing Then
-                Me.NameTxt.Text = authorEditable.Name
-                Me.CountryCmb.SelectedValue = authorEditable.Country
-                Me.BtnSave.Text = "Edit"
-            Else
-                MessageBox.Show("The author with the provided code was not found.")
-            End If
-
-        Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message)
-        End Try
     End Sub
 
     Private Sub BtnClose_Click(sender As Object, e As EventArgs) Handles BtnClose.Click
-        Me.Close()
-    End Sub
-
-    Private Sub FormAuthor_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        If MessageBox.Show("Do you want to close the app?", "Librery System",
-                           MessageBoxButtons.YesNo, MessageBoxIcon.Question,
-                           MessageBoxDefaultButton.Button1) = Windows.Forms.DialogResult.No Then
-            Exit Sub
+        If ClosingMessage() Then
+            Me.Close()
         End If
     End Sub
+
+    Private Sub FormEditorial_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        If Not ClosingMessage() Then
+            e.Cancel = True
+        End If
+    End Sub
+
+    Private Function ClosingMessage() As Boolean
+        If MessageBox.Show("Do you want to close the app?", "Librery System",
+                       MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+                       MessageBoxDefaultButton.Button1) = Windows.Forms.DialogResult.No Then
+            Return False
+        End If
+        Return True
+    End Function
 End Class
