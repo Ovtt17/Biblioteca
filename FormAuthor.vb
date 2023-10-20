@@ -149,11 +149,13 @@ Public Class FormAuthor
                 Me.CountryCmb.SelectedValue = authorEditable.Country
                 Me.BtnSave.Text = "Edit"
             Else
-                MessageBox.Show("The author with the provided code was not found.")
+                MessageBox.Show("The author with the provided code was not found.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             End If
 
+        Catch ex As InvalidCastException
+            MessageBox.Show("La celda está vacía. Debes seleccionar donde haya algo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message)
+            MessageBox.Show("Error: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 

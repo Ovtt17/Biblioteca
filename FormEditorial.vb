@@ -104,9 +104,8 @@ Public Class FormEditorial
     End Sub
 
     Private Sub GridEditorial_Click(sender As Object, e As EventArgs) Handles GridEditorial.Click
-        Dim code As Integer = GridEditorial.CurrentRow.Cells(0).Value
-
         Try
+            Dim code As Integer = GridEditorial.CurrentRow.Cells(0).Value
             Dim editorialDAO As New EditorialDAO()
             editorialEditable = editorialDAO.Row(code)
             If editorialEditable IsNot Nothing Then
@@ -114,11 +113,13 @@ Public Class FormEditorial
                 Me.CountryCmb.SelectedValue = editorialEditable.Country
                 Me.BtnSave.Text = "Edit"
             Else
-                MessageBox.Show("The editorial with the provided code was not found.")
+                MessageBox.Show("The editorial with the provided code was not found.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             End If
 
+        Catch ex As InvalidCastException
+            MessageBox.Show("La celda está vacía. Debes seleccionar donde haya algo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message)
+            MessageBox.Show("Error: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
