@@ -1,29 +1,28 @@
 ﻿Imports MySql.Data.MySqlClient
-Imports Mysqlx
 
-Public Class AuthorDAO
+Public Class EditorialDAO
     Inherits Conexion
 
     Public dataSet As New DataSet
 
     ''' <summary>
-    ''' Method for insert author in db
+    ''' Method for insert editorial in db
     ''' OJO - los parametros deben deben ser escritos exactamente a como estan declarados en el procedure
     ''' </summary>
-    ''' <param name="author">recibimos el objeto de Author, de esta forma pasamos los parametros al command y ejecutar el procedure sin problema</param>
-    Public Sub InsertAuthor(ByVal author As Author)
+    ''' <param name="editorial">recibimos el objeto de Editorial, de esta forma pasamos los parametros al command y ejecutar el procedure sin problema</param>
+    Public Sub InsertEditorial(ByVal editorial As Editorial)
         Try
             Using cx As MySqlConnection = Me.Connect()
                 ' sql script only contains the name, then put the parameters 
-                Dim sql As String = "insertar_autor"
+                Dim sql As String = "insertar_"
 
                 ' Create a MySqlCommand object with the SQL query and the database connection.
                 Using command As New MySqlCommand(sql, cx)
                     ' Specify command type
                     command.CommandType = CommandType.StoredProcedure
                     ' Add Parameters for insert_autor
-                    command.Parameters.AddWithValue("@nombre", author.Name)
-                    command.Parameters.AddWithValue("@pais", author.Country)
+                    command.Parameters.AddWithValue("@nombre", editorial.Name)
+                    command.Parameters.AddWithValue("@pais", editorial.Country)
 
                     ' Execute query
                     command.ExecuteNonQuery()
@@ -35,20 +34,25 @@ Public Class AuthorDAO
             MessageBox.Show("General error: " & ex.Message)
         End Try
     End Sub
-    Public Sub ModifyAuthor(ByVal author As Author)
+
+    ''' <summary>
+    ''' metodo para modificar las editoriales registradas en nuestra base de datos
+    ''' </summary>
+    ''' <param name="editorial">recibimos un objeto de tipo Editorial para asignarlos como parametros para la llamada al procedure en nuestra base de datos</param>
+    Public Sub ModifyEditorial(ByVal editorial As Editorial)
         Try
             Using cx As MySqlConnection = Me.Connect()
                 ' sql script only contains the name, then put the parameters 
-                Dim sql As String = "modificar_autor"
+                Dim sql As String = "modificar_editorial"
 
                 ' Create a MySqlCommand object with the SQL query and the database connection.
                 Using command As New MySqlCommand(sql, cx)
                     ' Specify command type
                     command.CommandType = CommandType.StoredProcedure
-                    ' Add Parameters for modificar_autor
-                    command.Parameters.AddWithValue("@codigo", author.Code)
-                    command.Parameters.AddWithValue("@nombre", author.Name)
-                    command.Parameters.AddWithValue("@pais", author.Country)
+                    ' Add Parameters for modificar_editorial
+                    command.Parameters.AddWithValue("@codigo", editorial.Code)
+                    command.Parameters.AddWithValue("@nombre", editorial.Name)
+                    command.Parameters.AddWithValue("@pais", editorial.Country)
 
                     ' Execute query
                     command.ExecuteNonQuery()
@@ -61,23 +65,23 @@ Public Class AuthorDAO
         End Try
     End Sub
 
-    Public Sub DeleteAuthor(ByVal code As Integer)
+    Public Sub DeleteEditorial(ByVal code As Integer)
         Try
             Using cx As MySqlConnection = Me.Connect()
                 ' sql script only contains the name, then put the parameters 
-                Dim sql As String = "borrar_autor"
+                Dim sql As String = "borrar_editorial"
 
                 ' Create a MySqlCommand object with the SQL query and the database connection.
                 Using command As New MySqlCommand(sql, cx)
                     ' Specify command type
                     command.CommandType = CommandType.StoredProcedure
                     ' Add Parameters for borrar_autor
-                    command.Parameters.AddWithValue("@autor", code)
+                    command.Parameters.AddWithValue("@editorial", code)
                     ' Execute query
                     command.ExecuteNonQuery()
-                    MessageBox.Show("Author Deleted!")
+                    MessageBox.Show("Editorial Deleted!")
                 End Using
-                Dim query As String = "ALTER TABLE autor AUTO_INCREMENT = " & code
+                Dim query As String = "ALTER TABLE editorial AUTO_INCREMENT = " & code
                 Using command As New MySqlCommand(query, cx)
                     ' Execute query
                     command.ExecuteNonQuery()
@@ -91,12 +95,12 @@ Public Class AuthorDAO
     End Sub
 
     ''' <summary>
-    ''' Method for consult all the authors in database.
+    ''' Method for consult all the editorials in database.
     ''' </summary>
-    Public Sub ConsultAuthor()
+    Public Sub ConsultEditorial()
         Try
             ' create sql query
-            Dim sql As String = "call seleccionar_autores();"
+            Dim sql As String = "call seleccionar_editoriales();"
             ' clear data.
             dataSet.Tables.Clear()
             ' Open connection
@@ -155,25 +159,25 @@ Public Class AuthorDAO
     ''' 
     ''' </summary>
     ''' <param name="code">obtenemos un codigo por el cual haremos una busqueda para editar los datos</param>
-    ''' <returns>retornamos un objeto de tipo Author, para poder manipularlo en el formulario</returns>
-    Public Function Row(ByVal code As Integer) As Author
+    ''' <returns>retornamos un objeto de tipo Editorial, para poder manipularlo en el formulario</returns>
+    Public Function Row(ByVal code As Integer) As Editorial
         Try
-            Dim sql As String = "ver_autor"
+            Dim sql As String = "ver_editorial"
             dataSet.Tables.Clear()
 
             Using cx As MySqlConnection = Me.Connect()
                 Using command As New MySqlCommand(sql, cx)
 
                     command.CommandType = CommandType.StoredProcedure
-                    command.Parameters.AddWithValue("@autor", code)
+                    command.Parameters.AddWithValue("@editorial", code)
                     Using reader As MySqlDataReader = command.ExecuteReader()
                         If reader.Read() Then
-                            Dim author As New Author With {
-                                .Code = CInt(reader("cod_autor")),
-                                .Name = reader("nombre_autor").ToString(),
+                            Dim editorial As New Editorial With {
+                                .Code = CInt(reader("cod_editorial")),
+                                .Name = reader("nombre_editorial").ToString(),
                                 .Country = CInt(reader("cod_pais"))
                             }
-                            Return author
+                            Return editorial
                         End If
                     End Using
                 End Using
@@ -187,5 +191,4 @@ Public Class AuthorDAO
         End Try
         Return Nothing
     End Function
-
 End Class

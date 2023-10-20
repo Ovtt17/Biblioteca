@@ -179,7 +179,7 @@ Partial Class FormAuthor
         Me.AuthorLbl.Name = "AuthorLbl"
         Me.AuthorLbl.Size = New System.Drawing.Size(76, 25)
         Me.AuthorLbl.TabIndex = 2
-        Me.AuthorLbl.Text = "Author:"
+        Me.AuthorLbl.Text = "Editorial:"
         '
         'GridAutor
         '
@@ -207,7 +207,7 @@ Partial Class FormAuthor
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "FormAuthor"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Author Catalog."
+        Me.Text = "Editorial Catalog."
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
