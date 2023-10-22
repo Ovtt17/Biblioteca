@@ -44,7 +44,7 @@ Public Class FormAuthor
             authorDao.ConsultAuthor()
             GridAutor.DataSource = authorDao.dataSet.Tables(0)
             For Each column As DataGridViewColumn In GridAutor.Columns
-                column.Width = 145.5
+                column.Width = CInt(145.5)
             Next
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message)
@@ -112,7 +112,7 @@ Public Class FormAuthor
 
 
     Private Sub BtnDelete_Click(sender As Object, e As EventArgs) Handles BtnDelete.Click
-        Dim currentRow As Integer = GridAutor.CurrentRow.Cells(0).Value
+        Dim currentRow As Integer = CInt(GridAutor.CurrentRow.Cells(0).Value)
         If NameTxt.Text Is Nothing Or CountryCmb.SelectedIndex = -1 Then
             MessageBox.Show("Select an author to delete it")
             Exit Sub
@@ -139,7 +139,7 @@ Public Class FormAuthor
     End Sub
 
     Private Sub GridAutor_Click(sender As Object, e As EventArgs) Handles GridAutor.Click
-        Dim code As Integer = GridAutor.CurrentRow.Cells(0).Value
+        Dim code As Integer = CInt(GridAutor.CurrentRow.Cells(0).Value)
 
         Try
             Dim authorDAO As New AuthorDAO()

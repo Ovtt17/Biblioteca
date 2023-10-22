@@ -39,7 +39,7 @@ Public Class FormEditorial
             editorialDao.ConsultEditorial()
             GridEditorial.DataSource = editorialDao.dataSet.Tables(0)
             For Each column As DataGridViewColumn In GridEditorial.Columns
-                column.Width = 145.5
+                column.Width = CInt(145.5)
             Next
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message)
@@ -105,7 +105,7 @@ Public Class FormEditorial
 
     Private Sub GridEditorial_Click(sender As Object, e As EventArgs) Handles GridEditorial.Click
         Try
-            Dim code As Integer = GridEditorial.CurrentRow.Cells(0).Value
+            Dim code As Integer = CInt(GridEditorial.CurrentRow.Cells(0).Value)
             Dim editorialDAO As New EditorialDAO()
             editorialEditable = editorialDAO.Row(code)
             If editorialEditable IsNot Nothing Then
@@ -124,7 +124,7 @@ Public Class FormEditorial
     End Sub
 
     Private Sub BtnDelete_Click(sender As Object, e As EventArgs) Handles BtnDelete.Click
-        Dim currentRow As Integer = GridEditorial.CurrentRow.Cells(0).Value
+        Dim currentRow As Integer = CInt(GridEditorial.CurrentRow.Cells(0).Value)
         If NameTxt.Text Is Nothing Or CountryCmb.SelectedIndex = -1 Then
             MessageBox.Show("Select an editorial to delete it")
             Exit Sub

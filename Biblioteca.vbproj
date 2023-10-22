@@ -16,14 +16,16 @@
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
     <DocumentationFile>Biblioteca.xml</DocumentationFile>
-    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <NoWarn>
+    </NoWarn>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,7 +35,9 @@
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DocumentationFile>Biblioteca.xml</DocumentationFile>
-    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <NoWarn>
+    </NoWarn>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup>
     <OptionExplicit>On</OptionExplicit>
@@ -42,7 +46,7 @@
     <OptionCompare>Binary</OptionCompare>
   </PropertyGroup>
   <PropertyGroup>
-    <OptionStrict>Off</OptionStrict>
+    <OptionStrict>On</OptionStrict>
   </PropertyGroup>
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
@@ -78,6 +82,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO\AuthorDAO.vb" />
+    <Compile Include="DAO\BookAuthorDAO.vb" />
+    <Compile Include="DAO\BookDAO.vb" />
     <Compile Include="DAO\EditorialDAO.vb" />
     <Compile Include="DB\Conexion.vb" />
     <Compile Include="FormAuthor.vb">
@@ -87,6 +93,12 @@
       <DependentUpon>FormAuthor.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormBook.Designer.vb">
+      <DependentUpon>FormBook.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormBook.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormEditorial.Designer.vb">
       <DependentUpon>FormEditorial.vb</DependentUpon>
     </Compile>
@@ -94,6 +106,8 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Models\Author.vb" />
+    <Compile Include="Models\Book.vb" />
+    <Compile Include="Models\BookAuthor.vb" />
     <Compile Include="Models\Editorial.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -115,6 +129,9 @@
   <ItemGroup>
     <EmbeddedResource Include="FormAuthor.resx">
       <DependentUpon>FormAuthor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBook.resx">
+      <DependentUpon>FormBook.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormEditorial.resx">
       <DependentUpon>FormEditorial.vb</DependentUpon>
