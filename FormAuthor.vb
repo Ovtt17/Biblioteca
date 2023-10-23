@@ -43,9 +43,7 @@ Public Class FormAuthor
             Dim authorDao As New AuthorDAO()
             authorDao.ConsultAuthor()
             GridAutor.DataSource = authorDao.dataSet.Tables(0)
-            For Each column As DataGridViewColumn In GridAutor.Columns
-                column.Width = CInt(145.5)
-            Next
+            GridAutor.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message)
         End Try
@@ -53,10 +51,10 @@ Public Class FormAuthor
     End Sub
 
     Private Sub BtnNew_Click(sender As Object, e As EventArgs) Handles BtnNew.Click
-        CleanField()
+        CleanFields()
     End Sub
 
-    Private Sub CleanField()
+    Private Sub CleanFields()
         Me.NameTxt.Text = ""
         Me.CountryCmb.SelectedIndex = -1
         Me.BtnSave.Text = "Guardar"
@@ -89,8 +87,7 @@ Public Class FormAuthor
             Dim authorDao As New AuthorDAO()
             ' Verify if author is editable or not
             If (BtnSave.Text = "Edit") Then
-                authorEditable.Name = Me.NameTxt.Text
-                authorEditable.Country = Me.CountryCmb.SelectedIndex + 1
+                authorEditable = New Author(Me.NameTxt.Text, Me.CountryCmb.SelectedIndex + 1)
                 authorDao.ModifyAuthor(authorEditable)
                 rot = "Modified"
             Else
@@ -103,7 +100,7 @@ Public Class FormAuthor
             ' Load table again
             Showdata()
             ' Clean all the fields to add new authors
-            CleanField()
+            CleanFields()
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message)
         End Try
@@ -117,7 +114,7 @@ Public Class FormAuthor
             MessageBox.Show("Select an author to delete it")
             Exit Sub
         End If
-        If MessageBox.Show("Do you want to delete the record?", "Library System",
+        If MessageBox.Show("Do you want to delete the selected author?", "Library System",
                            MessageBoxButtons.YesNo, MessageBoxIcon.Question,
                            MessageBoxDefaultButton.Button1) = Windows.Forms.DialogResult.No Then
             Exit Sub
@@ -129,7 +126,7 @@ Public Class FormAuthor
             ' Load table again
             Showdata()
             ' Clean all the fields to add new authors
-            CleanField()
+            CleanFields()
         Catch ex As MySqlException
             MessageBox.Show("SQL Error: " & ex.Message)
         Catch ex As Exception
@@ -143,26 +140,24 @@ Public Class FormAuthor
 
         Try
             Dim authorDAO As New AuthorDAO()
-            authorEditable = authorDAO.Row(code)
+            authorEditable = authorDAO.GetAuthorById(code)
             If authorEditable IsNot Nothing Then
                 Me.NameTxt.Text = authorEditable.Name
                 Me.CountryCmb.SelectedValue = authorEditable.Country
                 Me.BtnSave.Text = "Edit"
             Else
-                MessageBox.Show("The author with the provided code was not found.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                MessageBox.Show("The author with the provided code was not found.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             End If
 
         Catch ex As InvalidCastException
-            MessageBox.Show("La celda está vacía. Debes seleccionar donde haya algo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("The cell is empty. Select another one.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
     Private Sub BtnClose_Click(sender As Object, e As EventArgs) Handles BtnClose.Click
-        If ClosingMessage() Then
-            Me.Close()
-        End If
+        Me.Close()
     End Sub
 
     Private Sub FormAuthor_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing

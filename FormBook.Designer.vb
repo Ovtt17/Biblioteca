@@ -97,6 +97,7 @@ Partial Class FormBook
         '
         'RemoveAuthorBtn
         '
+        Me.RemoveAuthorBtn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.RemoveAuthorBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RemoveAuthorBtn.Location = New System.Drawing.Point(1038, 137)
         Me.RemoveAuthorBtn.Name = "RemoveAuthorBtn"
@@ -108,6 +109,7 @@ Partial Class FormBook
         'AddAuthorBtn
         '
         Me.AddAuthorBtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.AddAuthorBtn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.AddAuthorBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.AddAuthorBtn.Location = New System.Drawing.Point(1038, 74)
         Me.AddAuthorBtn.Name = "AddAuthorBtn"
@@ -129,6 +131,7 @@ Partial Class FormBook
         'AuthorsCmb
         '
         Me.AuthorsCmb.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.AuthorsCmb.Cursor = System.Windows.Forms.Cursors.Hand
         Me.AuthorsCmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.AuthorsCmb.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.AuthorsCmb.FormattingEnabled = True
@@ -151,6 +154,7 @@ Partial Class FormBook
         '
         'DateTimer
         '
+        Me.DateTimer.Cursor = System.Windows.Forms.Cursors.Hand
         Me.DateTimer.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateTimer.Location = New System.Drawing.Point(127, 124)
         Me.DateTimer.Name = "DateTimer"
@@ -159,6 +163,7 @@ Partial Class FormBook
         '
         'EditorialCmb
         '
+        Me.EditorialCmb.Cursor = System.Windows.Forms.Cursors.Hand
         Me.EditorialCmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.EditorialCmb.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.EditorialCmb.FormattingEnabled = True
@@ -188,10 +193,11 @@ Partial Class FormBook
         '
         'EditionCmb
         '
+        Me.EditionCmb.Cursor = System.Windows.Forms.Cursors.Hand
         Me.EditionCmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.EditionCmb.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.EditionCmb.FormattingEnabled = True
-        Me.EditionCmb.Items.AddRange(New Object() {"1ra edición", "2da edición", "3ra edición", "4ta edición", "5ta edición", "6ta edición", "7ma edición", "8va edición", "9na edición", "10ma edición"})
+        Me.EditionCmb.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"})
         Me.EditionCmb.Location = New System.Drawing.Point(127, 273)
         Me.EditionCmb.Name = "EditionCmb"
         Me.EditionCmb.Size = New System.Drawing.Size(216, 28)
@@ -199,6 +205,7 @@ Partial Class FormBook
         '
         'LanguageCmb
         '
+        Me.LanguageCmb.Cursor = System.Windows.Forms.Cursors.Hand
         Me.LanguageCmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.LanguageCmb.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LanguageCmb.FormattingEnabled = True

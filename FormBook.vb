@@ -1,6 +1,9 @@
-﻿Imports System.Xml
+﻿Imports System.Linq.Expressions
+Imports System.Xml
 
 Public Class FormBook
+    Private bookEditable As Book
+    Private authorsEditablesList As List(Of BookAuthor)
     Private Sub FormBook_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Show data on the form
         ShowData()
@@ -50,12 +53,16 @@ Public Class FormBook
     End Sub
 
     Private Sub AddAuthorBtn_Click(sender As Object, e As EventArgs) Handles AddAuthorBtn.Click
+        Dim authorSelected As String = $"{AuthorsCmb.Text}-{AuthorsCmb.SelectedValue}"
         If AuthorsCmb.SelectedIndex = -1 Then
             MessageBox.Show("Select an Author.")
             AuthorsCmb.Focus()
             Exit Sub
+        ElseIf AuthorsList.Items.Contains(authorSelected) Then
+            MessageBox.Show("You've already select that author.")
+            Exit Sub
         End If
-        AuthorsList.Items.Add(AuthorsCmb.Text + "-" + AuthorsCmb.SelectedValue.ToString)
+        AuthorsList.Items.Add(authorSelected)
         AuthorsCmb.SelectedIndex = -1
     End Sub
 
@@ -80,6 +87,7 @@ Public Class FormBook
         TitleTxt.Focus()
         AuthorsCmb.SelectedIndex = -1
         AuthorsList.Items.Clear()
+        BtnSave.Text = "Save"
     End Sub
 
     Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
@@ -93,41 +101,77 @@ Public Class FormBook
         Try
             Dim rot As String
             Dim bookDao As New BookDAO()
+            Dim bookAuthorDao As New BookAuthorDAO()
 
-            Dim title As String = TitleTxt.Text
+            Dim title As String = TitleTxt.Text.Trim()
             Dim editorial As Integer = EditorialCmb.SelectedIndex + 1
             Dim publicationDate As Date = DateTimer.Value.Date
-            Dim examples As Integer = Integer.Parse(ExamplesTxt.Text)
-            Dim pages As Integer = Integer.Parse(PageNumberTxt.Text)
-            Dim language As String = LanguageCmb.SelectedItem.ToString()
+
+            ' Validate examples
+            Dim examples As Integer
+            If Not Integer.TryParse(ExamplesTxt.Text, examples) OrElse examples < 1 Then
+                MessageBox.Show("The number of examples must be an integer greater than 0.")
+                Return
+            End If
+
+            ' Validate pages
+            Dim pages As Integer
+            If Not Integer.TryParse(PageNumberTxt.Text, pages) OrElse pages < 1 Then
+                MessageBox.Show("The number of pages must be an integer greater than 0.")
+                Return
+            End If
+
+            Dim language As String = LanguageCmb.SelectedItem.ToString().Trim()
             Dim edition As Integer = EditionCmb.SelectedIndex
 
-            Dim book As New Book(title, editorial, publicationDate, examples, pages, language, edition)
+            Dim a() As String
+            Dim total As Integer = AuthorsList.Items.Count - 1
 
-            Dim bookId = bookDao.InsertBook(book)
+            If (BtnSave.Text = "Edit") Then
+                bookDao.ModifyBook(bookEditable)
+                ' Obtener los autores antiguos
+                Dim oldAuthors As List(Of BookAuthor) = bookAuthorDao.GetBookAuthorsById(bookEditable.Id)
 
-            Try
-                Dim a() As String
-                Dim total As Integer = AuthorsList.Items.Count - 1
+                ' Crear una lista para almacenar los nuevos autores
+                Dim newAuthors As New List(Of BookAuthor)
+
+                ' Llenar la lista de nuevos autores
+                For i = 0 To total
+                    a = Split(AuthorsList.Items(i).ToString, "-")
+                    Dim authorId As Integer = CInt(a(1))
+                    newAuthors.Add(New BookAuthor(bookEditable.Id, authorId))
+                Next
+
+                ' Para cada autor en la nueva lista
+                For Each newAuthor In newAuthors
+                    ' Verificar si el autor ya existe en la lista antigua
+                    If Not oldAuthors.Any(Function(oldAuthor) oldAuthor.AuthorCode = newAuthor.AuthorCode) Then
+                        ' Si no existe, insertar el nuevo autor en la base de datos
+                        bookAuthorDao.InsertBookAuthor(newAuthor)
+                    End If
+                Next
+
+                ' Para cada autor en la lista antigua
+                For Each oldAuthor In oldAuthors
+                    ' Verificar si el autor todavía existe en la nueva lista
+                    If Not newAuthors.Any(Function(newAuthor) newAuthor.AuthorCode = oldAuthor.AuthorCode) Then
+                        ' Si no existe, eliminar el autor de la base de datos
+                        bookAuthorDao.DeleteBookAuthor(oldAuthor)
+                    End If
+                Next
+                rot = "Modified"
+            Else
+                Dim book As New Book(title, editorial, publicationDate, examples, pages, language, edition)
+                Dim bookId = bookDao.InsertBook(book)
                 For i = 0 To total
                     a = Split(AuthorsList.Items(i).ToString, "-")
                     Dim authorId As Integer = CInt(a(1))
                     Dim bookAuthor As New BookAuthor(bookId, authorId)
-
-                    Dim bookAuthorDao As New BookAuthorDAO()
                     bookAuthorDao.InsertBookAuthor(bookAuthor)
 
                 Next
-            Catch ex As Exception
-
-            End Try
-            rot = "Saved"
-            'If (BtnSave.Text = "Edit") Then
-            '    bookEditable.Name = Me.NameTxt.Text
-
-            '    bookDao.(authorEditable)
-            '    rot = "Modified"
-            'End If
+                rot = "Saved"
+            End If
 
             MessageBox.Show($"Book {rot} Corretly.")
             ' Load table again
@@ -172,4 +216,79 @@ Public Class FormBook
             End If
         Next
     End Sub
+
+    Private Sub BtnDelete_Click(sender As Object, e As EventArgs) Handles BtnDelete.Click
+        Dim currentRow As Integer = CInt(GridBook.CurrentRow.Cells(0).Value)
+        ValidateInputs()
+        If MessageBox.Show("Do you want to delete the selected book?", "Library System",
+            MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) =
+            Windows.Forms.DialogResult.No Then
+            Exit Sub
+        End If
+        Try
+            Dim bookdao As New BookDAO()
+            bookdao.DeleteBook(currentRow)
+            MessageBox.Show("Book Deleted!")
+            ' Load table again
+            ShowData()
+            ' Clean all the fields to add new authors
+            CleanFields()
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    Private Sub GridBook_Click(sender As Object, e As EventArgs) Handles GridBook.Click
+        Dim code As Integer = CInt(GridBook.CurrentRow.Cells(0).Value)
+        Try
+            Dim bookDao As New BookDAO()
+            bookEditable = bookDao.GetBookById(code)
+            If bookEditable IsNot Nothing Then
+                Me.TitleTxt.Text = bookEditable.Title
+                Me.EditorialCmb.SelectedIndex = bookEditable.EditorialC - 1
+                Me.DateTimer.Value = bookEditable.DatePublished
+                Me.ExamplesTxt.Text = CStr(bookEditable.Examples)
+                Me.PageNumberTxt.Text = CStr(bookEditable.PageNumbers)
+                Me.LanguageCmb.SelectedItem = bookEditable.Language
+                Me.EditionCmb.SelectedIndex = bookEditable.Edition
+
+                Dim bookAuthorDao As New BookAuthorDAO()
+                authorsEditablesList = bookAuthorDao.GetBookAuthorsById(code)
+                If authorsEditablesList IsNot Nothing Then
+                    AuthorsList.Items.Clear()
+                    For Each author In authorsEditablesList
+                        AuthorsList.Items.Add(author.AuthorName + "-" + author.AuthorCode.ToString)
+                    Next
+                End If
+
+                Me.BtnSave.Text = "Edit"
+            Else
+                MessageBox.Show("The book with the provided code was not found.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            End If
+        Catch ex As InvalidCastException
+            MessageBox.Show("The cell is empty. Select another one.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+
+    End Sub
+
+    Private Sub BtnClose_Click(sender As Object, e As EventArgs) Handles BtnClose.Click
+        Me.Close()
+    End Sub
+
+    Private Sub FormBook_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        If Not ClosingMessage() Then
+            e.Cancel = True
+        End If
+    End Sub
+
+    Private Function ClosingMessage() As Boolean
+        If MessageBox.Show("Do you want to close the app?", "Librery System",
+                       MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+                       MessageBoxDefaultButton.Button1) = Windows.Forms.DialogResult.No Then
+            Return False
+        End If
+        Return True
+    End Function
 End Class

@@ -156,7 +156,7 @@ Public Class AuthorDAO
     ''' </summary>
     ''' <param name="code">obtenemos un codigo por el cual haremos una busqueda para editar los datos</param>
     ''' <returns>retornamos un objeto de tipo Author, para poder manipularlo en el formulario</returns>
-    Public Function Row(ByVal code As Integer) As Author
+    Public Function GetAuthorById(ByVal code As Integer) As Author
         Try
             Dim sql As String = "ver_autor"
             dataSet.Tables.Clear()

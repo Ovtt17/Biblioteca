@@ -38,9 +38,7 @@ Public Class FormEditorial
             Dim editorialDao As New EditorialDAO()
             editorialDao.ConsultEditorial()
             GridEditorial.DataSource = editorialDao.dataSet.Tables(0)
-            For Each column As DataGridViewColumn In GridEditorial.Columns
-                column.Width = CInt(145.5)
-            Next
+            GridEditorial.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message)
         End Try
@@ -83,8 +81,7 @@ Public Class FormEditorial
             Dim editorialDao As New EditorialDAO()
             ' Verify if editorial is editable or not
             If (BtnSave.Text = "Edit") Then
-                editorialEditable.Name = Me.NameTxt.Text
-                editorialEditable.Country = Me.CountryCmb.SelectedIndex + 1
+                editorialEditable = New Editorial(Me.NameTxt.Text, Me.CountryCmb.SelectedIndex + 1)
                 editorialDao.ModifyEditorial(editorialEditable)
                 rot = "Modified"
             Else
@@ -129,7 +126,7 @@ Public Class FormEditorial
             MessageBox.Show("Select an editorial to delete it")
             Exit Sub
         End If
-        If MessageBox.Show("Do you want to delete the record?", "Library System",
+        If MessageBox.Show("Do you want to delete the selected editorial?", "Library System",
                            MessageBoxButtons.YesNo, MessageBoxIcon.Question,
                            MessageBoxDefaultButton.Button1) = Windows.Forms.DialogResult.No Then
             Exit Sub
@@ -150,9 +147,7 @@ Public Class FormEditorial
     End Sub
 
     Private Sub BtnClose_Click(sender As Object, e As EventArgs) Handles BtnClose.Click
-        If ClosingMessage() Then
-            Me.Close()
-        End If
+        Me.Close()
     End Sub
 
     Private Sub FormEditorial_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing

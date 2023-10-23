@@ -23,19 +23,19 @@ Partial Class FormEditorial
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.CountryCmb = New System.Windows.Forms.ComboBox()
-        Me.NameTxt = New System.Windows.Forms.TextBox()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.BtnClose = New System.Windows.Forms.Button()
-        Me.BtnDelete = New System.Windows.Forms.Button()
-        Me.BtnSave = New System.Windows.Forms.Button()
-        Me.BtnNew = New System.Windows.Forms.Button()
-        Me.CountryLbl = New System.Windows.Forms.Label()
-        Me.AuthorLbl = New System.Windows.Forms.Label()
         Me.GridEditorial = New System.Windows.Forms.DataGridView()
+        Me.BtnNew = New System.Windows.Forms.Button()
+        Me.BtnSave = New System.Windows.Forms.Button()
+        Me.BtnDelete = New System.Windows.Forms.Button()
+        Me.BtnClose = New System.Windows.Forms.Button()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.AuthorLbl = New System.Windows.Forms.Label()
+        Me.CountryLbl = New System.Windows.Forms.Label()
+        Me.NameTxt = New System.Windows.Forms.TextBox()
+        Me.CountryCmb = New System.Windows.Forms.ComboBox()
         Me.Panel1.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
         CType(Me.GridEditorial, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -51,170 +51,172 @@ Partial Class FormEditorial
         Me.Panel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel1.ForeColor = System.Drawing.SystemColors.ControlText
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(528, 564)
+        Me.Panel1.Size = New System.Drawing.Size(704, 694)
         Me.Panel1.TabIndex = 1
-        '
-        'CountryCmb
-        '
-        Me.CountryCmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.CountryCmb.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CountryCmb.FormattingEnabled = True
-        Me.CountryCmb.Location = New System.Drawing.Point(123, 378)
-        Me.CountryCmb.Margin = New System.Windows.Forms.Padding(2)
-        Me.CountryCmb.Name = "CountryCmb"
-        Me.CountryCmb.Size = New System.Drawing.Size(204, 28)
-        Me.CountryCmb.TabIndex = 6
-        '
-        'NameTxt
-        '
-        Me.NameTxt.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.NameTxt.Location = New System.Drawing.Point(123, 313)
-        Me.NameTxt.Margin = New System.Windows.Forms.Padding(2)
-        Me.NameTxt.Name = "NameTxt"
-        Me.NameTxt.Size = New System.Drawing.Size(204, 26)
-        Me.NameTxt.TabIndex = 5
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox1.Controls.Add(Me.BtnClose)
-        Me.GroupBox1.Controls.Add(Me.BtnDelete)
-        Me.GroupBox1.Controls.Add(Me.BtnSave)
-        Me.GroupBox1.Controls.Add(Me.BtnNew)
-        Me.GroupBox1.Location = New System.Drawing.Point(358, 284)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2)
-        Me.GroupBox1.Size = New System.Drawing.Size(150, 257)
-        Me.GroupBox1.TabIndex = 4
-        Me.GroupBox1.TabStop = False
-        '
-        'BtnClose
-        '
-        Me.BtnClose.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.BtnClose.BackColor = System.Drawing.Color.Orange
-        Me.BtnClose.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnClose.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnClose.ForeColor = System.Drawing.SystemColors.Window
-        Me.BtnClose.Location = New System.Drawing.Point(24, 194)
-        Me.BtnClose.Margin = New System.Windows.Forms.Padding(2)
-        Me.BtnClose.Name = "BtnClose"
-        Me.BtnClose.Size = New System.Drawing.Size(112, 34)
-        Me.BtnClose.TabIndex = 4
-        Me.BtnClose.Text = "Close"
-        Me.BtnClose.UseVisualStyleBackColor = False
-        '
-        'BtnDelete
-        '
-        Me.BtnDelete.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.BtnDelete.BackColor = System.Drawing.Color.Crimson
-        Me.BtnDelete.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnDelete.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnDelete.ForeColor = System.Drawing.SystemColors.Window
-        Me.BtnDelete.Location = New System.Drawing.Point(24, 139)
-        Me.BtnDelete.Margin = New System.Windows.Forms.Padding(2)
-        Me.BtnDelete.Name = "BtnDelete"
-        Me.BtnDelete.Size = New System.Drawing.Size(112, 34)
-        Me.BtnDelete.TabIndex = 3
-        Me.BtnDelete.Text = "Delete"
-        Me.BtnDelete.UseVisualStyleBackColor = False
-        '
-        'BtnSave
-        '
-        Me.BtnSave.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.BtnSave.BackColor = System.Drawing.Color.Purple
-        Me.BtnSave.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnSave.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnSave.ForeColor = System.Drawing.SystemColors.Window
-        Me.BtnSave.Location = New System.Drawing.Point(24, 83)
-        Me.BtnSave.Margin = New System.Windows.Forms.Padding(2)
-        Me.BtnSave.Name = "BtnSave"
-        Me.BtnSave.Size = New System.Drawing.Size(112, 34)
-        Me.BtnSave.TabIndex = 1
-        Me.BtnSave.Text = "Save"
-        Me.BtnSave.UseVisualStyleBackColor = False
-        '
-        'BtnNew
-        '
-        Me.BtnNew.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.BtnNew.BackColor = System.Drawing.Color.Green
-        Me.BtnNew.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnNew.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnNew.ForeColor = System.Drawing.SystemColors.Window
-        Me.BtnNew.Location = New System.Drawing.Point(24, 22)
-        Me.BtnNew.Margin = New System.Windows.Forms.Padding(2)
-        Me.BtnNew.Name = "BtnNew"
-        Me.BtnNew.Size = New System.Drawing.Size(112, 34)
-        Me.BtnNew.TabIndex = 0
-        Me.BtnNew.Text = "New"
-        Me.BtnNew.UseVisualStyleBackColor = False
-        '
-        'CountryLbl
-        '
-        Me.CountryLbl.AutoSize = True
-        Me.CountryLbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CountryLbl.ForeColor = System.Drawing.SystemColors.Window
-        Me.CountryLbl.Location = New System.Drawing.Point(51, 381)
-        Me.CountryLbl.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.CountryLbl.Name = "CountryLbl"
-        Me.CountryLbl.Size = New System.Drawing.Size(68, 20)
-        Me.CountryLbl.TabIndex = 3
-        Me.CountryLbl.Text = "Country:"
-        '
-        'AuthorLbl
-        '
-        Me.AuthorLbl.AutoSize = True
-        Me.AuthorLbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.AuthorLbl.ForeColor = System.Drawing.SystemColors.Window
-        Me.AuthorLbl.Location = New System.Drawing.Point(51, 313)
-        Me.AuthorLbl.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.AuthorLbl.Name = "AuthorLbl"
-        Me.AuthorLbl.Size = New System.Drawing.Size(70, 20)
-        Me.AuthorLbl.TabIndex = 2
-        Me.AuthorLbl.Text = "Editorial:"
         '
         'GridEditorial
         '
+        Me.GridEditorial.AllowUserToAddRows = False
+        Me.GridEditorial.AllowUserToDeleteRows = False
         Me.GridEditorial.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GridEditorial.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
         Me.GridEditorial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.GridEditorial.GridColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.GridEditorial.Location = New System.Drawing.Point(16, 11)
-        Me.GridEditorial.Margin = New System.Windows.Forms.Padding(2)
+        Me.GridEditorial.Location = New System.Drawing.Point(21, 14)
+        Me.GridEditorial.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GridEditorial.Name = "GridEditorial"
         Me.GridEditorial.ReadOnly = True
         Me.GridEditorial.RowHeadersWidth = 51
         Me.GridEditorial.RowTemplate.Height = 24
-        Me.GridEditorial.Size = New System.Drawing.Size(492, 244)
+        Me.GridEditorial.Size = New System.Drawing.Size(656, 300)
         Me.GridEditorial.TabIndex = 1
+        '
+        'BtnNew
+        '
+        Me.BtnNew.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BtnNew.BackColor = System.Drawing.Color.Green
+        Me.BtnNew.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnNew.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnNew.ForeColor = System.Drawing.SystemColors.Window
+        Me.BtnNew.Location = New System.Drawing.Point(32, 21)
+        Me.BtnNew.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BtnNew.Name = "BtnNew"
+        Me.BtnNew.Size = New System.Drawing.Size(146, 42)
+        Me.BtnNew.TabIndex = 0
+        Me.BtnNew.Text = "New"
+        Me.BtnNew.UseVisualStyleBackColor = False
+        '
+        'BtnSave
+        '
+        Me.BtnSave.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BtnSave.BackColor = System.Drawing.Color.Purple
+        Me.BtnSave.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnSave.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnSave.ForeColor = System.Drawing.SystemColors.Window
+        Me.BtnSave.Location = New System.Drawing.Point(32, 96)
+        Me.BtnSave.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BtnSave.Name = "BtnSave"
+        Me.BtnSave.Size = New System.Drawing.Size(146, 42)
+        Me.BtnSave.TabIndex = 1
+        Me.BtnSave.Text = "Save"
+        Me.BtnSave.UseVisualStyleBackColor = False
+        '
+        'BtnDelete
+        '
+        Me.BtnDelete.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BtnDelete.BackColor = System.Drawing.Color.Crimson
+        Me.BtnDelete.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnDelete.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnDelete.ForeColor = System.Drawing.SystemColors.Window
+        Me.BtnDelete.Location = New System.Drawing.Point(32, 165)
+        Me.BtnDelete.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BtnDelete.Name = "BtnDelete"
+        Me.BtnDelete.Size = New System.Drawing.Size(146, 42)
+        Me.BtnDelete.TabIndex = 3
+        Me.BtnDelete.Text = "Delete"
+        Me.BtnDelete.UseVisualStyleBackColor = False
+        '
+        'BtnClose
+        '
+        Me.BtnClose.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BtnClose.BackColor = System.Drawing.Color.Orange
+        Me.BtnClose.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnClose.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnClose.ForeColor = System.Drawing.SystemColors.Window
+        Me.BtnClose.Location = New System.Drawing.Point(32, 233)
+        Me.BtnClose.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BtnClose.Name = "BtnClose"
+        Me.BtnClose.Size = New System.Drawing.Size(146, 42)
+        Me.BtnClose.TabIndex = 4
+        Me.BtnClose.Text = "Close"
+        Me.BtnClose.UseVisualStyleBackColor = False
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox1.Controls.Add(Me.BtnClose)
+        Me.GroupBox1.Controls.Add(Me.BtnDelete)
+        Me.GroupBox1.Controls.Add(Me.BtnSave)
+        Me.GroupBox1.Controls.Add(Me.BtnNew)
+        Me.GroupBox1.Location = New System.Drawing.Point(477, 362)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.GroupBox1.Size = New System.Drawing.Size(197, 304)
+        Me.GroupBox1.TabIndex = 4
+        Me.GroupBox1.TabStop = False
+        '
+        'AuthorLbl
+        '
+        Me.AuthorLbl.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.AuthorLbl.AutoSize = True
+        Me.AuthorLbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.AuthorLbl.ForeColor = System.Drawing.SystemColors.Window
+        Me.AuthorLbl.Location = New System.Drawing.Point(68, 385)
+        Me.AuthorLbl.Name = "AuthorLbl"
+        Me.AuthorLbl.Size = New System.Drawing.Size(87, 25)
+        Me.AuthorLbl.TabIndex = 2
+        Me.AuthorLbl.Text = "Editorial:"
+        '
+        'CountryLbl
+        '
+        Me.CountryLbl.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.CountryLbl.AutoSize = True
+        Me.CountryLbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CountryLbl.ForeColor = System.Drawing.SystemColors.Window
+        Me.CountryLbl.Location = New System.Drawing.Point(68, 469)
+        Me.CountryLbl.Name = "CountryLbl"
+        Me.CountryLbl.Size = New System.Drawing.Size(87, 25)
+        Me.CountryLbl.TabIndex = 3
+        Me.CountryLbl.Text = "Country:"
+        '
+        'NameTxt
+        '
+        Me.NameTxt.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.NameTxt.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NameTxt.Location = New System.Drawing.Point(164, 385)
+        Me.NameTxt.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.NameTxt.Name = "NameTxt"
+        Me.NameTxt.Size = New System.Drawing.Size(271, 30)
+        Me.NameTxt.TabIndex = 5
+        '
+        'CountryCmb
+        '
+        Me.CountryCmb.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.CountryCmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CountryCmb.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CountryCmb.FormattingEnabled = True
+        Me.CountryCmb.Location = New System.Drawing.Point(164, 465)
+        Me.CountryCmb.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.CountryCmb.Name = "CountryCmb"
+        Me.CountryCmb.Size = New System.Drawing.Size(271, 33)
+        Me.CountryCmb.TabIndex = 6
         '
         'FormEditorial
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(528, 564)
+        Me.ClientSize = New System.Drawing.Size(704, 694)
         Me.Controls.Add(Me.Panel1)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "FormEditorial"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Editorial Catalog."
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        Me.GroupBox1.ResumeLayout(False)
         CType(Me.GridEditorial, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents GridEditorial As DataGridView
     Friend WithEvents CountryCmb As ComboBox
     Friend WithEvents NameTxt As TextBox
     Friend WithEvents GroupBox1 As GroupBox
@@ -224,5 +226,4 @@ Partial Class FormEditorial
     Friend WithEvents BtnNew As Button
     Friend WithEvents CountryLbl As Label
     Friend WithEvents AuthorLbl As Label
-    Friend WithEvents GridEditorial As DataGridView
 End Class
