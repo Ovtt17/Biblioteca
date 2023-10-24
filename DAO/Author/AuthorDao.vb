@@ -169,7 +169,7 @@ Public Class AuthorDAO
                     Using reader As MySqlDataReader = command.ExecuteReader()
                         If reader.Read() Then
                             Dim author As New Author With {
-                                .Code = CInt(reader("cod_autor")),
+                                .code = CInt(reader("cod_autor")),
                                 .Name = reader("nombre_autor").ToString(),
                                 .Country = CInt(reader("cod_pais"))
                             }

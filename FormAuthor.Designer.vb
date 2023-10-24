@@ -53,7 +53,7 @@ Partial Class FormAuthor
         Me.Panel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel1.ForeColor = System.Drawing.SystemColors.ControlText
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(528, 564)
         Me.Panel1.TabIndex = 0
@@ -64,7 +64,7 @@ Partial Class FormAuthor
         Me.CountryCmb.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CountryCmb.FormattingEnabled = True
         Me.CountryCmb.Location = New System.Drawing.Point(123, 378)
-        Me.CountryCmb.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.CountryCmb.Margin = New System.Windows.Forms.Padding(2)
         Me.CountryCmb.Name = "CountryCmb"
         Me.CountryCmb.Size = New System.Drawing.Size(204, 28)
         Me.CountryCmb.TabIndex = 6
@@ -73,7 +73,7 @@ Partial Class FormAuthor
         '
         Me.NameTxt.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.NameTxt.Location = New System.Drawing.Point(123, 313)
-        Me.NameTxt.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.NameTxt.Margin = New System.Windows.Forms.Padding(2)
         Me.NameTxt.Name = "NameTxt"
         Me.NameTxt.Size = New System.Drawing.Size(204, 26)
         Me.NameTxt.TabIndex = 5
@@ -88,9 +88,9 @@ Partial Class FormAuthor
         Me.GroupBox1.Controls.Add(Me.BtnSave)
         Me.GroupBox1.Controls.Add(Me.BtnNew)
         Me.GroupBox1.Location = New System.Drawing.Point(358, 284)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Size = New System.Drawing.Size(150, 257)
         Me.GroupBox1.TabIndex = 4
         Me.GroupBox1.TabStop = False
@@ -104,7 +104,7 @@ Partial Class FormAuthor
         Me.BtnClose.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnClose.ForeColor = System.Drawing.SystemColors.Window
         Me.BtnClose.Location = New System.Drawing.Point(24, 194)
-        Me.BtnClose.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BtnClose.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnClose.Name = "BtnClose"
         Me.BtnClose.Size = New System.Drawing.Size(112, 34)
         Me.BtnClose.TabIndex = 4
@@ -120,7 +120,7 @@ Partial Class FormAuthor
         Me.BtnDelete.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnDelete.ForeColor = System.Drawing.SystemColors.Window
         Me.BtnDelete.Location = New System.Drawing.Point(24, 139)
-        Me.BtnDelete.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BtnDelete.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnDelete.Name = "BtnDelete"
         Me.BtnDelete.Size = New System.Drawing.Size(112, 34)
         Me.BtnDelete.TabIndex = 3
@@ -136,7 +136,7 @@ Partial Class FormAuthor
         Me.BtnSave.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnSave.ForeColor = System.Drawing.SystemColors.Window
         Me.BtnSave.Location = New System.Drawing.Point(24, 83)
-        Me.BtnSave.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BtnSave.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnSave.Name = "BtnSave"
         Me.BtnSave.Size = New System.Drawing.Size(112, 34)
         Me.BtnSave.TabIndex = 1
@@ -152,7 +152,7 @@ Partial Class FormAuthor
         Me.BtnNew.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnNew.ForeColor = System.Drawing.SystemColors.Window
         Me.BtnNew.Location = New System.Drawing.Point(24, 22)
-        Me.BtnNew.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BtnNew.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnNew.Name = "BtnNew"
         Me.BtnNew.Size = New System.Drawing.Size(112, 34)
         Me.BtnNew.TabIndex = 0
@@ -192,7 +192,7 @@ Partial Class FormAuthor
         Me.GridAutor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.GridAutor.GridColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.GridAutor.Location = New System.Drawing.Point(16, 11)
-        Me.GridAutor.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GridAutor.Margin = New System.Windows.Forms.Padding(2)
         Me.GridAutor.Name = "GridAutor"
         Me.GridAutor.ReadOnly = True
         Me.GridAutor.RowHeadersWidth = 51
@@ -206,7 +206,7 @@ Partial Class FormAuthor
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(528, 564)
         Me.Controls.Add(Me.Panel1)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "FormAuthor"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Author Catalog."

@@ -77,8 +77,9 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAO\AuthorDAO.vb" />
-    <Compile Include="DAO\EditorialDAO.vb" />
+    <Compile Include="DAO\Author\AuthorDAO.vb" />
+    <Compile Include="DAO\Bibliotecario\BibliotecarioDAO.vb" />
+    <Compile Include="DAO\Editorial\EditorialDAO.vb" />
     <Compile Include="DB\Conexion.vb" />
     <Compile Include="FormAuthor.vb">
       <SubType>Form</SubType>
@@ -87,14 +88,21 @@
       <DependentUpon>FormAuthor.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormBibliotecario.Designer.vb">
+      <DependentUpon>FormBibliotecario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormBibliotecario.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormEditorial.Designer.vb">
       <DependentUpon>FormEditorial.vb</DependentUpon>
     </Compile>
     <Compile Include="FormEditorial.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Models\Author.vb" />
-    <Compile Include="Models\Editorial.vb" />
+    <Compile Include="Models\Author\Author.vb" />
+    <Compile Include="Models\Bibliotecario\Bibliotecario.vb" />
+    <Compile Include="Models\Editorial\Editorial.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -115,6 +123,9 @@
   <ItemGroup>
     <EmbeddedResource Include="FormAuthor.resx">
       <DependentUpon>FormAuthor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBibliotecario.resx">
+      <DependentUpon>FormBibliotecario.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormEditorial.resx">
       <DependentUpon>FormEditorial.vb</DependentUpon>
