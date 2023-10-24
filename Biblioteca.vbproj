@@ -86,6 +86,7 @@
     <Compile Include="DAO\Book\BookDAO.vb" />
     <Compile Include="DAO\Editorial\EditorialDAO.vb" />
     <Compile Include="DAO\Login\LoginDAO.vb" />
+    <Compile Include="DAO\UserDAO.vb" />
     <Compile Include="DB\Conexion.vb" />
     <Compile Include="FormAuthor.vb">
       <SubType>Form</SubType>
@@ -118,10 +119,17 @@
     <Compile Include="FormPresentation.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormUsers.Designer.vb">
+      <DependentUpon>FormUsers.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormUsers.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Models\Author\Author.vb" />
     <Compile Include="Models\Book\Book.vb" />
     <Compile Include="Models\Book\BookAuthor.vb" />
     <Compile Include="Models\Editorial\Editorial.vb" />
+    <Compile Include="Models\User.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -140,21 +148,23 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="FormAuthor.resx">
+    <!-- <EmbeddedResource Include="src\FormAuthor.resx">
       <DependentUpon>FormAuthor.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormBook.resx">
+    <EmbeddedResource Include="src\FormBook.resx">
       <DependentUpon>FormBook.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormEditorial.resx">
+    <EmbeddedResource Include="src\FormEditorial.resx">
       <DependentUpon>FormEditorial.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormLogin.resx">
+    <EmbeddedResource Include="src\FormLogin.resx">
       <DependentUpon>FormLogin.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormPresentation.resx">
+    <EmbeddedResource Include="src\FormPresentation.resx">
       <DependentUpon>FormPresentation.vb</DependentUpon>
-    </EmbeddedResource>
+    <EmbeddedResource Include="src\FormUsers.resx">
+      <DependentUpon>FormUsers.vb</DependentUpon>
+    </EmbeddedResource> -->
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
