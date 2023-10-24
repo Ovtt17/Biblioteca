@@ -55,7 +55,7 @@ Partial Class FormAuthor
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(704, 694)
+        Me.Panel1.Size = New System.Drawing.Size(1454, 645)
         Me.Panel1.TabIndex = 0
         '
         'CountryCmb
@@ -64,20 +64,20 @@ Partial Class FormAuthor
         Me.CountryCmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CountryCmb.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CountryCmb.FormattingEnabled = True
-        Me.CountryCmb.Location = New System.Drawing.Point(164, 465)
+        Me.CountryCmb.Location = New System.Drawing.Point(242, 409)
         Me.CountryCmb.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.CountryCmb.Name = "CountryCmb"
-        Me.CountryCmb.Size = New System.Drawing.Size(271, 33)
+        Me.CountryCmb.Size = New System.Drawing.Size(366, 33)
         Me.CountryCmb.TabIndex = 6
         '
         'NameTxt
         '
         Me.NameTxt.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.NameTxt.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.NameTxt.Location = New System.Drawing.Point(164, 385)
+        Me.NameTxt.Location = New System.Drawing.Point(242, 329)
         Me.NameTxt.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.NameTxt.Name = "NameTxt"
-        Me.NameTxt.Size = New System.Drawing.Size(271, 30)
+        Me.NameTxt.Size = New System.Drawing.Size(366, 30)
         Me.NameTxt.TabIndex = 5
         '
         'GroupBox1
@@ -88,11 +88,11 @@ Partial Class FormAuthor
         Me.GroupBox1.Controls.Add(Me.BtnDelete)
         Me.GroupBox1.Controls.Add(Me.BtnSave)
         Me.GroupBox1.Controls.Add(Me.BtnNew)
-        Me.GroupBox1.Location = New System.Drawing.Point(477, 350)
+        Me.GroupBox1.Location = New System.Drawing.Point(919, 301)
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.GroupBox1.Size = New System.Drawing.Size(200, 316)
+        Me.GroupBox1.Size = New System.Drawing.Size(508, 316)
         Me.GroupBox1.TabIndex = 4
         Me.GroupBox1.TabStop = False
         '
@@ -106,7 +106,7 @@ Partial Class FormAuthor
         Me.BtnClose.Location = New System.Drawing.Point(32, 239)
         Me.BtnClose.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BtnClose.Name = "BtnClose"
-        Me.BtnClose.Size = New System.Drawing.Size(149, 42)
+        Me.BtnClose.Size = New System.Drawing.Size(457, 42)
         Me.BtnClose.TabIndex = 4
         Me.BtnClose.Text = "Close"
         Me.BtnClose.UseVisualStyleBackColor = False
@@ -121,7 +121,7 @@ Partial Class FormAuthor
         Me.BtnDelete.Location = New System.Drawing.Point(32, 171)
         Me.BtnDelete.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BtnDelete.Name = "BtnDelete"
-        Me.BtnDelete.Size = New System.Drawing.Size(149, 42)
+        Me.BtnDelete.Size = New System.Drawing.Size(457, 42)
         Me.BtnDelete.TabIndex = 3
         Me.BtnDelete.Text = "Delete"
         Me.BtnDelete.UseVisualStyleBackColor = False
@@ -136,7 +136,7 @@ Partial Class FormAuthor
         Me.BtnSave.Location = New System.Drawing.Point(32, 102)
         Me.BtnSave.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BtnSave.Name = "BtnSave"
-        Me.BtnSave.Size = New System.Drawing.Size(149, 42)
+        Me.BtnSave.Size = New System.Drawing.Size(457, 42)
         Me.BtnSave.TabIndex = 1
         Me.BtnSave.Text = "Save"
         Me.BtnSave.UseVisualStyleBackColor = False
@@ -151,7 +151,7 @@ Partial Class FormAuthor
         Me.BtnNew.Location = New System.Drawing.Point(32, 27)
         Me.BtnNew.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BtnNew.Name = "BtnNew"
-        Me.BtnNew.Size = New System.Drawing.Size(149, 42)
+        Me.BtnNew.Size = New System.Drawing.Size(457, 42)
         Me.BtnNew.TabIndex = 0
         Me.BtnNew.Text = "New"
         Me.BtnNew.UseVisualStyleBackColor = False
@@ -162,7 +162,7 @@ Partial Class FormAuthor
         Me.CountryLbl.AutoSize = True
         Me.CountryLbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CountryLbl.ForeColor = System.Drawing.SystemColors.Window
-        Me.CountryLbl.Location = New System.Drawing.Point(68, 469)
+        Me.CountryLbl.Location = New System.Drawing.Point(146, 413)
         Me.CountryLbl.Name = "CountryLbl"
         Me.CountryLbl.Size = New System.Drawing.Size(87, 25)
         Me.CountryLbl.TabIndex = 3
@@ -174,7 +174,7 @@ Partial Class FormAuthor
         Me.AuthorLbl.AutoSize = True
         Me.AuthorLbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.AuthorLbl.ForeColor = System.Drawing.SystemColors.Window
-        Me.AuthorLbl.Location = New System.Drawing.Point(65, 389)
+        Me.AuthorLbl.Location = New System.Drawing.Point(143, 333)
         Me.AuthorLbl.Name = "AuthorLbl"
         Me.AuthorLbl.Size = New System.Drawing.Size(70, 25)
         Me.AuthorLbl.TabIndex = 2
@@ -196,14 +196,14 @@ Partial Class FormAuthor
         Me.GridAutor.ReadOnly = True
         Me.GridAutor.RowHeadersWidth = 51
         Me.GridAutor.RowTemplate.Height = 24
-        Me.GridAutor.Size = New System.Drawing.Size(656, 300)
+        Me.GridAutor.Size = New System.Drawing.Size(1406, 251)
         Me.GridAutor.TabIndex = 1
         '
         'FormAuthor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(704, 694)
+        Me.ClientSize = New System.Drawing.Size(1454, 645)
         Me.Controls.Add(Me.Panel1)
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "FormAuthor"

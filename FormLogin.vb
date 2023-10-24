@@ -6,7 +6,9 @@
         Dim login As New Login(userName, password)
         If loginDao.ConsultUser(login) Then
             MessageBox.Show("You logged in")
-
+            Me.Hide()
+            Dim formContainer As New FormContainer()
+            formContainer.Show()
         End If
     End Sub
 

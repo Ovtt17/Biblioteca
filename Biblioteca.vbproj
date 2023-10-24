@@ -101,6 +101,12 @@
     <Compile Include="FormBook.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormContainer.Designer.vb">
+      <DependentUpon>FormContainer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormContainer.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormEditorial.Designer.vb">
       <DependentUpon>FormEditorial.vb</DependentUpon>
     </Compile>
@@ -166,6 +172,15 @@
     <EmbeddedResource Include="src\FormUsers.resx">
       <DependentUpon>FormUsers.vb</DependentUpon>
     </EmbeddedResource> -->
+    <EmbeddedResource Include="FormAuthor.resx">
+      <DependentUpon>FormAuthor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBook.resx">
+      <DependentUpon>FormBook.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormContainer.resx">
+      <DependentUpon>FormContainer.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.vb</DependentUpon>
     </EmbeddedResource>
