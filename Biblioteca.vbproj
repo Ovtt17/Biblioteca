@@ -79,6 +79,7 @@
   <ItemGroup>
     <Compile Include="DAO\AuthorDAO.vb" />
     <Compile Include="DAO\EditorialDAO.vb" />
+    <Compile Include="DAO\UserDAO.vb" />
     <Compile Include="DB\Conexion.vb" />
     <Compile Include="FormAuthor.vb">
       <SubType>Form</SubType>
@@ -93,8 +94,15 @@
     <Compile Include="FormEditorial.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormUsers.Designer.vb">
+      <DependentUpon>FormUsers.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormUsers.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Models\Author.vb" />
     <Compile Include="Models\Editorial.vb" />
+    <Compile Include="Models\User.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -118,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormEditorial.resx">
       <DependentUpon>FormEditorial.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUsers.resx">
+      <DependentUpon>FormUsers.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
