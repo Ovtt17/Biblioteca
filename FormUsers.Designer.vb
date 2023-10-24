@@ -23,6 +23,7 @@ Partial Class FormUsers
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.codidenttxt = New System.Windows.Forms.TextBox()
         Me.codIdetlb = New System.Windows.Forms.Label()
         Me.statuscmb = New System.Windows.Forms.ComboBox()
@@ -46,7 +47,6 @@ Partial Class FormUsers
         Me.lastnamelb = New System.Windows.Forms.Label()
         Me.namelb = New System.Windows.Forms.Label()
         Me.GridUser = New System.Windows.Forms.DataGridView()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.GridUser, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -81,13 +81,20 @@ Partial Class FormUsers
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(823, 694)
+        Me.Panel1.Size = New System.Drawing.Size(823, 881)
         Me.Panel1.TabIndex = 1
+        '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.Location = New System.Drawing.Point(200, 660)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(307, 26)
+        Me.DateTimePicker1.TabIndex = 23
         '
         'codidenttxt
         '
         Me.codidenttxt.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.codidenttxt.Location = New System.Drawing.Point(219, 315)
+        Me.codidenttxt.Location = New System.Drawing.Point(281, 404)
         Me.codidenttxt.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.codidenttxt.Name = "codidenttxt"
         Me.codidenttxt.Size = New System.Drawing.Size(150, 30)
@@ -98,7 +105,7 @@ Partial Class FormUsers
         Me.codIdetlb.AutoSize = True
         Me.codIdetlb.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.codIdetlb.ForeColor = System.Drawing.SystemColors.Window
-        Me.codIdetlb.Location = New System.Drawing.Point(23, 318)
+        Me.codIdetlb.Location = New System.Drawing.Point(85, 407)
         Me.codIdetlb.Name = "codIdetlb"
         Me.codIdetlb.Size = New System.Drawing.Size(190, 25)
         Me.codIdetlb.TabIndex = 21
@@ -110,7 +117,7 @@ Partial Class FormUsers
         Me.statuscmb.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.statuscmb.FormattingEnabled = True
         Me.statuscmb.Items.AddRange(New Object() {"S", "C"})
-        Me.statuscmb.Location = New System.Drawing.Point(164, 606)
+        Me.statuscmb.Location = New System.Drawing.Point(226, 754)
         Me.statuscmb.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.statuscmb.Name = "statuscmb"
         Me.statuscmb.Size = New System.Drawing.Size(150, 33)
@@ -122,7 +129,7 @@ Partial Class FormUsers
         Me.sexcmb.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.sexcmb.FormattingEnabled = True
         Me.sexcmb.Items.AddRange(New Object() {"M", "F"})
-        Me.sexcmb.Location = New System.Drawing.Point(164, 566)
+        Me.sexcmb.Location = New System.Drawing.Point(226, 704)
         Me.sexcmb.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.sexcmb.Name = "sexcmb"
         Me.sexcmb.Size = New System.Drawing.Size(150, 33)
@@ -131,7 +138,7 @@ Partial Class FormUsers
         'studytxt
         '
         Me.studytxt.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.studytxt.Location = New System.Drawing.Point(164, 653)
+        Me.studytxt.Location = New System.Drawing.Point(226, 813)
         Me.studytxt.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.studytxt.Name = "studytxt"
         Me.studytxt.Size = New System.Drawing.Size(150, 30)
@@ -142,7 +149,7 @@ Partial Class FormUsers
         Me.studylb.AutoSize = True
         Me.studylb.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.studylb.ForeColor = System.Drawing.SystemColors.Window
-        Me.studylb.Location = New System.Drawing.Point(23, 650)
+        Me.studylb.Location = New System.Drawing.Point(85, 818)
         Me.studylb.Name = "studylb"
         Me.studylb.Size = New System.Drawing.Size(127, 25)
         Me.studylb.TabIndex = 17
@@ -153,7 +160,7 @@ Partial Class FormUsers
         Me.statuslb.AutoSize = True
         Me.statuslb.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.statuslb.ForeColor = System.Drawing.SystemColors.Window
-        Me.statuslb.Location = New System.Drawing.Point(23, 606)
+        Me.statuslb.Location = New System.Drawing.Point(85, 762)
         Me.statuslb.Name = "statuslb"
         Me.statuslb.Size = New System.Drawing.Size(115, 25)
         Me.statuslb.TabIndex = 14
@@ -164,7 +171,7 @@ Partial Class FormUsers
         Me.sexlb.AutoSize = True
         Me.sexlb.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.sexlb.ForeColor = System.Drawing.SystemColors.Window
-        Me.sexlb.Location = New System.Drawing.Point(51, 566)
+        Me.sexlb.Location = New System.Drawing.Point(91, 707)
         Me.sexlb.Name = "sexlb"
         Me.sexlb.Size = New System.Drawing.Size(47, 25)
         Me.sexlb.TabIndex = 13
@@ -175,7 +182,7 @@ Partial Class FormUsers
         Me.Datelb.AutoSize = True
         Me.Datelb.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Datelb.ForeColor = System.Drawing.SystemColors.Window
-        Me.Datelb.Location = New System.Drawing.Point(36, 530)
+        Me.Datelb.Location = New System.Drawing.Point(91, 660)
         Me.Datelb.Name = "Datelb"
         Me.Datelb.Size = New System.Drawing.Size(94, 25)
         Me.Datelb.TabIndex = 11
@@ -186,7 +193,7 @@ Partial Class FormUsers
         Me.Addrlb.AutoSize = True
         Me.Addrlb.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Addrlb.ForeColor = System.Drawing.SystemColors.Window
-        Me.Addrlb.Location = New System.Drawing.Point(45, 485)
+        Me.Addrlb.Location = New System.Drawing.Point(91, 614)
         Me.Addrlb.Name = "Addrlb"
         Me.Addrlb.Size = New System.Drawing.Size(85, 25)
         Me.Addrlb.TabIndex = 10
@@ -195,7 +202,7 @@ Partial Class FormUsers
         'addrtxt
         '
         Me.addrtxt.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.addrtxt.Location = New System.Drawing.Point(164, 485)
+        Me.addrtxt.Location = New System.Drawing.Point(200, 614)
         Me.addrtxt.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.addrtxt.Name = "addrtxt"
         Me.addrtxt.Size = New System.Drawing.Size(150, 30)
@@ -204,7 +211,7 @@ Partial Class FormUsers
         'phonetxt
         '
         Me.phonetxt.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.phonetxt.Location = New System.Drawing.Point(164, 447)
+        Me.phonetxt.Location = New System.Drawing.Point(200, 565)
         Me.phonetxt.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.phonetxt.Name = "phonetxt"
         Me.phonetxt.Size = New System.Drawing.Size(150, 30)
@@ -213,7 +220,7 @@ Partial Class FormUsers
         'name2txt
         '
         Me.name2txt.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.name2txt.Location = New System.Drawing.Point(164, 400)
+        Me.name2txt.Location = New System.Drawing.Point(200, 511)
         Me.name2txt.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.name2txt.Name = "name2txt"
         Me.name2txt.Size = New System.Drawing.Size(150, 30)
@@ -224,7 +231,7 @@ Partial Class FormUsers
         Me.phonelb.AutoSize = True
         Me.phonelb.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.phonelb.ForeColor = System.Drawing.SystemColors.Window
-        Me.phonelb.Location = New System.Drawing.Point(49, 447)
+        Me.phonelb.Location = New System.Drawing.Point(91, 565)
         Me.phonelb.Name = "phonelb"
         Me.phonelb.Size = New System.Drawing.Size(69, 25)
         Me.phonelb.TabIndex = 7
@@ -233,7 +240,7 @@ Partial Class FormUsers
         'NameTxt
         '
         Me.NameTxt.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.NameTxt.Location = New System.Drawing.Point(164, 359)
+        Me.NameTxt.Location = New System.Drawing.Point(200, 458)
         Me.NameTxt.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.NameTxt.Name = "NameTxt"
         Me.NameTxt.Size = New System.Drawing.Size(150, 30)
@@ -241,18 +248,17 @@ Partial Class FormUsers
         '
         'GroupBox1
         '
-        Me.GroupBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox1.Controls.Add(Me.BtnClose)
         Me.GroupBox1.Controls.Add(Me.BtnDelete)
         Me.GroupBox1.Controls.Add(Me.BtnSave)
         Me.GroupBox1.Controls.Add(Me.BtnNew)
-        Me.GroupBox1.Location = New System.Drawing.Point(584, 350)
+        Me.GroupBox1.Location = New System.Drawing.Point(584, 424)
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.GroupBox1.Size = New System.Drawing.Size(212, 316)
+        Me.GroupBox1.Size = New System.Drawing.Size(212, 323)
         Me.GroupBox1.TabIndex = 4
         Me.GroupBox1.TabStop = False
         '
@@ -264,7 +270,7 @@ Partial Class FormUsers
         Me.BtnClose.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnClose.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnClose.ForeColor = System.Drawing.SystemColors.Window
-        Me.BtnClose.Location = New System.Drawing.Point(32, 239)
+        Me.BtnClose.Location = New System.Drawing.Point(32, 246)
         Me.BtnClose.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BtnClose.Name = "BtnClose"
         Me.BtnClose.Size = New System.Drawing.Size(161, 42)
@@ -280,7 +286,7 @@ Partial Class FormUsers
         Me.BtnDelete.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnDelete.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnDelete.ForeColor = System.Drawing.SystemColors.Window
-        Me.BtnDelete.Location = New System.Drawing.Point(32, 171)
+        Me.BtnDelete.Location = New System.Drawing.Point(32, 178)
         Me.BtnDelete.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BtnDelete.Name = "BtnDelete"
         Me.BtnDelete.Size = New System.Drawing.Size(161, 42)
@@ -296,7 +302,7 @@ Partial Class FormUsers
         Me.BtnSave.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnSave.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnSave.ForeColor = System.Drawing.SystemColors.Window
-        Me.BtnSave.Location = New System.Drawing.Point(32, 102)
+        Me.BtnSave.Location = New System.Drawing.Point(32, 109)
         Me.BtnSave.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BtnSave.Name = "BtnSave"
         Me.BtnSave.Size = New System.Drawing.Size(161, 42)
@@ -312,7 +318,7 @@ Partial Class FormUsers
         Me.BtnNew.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnNew.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnNew.ForeColor = System.Drawing.SystemColors.Window
-        Me.BtnNew.Location = New System.Drawing.Point(32, 27)
+        Me.BtnNew.Location = New System.Drawing.Point(32, 34)
         Me.BtnNew.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BtnNew.Name = "BtnNew"
         Me.BtnNew.Size = New System.Drawing.Size(161, 42)
@@ -325,7 +331,7 @@ Partial Class FormUsers
         Me.lastnamelb.AutoSize = True
         Me.lastnamelb.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lastnamelb.ForeColor = System.Drawing.SystemColors.Window
-        Me.lastnamelb.Location = New System.Drawing.Point(51, 400)
+        Me.lastnamelb.Location = New System.Drawing.Point(85, 514)
         Me.lastnamelb.Name = "lastnamelb"
         Me.lastnamelb.Size = New System.Drawing.Size(106, 25)
         Me.lastnamelb.TabIndex = 3
@@ -336,7 +342,7 @@ Partial Class FormUsers
         Me.namelb.AutoSize = True
         Me.namelb.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.namelb.ForeColor = System.Drawing.SystemColors.Window
-        Me.namelb.Location = New System.Drawing.Point(51, 364)
+        Me.namelb.Location = New System.Drawing.Point(85, 463)
         Me.namelb.Name = "namelb"
         Me.namelb.Size = New System.Drawing.Size(64, 25)
         Me.namelb.TabIndex = 2
@@ -344,6 +350,8 @@ Partial Class FormUsers
         '
         'GridUser
         '
+        Me.GridUser.AllowUserToAddRows = False
+        Me.GridUser.AllowUserToDeleteRows = False
         Me.GridUser.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -356,21 +364,14 @@ Partial Class FormUsers
         Me.GridUser.ReadOnly = True
         Me.GridUser.RowHeadersWidth = 51
         Me.GridUser.RowTemplate.Height = 24
-        Me.GridUser.Size = New System.Drawing.Size(775, 269)
+        Me.GridUser.Size = New System.Drawing.Size(775, 341)
         Me.GridUser.TabIndex = 1
-        '
-        'DateTimePicker1
-        '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(164, 530)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(307, 26)
-        Me.DateTimePicker1.TabIndex = 23
         '
         'FormUsers
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(823, 694)
+        Me.ClientSize = New System.Drawing.Size(823, 881)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "FormUsers"
         Me.Text = "FormUsers"

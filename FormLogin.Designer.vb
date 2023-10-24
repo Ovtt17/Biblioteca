@@ -28,7 +28,7 @@ Partial Class FormLogin
         Me.PassTxt = New System.Windows.Forms.TextBox()
         Me.LoginBtn = New System.Windows.Forms.Button()
         Me.CancelBtn = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.ConsultBooksBtn = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label1
@@ -62,8 +62,10 @@ Partial Class FormLogin
         'PassTxt
         '
         Me.PassTxt.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PassTxt.HideSelection = False
         Me.PassTxt.Location = New System.Drawing.Point(395, 194)
         Me.PassTxt.Name = "PassTxt"
+        Me.PassTxt.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.PassTxt.Size = New System.Drawing.Size(298, 38)
         Me.PassTxt.TabIndex = 3
         '
@@ -93,18 +95,18 @@ Partial Class FormLogin
         Me.CancelBtn.Text = "Cancel"
         Me.CancelBtn.UseVisualStyleBackColor = False
         '
-        'Button1
+        'ConsultBooksBtn
         '
-        Me.Button1.BackColor = System.Drawing.Color.Green
-        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.SystemColors.Control
-        Me.Button1.Location = New System.Drawing.Point(723, 455)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(145, 88)
-        Me.Button1.TabIndex = 6
-        Me.Button1.Text = "Consult Books"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.ConsultBooksBtn.BackColor = System.Drawing.Color.Green
+        Me.ConsultBooksBtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.ConsultBooksBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ConsultBooksBtn.ForeColor = System.Drawing.SystemColors.Control
+        Me.ConsultBooksBtn.Location = New System.Drawing.Point(723, 455)
+        Me.ConsultBooksBtn.Name = "ConsultBooksBtn"
+        Me.ConsultBooksBtn.Size = New System.Drawing.Size(145, 88)
+        Me.ConsultBooksBtn.TabIndex = 6
+        Me.ConsultBooksBtn.Text = "Consult Books"
+        Me.ConsultBooksBtn.UseVisualStyleBackColor = False
         '
         'FormLogin
         '
@@ -112,7 +114,7 @@ Partial Class FormLogin
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.MidnightBlue
         Me.ClientSize = New System.Drawing.Size(916, 579)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.ConsultBooksBtn)
         Me.Controls.Add(Me.CancelBtn)
         Me.Controls.Add(Me.LoginBtn)
         Me.Controls.Add(Me.PassTxt)
@@ -134,5 +136,5 @@ Partial Class FormLogin
     Friend WithEvents PassTxt As TextBox
     Friend WithEvents LoginBtn As Button
     Friend WithEvents CancelBtn As Button
-    Friend WithEvents Button1 As Button
+    Friend WithEvents ConsultBooksBtn As Button
 End Class

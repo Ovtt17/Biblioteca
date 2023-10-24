@@ -86,7 +86,7 @@
     <Compile Include="DAO\Book\BookDAO.vb" />
     <Compile Include="DAO\Editorial\EditorialDAO.vb" />
     <Compile Include="DAO\Login\LoginDAO.vb" />
-    <Compile Include="DAO\UserDAO.vb" />
+    <Compile Include="DAO\User\UserDAO.vb" />
     <Compile Include="DB\Conexion.vb" />
     <Compile Include="FormAuthor.vb">
       <SubType>Form</SubType>
@@ -129,7 +129,8 @@
     <Compile Include="Models\Book\Book.vb" />
     <Compile Include="Models\Book\BookAuthor.vb" />
     <Compile Include="Models\Editorial\Editorial.vb" />
-    <Compile Include="Models\User.vb" />
+    <Compile Include="Models\Login\Login.vb" />
+    <Compile Include="Models\User\User.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -165,6 +166,12 @@
     <EmbeddedResource Include="src\FormUsers.resx">
       <DependentUpon>FormUsers.vb</DependentUpon>
     </EmbeddedResource> -->
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUsers.resx">
+      <DependentUpon>FormUsers.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
