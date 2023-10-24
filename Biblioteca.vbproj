@@ -87,12 +87,19 @@
     <Compile Include="DAO\Editorial\EditorialDAO.vb" />
     <Compile Include="DAO\Login\LoginDAO.vb" />
     <Compile Include="DAO\User\UserDAO.vb" />
+    <Compile Include="DAO\Bibliotecario\BibliotecarioDAO.vb" />
     <Compile Include="DB\Conexion.vb" />
     <Compile Include="FormAuthor.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormAuthor.Designer.vb">
       <DependentUpon>FormAuthor.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBibliotecario.Designer.vb">
+      <DependentUpon>FormBibliotecario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormBibliotecario.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormBook.Designer.vb">
@@ -137,6 +144,7 @@
     <Compile Include="Models\Editorial\Editorial.vb" />
     <Compile Include="Models\Login\Login.vb" />
     <Compile Include="Models\User\User.vb" />
+    <Compile Include="Models\Bibliotecario\Bibliotecario.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -162,6 +170,10 @@
       <DependentUpon>FormBook.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\FormEditorial.resx">
+    <EmbeddedResource Include="FormBibliotecario.resx">
+      <DependentUpon>FormBibliotecario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditorial.resx">
       <DependentUpon>FormEditorial.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\FormLogin.resx">
@@ -174,6 +186,9 @@
     </EmbeddedResource> -->
     <EmbeddedResource Include="FormAuthor.resx">
       <DependentUpon>FormAuthor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBibliotecario.resx">
+      <DependentUpon>FormBibliotecario.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormBook.resx">
       <DependentUpon>FormBook.vb</DependentUpon>

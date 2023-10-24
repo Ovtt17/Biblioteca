@@ -1,10 +1,11 @@
 ﻿Public Class FormContainer
     Private Sub FormContainer_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim formBook As New FormBook()
-        formBook.MdiParent = Me
-        formBook.TopLevel = False
-        formBook.FormBorderStyle = FormBorderStyle.None
-        formBook.Dock = DockStyle.Fill
+        Dim formBook As New FormBook With {
+            .MdiParent = Me,
+            .TopLevel = False,
+            .FormBorderStyle = FormBorderStyle.None,
+            .Dock = DockStyle.Fill
+        }
         PanelContainer.Controls.Add(formBook)
         formBook.Show()
     End Sub

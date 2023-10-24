@@ -173,4 +173,8 @@ Public Class FormAuthor
         End If
         Return True
     End Function
+
+    Private Sub NameTxt_TextChanged(sender As Object, e As EventArgs) Handles NameTxt.TextChanged
+
+    End Sub
 End Class

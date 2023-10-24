@@ -118,8 +118,8 @@ Partial Class FormAuthor
         Me.BtnDelete.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnDelete.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnDelete.ForeColor = System.Drawing.SystemColors.Window
-        Me.BtnDelete.Location = New System.Drawing.Point(32, 171)
-        Me.BtnDelete.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BtnDelete.Location = New System.Drawing.Point(24, 139)
+        Me.BtnDelete.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnDelete.Name = "BtnDelete"
         Me.BtnDelete.Size = New System.Drawing.Size(457, 42)
         Me.BtnDelete.TabIndex = 3
@@ -133,8 +133,8 @@ Partial Class FormAuthor
         Me.BtnSave.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnSave.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnSave.ForeColor = System.Drawing.SystemColors.Window
-        Me.BtnSave.Location = New System.Drawing.Point(32, 102)
-        Me.BtnSave.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BtnSave.Location = New System.Drawing.Point(24, 83)
+        Me.BtnSave.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnSave.Name = "BtnSave"
         Me.BtnSave.Size = New System.Drawing.Size(457, 42)
         Me.BtnSave.TabIndex = 1
@@ -148,8 +148,8 @@ Partial Class FormAuthor
         Me.BtnNew.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnNew.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnNew.ForeColor = System.Drawing.SystemColors.Window
-        Me.BtnNew.Location = New System.Drawing.Point(32, 27)
-        Me.BtnNew.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BtnNew.Location = New System.Drawing.Point(24, 22)
+        Me.BtnNew.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnNew.Name = "BtnNew"
         Me.BtnNew.Size = New System.Drawing.Size(457, 42)
         Me.BtnNew.TabIndex = 0
@@ -190,8 +190,8 @@ Partial Class FormAuthor
         Me.GridAutor.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
         Me.GridAutor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.GridAutor.GridColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.GridAutor.Location = New System.Drawing.Point(21, 14)
-        Me.GridAutor.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.GridAutor.Location = New System.Drawing.Point(16, 11)
+        Me.GridAutor.Margin = New System.Windows.Forms.Padding(2)
         Me.GridAutor.Name = "GridAutor"
         Me.GridAutor.ReadOnly = True
         Me.GridAutor.RowHeadersWidth = 51
@@ -205,7 +205,7 @@ Partial Class FormAuthor
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1454, 645)
         Me.Controls.Add(Me.Panel1)
-        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "FormAuthor"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Author Catalog."
