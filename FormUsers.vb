@@ -29,9 +29,8 @@ Public Class FormUsers
         End Try
 
     End Sub
-    Private Sub BtnNew_Click(sender As Object, e As EventArgs) Handles BtnNew.Click
+    Private Sub BtnNew_Click(sender As Object, e As EventArgs)
         CleanField()
-
     End Sub
     Private Sub CleanField()
         Me.codidenttxt.Text = ""
@@ -49,10 +48,7 @@ Public Class FormUsers
 
     End Sub
 
-
-
-
-    Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
+    Private Sub BtnSave_Click(sender As Object, e As EventArgs)
 
         Dim rot As String
         ' Check if the NameTxt TextBox is empty or null.
@@ -122,13 +118,9 @@ Public Class FormUsers
             ' Maneja cualquier excepción que pueda ocurrir
             MessageBox.Show("Se ha producido una excepción: " & ex.Message)
         End Try
-
-
-
-
     End Sub
 
-    Private Sub BtnDelete_Click(sender As Object, e As EventArgs) Handles BtnDelete.Click
+    Private Sub BtnDelete_Click(sender As Object, e As EventArgs)
         Dim currentRow As Integer = CInt(GridUser.CurrentRow.Cells(0).Value)
         'If NameTxt.Text Is Nothing Or sexcmb.SelectedIndex = -1 Then
         '    MessageBox.Show("Select an author to delete it")
@@ -154,35 +146,7 @@ Public Class FormUsers
         End Try
     End Sub
 
-
-
-
-
-    Private Sub BtnClose_Click(sender As Object, e As EventArgs) Handles BtnClose.Click
-
-        Me.Close()
-
-    End Sub
-
-    Private Sub FormAuthor_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        If Not ClosingMessage() Then
-            e.Cancel = True
-        End If
-    End Sub
-    Private Function ClosingMessage() As Boolean
-        If MessageBox.Show("Do you want to close the app?", "Librery System",
-                       MessageBoxButtons.YesNo, MessageBoxIcon.Question,
-                       MessageBoxDefaultButton.Button1) = Windows.Forms.DialogResult.No Then
-            Return False
-        End If
-        Return True
-    End Function
-
-    Private Sub GridUser_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles GridUser.CellContentClick
-
-    End Sub
-
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
-
+    Private Sub BtnClose_Click_1(sender As Object, e As EventArgs) Handles BtnClose.Click
+        FormPresentation.Close()
     End Sub
 End Class
