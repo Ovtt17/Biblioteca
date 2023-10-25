@@ -124,10 +124,8 @@ Public Class FormBibliotecario
 
 
 
-    Private Sub FormBibliotecario_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        If Not ClosingMessage() Then
-            e.Cancel = True
-        End If
+    Private Sub FormBibliotecario_FormClosing(sender As Object, e As FormClosingEventArgs)
+
     End Sub
     Private Function ClosingMessage() As Boolean
         If MessageBox.Show("Do you want to close the app?", "Librery System",

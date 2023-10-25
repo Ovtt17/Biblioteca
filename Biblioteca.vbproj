@@ -196,6 +196,9 @@
     <EmbeddedResource Include="FormContainer.resx">
       <DependentUpon>FormContainer.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormEditorial.resx">
+      <DependentUpon>FormEditorial.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.vb</DependentUpon>
     </EmbeddedResource>

@@ -29,7 +29,7 @@ Public Class FormUsers
         End Try
 
     End Sub
-    Private Sub BtnNew_Click(sender As Object, e As EventArgs) Handles BtnNew.Click
+    Private Sub BtnNew_Click(sender As Object, e As EventArgs)
         CleanField()
 
     End Sub
@@ -52,7 +52,7 @@ Public Class FormUsers
 
 
 
-    Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
+    Private Sub BtnSave_Click(sender As Object, e As EventArgs)
 
         Dim rot As String
         ' Check if the NameTxt TextBox is empty or null.
@@ -128,7 +128,7 @@ Public Class FormUsers
 
     End Sub
 
-    Private Sub BtnDelete_Click(sender As Object, e As EventArgs) Handles BtnDelete.Click
+    Private Sub BtnDelete_Click(sender As Object, e As EventArgs)
         Dim currentRow As Integer = CInt(GridUser.CurrentRow.Cells(0).Value)
         'If NameTxt.Text Is Nothing Or sexcmb.SelectedIndex = -1 Then
         '    MessageBox.Show("Select an author to delete it")
@@ -158,16 +158,14 @@ Public Class FormUsers
 
 
 
-    Private Sub BtnClose_Click(sender As Object, e As EventArgs) Handles BtnClose.Click
+    Private Sub BtnClose_Click(sender As Object, e As EventArgs)
 
         Me.Close()
 
     End Sub
 
-    Private Sub FormAuthor_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        If Not ClosingMessage() Then
-            e.Cancel = True
-        End If
+    Private Sub FormAuthor_FormClosing(sender As Object, e As FormClosingEventArgs)
+
     End Sub
     Private Function ClosingMessage() As Boolean
         If MessageBox.Show("Do you want to close the app?", "Librery System",
@@ -178,7 +176,7 @@ Public Class FormUsers
         Return True
     End Function
 
-    Private Sub GridUser_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles GridUser.CellContentClick
+    Private Sub GridUser_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
 
     End Sub
 

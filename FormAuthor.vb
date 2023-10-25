@@ -160,10 +160,8 @@ Public Class FormAuthor
         Me.Close()
     End Sub
 
-    Private Sub FormAuthor_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        If Not ClosingMessage() Then
-            e.Cancel = True
-        End If
+    Private Sub FormAuthor_FormClosing(sender As Object, e As FormClosingEventArgs)
+
     End Sub
     Private Function ClosingMessage() As Boolean
         If MessageBox.Show("Do you want to close the app?", "Librery System",
@@ -174,7 +172,7 @@ Public Class FormAuthor
         Return True
     End Function
 
-    Private Sub NameTxt_TextChanged(sender As Object, e As EventArgs) Handles NameTxt.TextChanged
+    Private Sub NameTxt_TextChanged(sender As Object, e As EventArgs)
 
     End Sub
 End Class

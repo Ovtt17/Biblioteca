@@ -150,10 +150,8 @@ Public Class FormEditorial
         Me.Close()
     End Sub
 
-    Private Sub FormEditorial_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        If Not ClosingMessage() Then
-            e.Cancel = True
-        End If
+    Private Sub FormEditorial_FormClosing(sender As Object, e As FormClosingEventArgs)
+
     End Sub
 
     Private Function ClosingMessage() As Boolean
