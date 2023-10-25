@@ -65,7 +65,7 @@ Partial Class FormBook
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1472, 692)
+        Me.Panel1.Size = New System.Drawing.Size(1589, 582)
         Me.Panel1.TabIndex = 0
         '
         'Panel2
@@ -90,7 +90,7 @@ Partial Class FormBook
         Me.Panel2.Controls.Add(Me.DateLbl)
         Me.Panel2.Controls.Add(Me.EditorialLbl)
         Me.Panel2.Controls.Add(Me.TitleLbl)
-        Me.Panel2.Location = New System.Drawing.Point(69, 330)
+        Me.Panel2.Location = New System.Drawing.Point(46, 204)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(1095, 316)
         Me.Panel2.TabIndex = 21
@@ -307,11 +307,11 @@ Partial Class FormBook
         Me.GroupBox1.Controls.Add(Me.BtnDelete)
         Me.GroupBox1.Controls.Add(Me.BtnSave)
         Me.GroupBox1.Controls.Add(Me.BtnNew)
-        Me.GroupBox1.Location = New System.Drawing.Point(1225, 330)
+        Me.GroupBox1.Location = New System.Drawing.Point(1281, 204)
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.GroupBox1.Size = New System.Drawing.Size(200, 316)
+        Me.GroupBox1.Size = New System.Drawing.Size(261, 316)
         Me.GroupBox1.TabIndex = 20
         Me.GroupBox1.TabStop = False
         '
@@ -325,7 +325,7 @@ Partial Class FormBook
         Me.BtnClose.Location = New System.Drawing.Point(32, 239)
         Me.BtnClose.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BtnClose.Name = "BtnClose"
-        Me.BtnClose.Size = New System.Drawing.Size(149, 42)
+        Me.BtnClose.Size = New System.Drawing.Size(210, 42)
         Me.BtnClose.TabIndex = 4
         Me.BtnClose.Text = "Close"
         Me.BtnClose.UseVisualStyleBackColor = False
@@ -340,7 +340,7 @@ Partial Class FormBook
         Me.BtnDelete.Location = New System.Drawing.Point(32, 171)
         Me.BtnDelete.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BtnDelete.Name = "BtnDelete"
-        Me.BtnDelete.Size = New System.Drawing.Size(149, 42)
+        Me.BtnDelete.Size = New System.Drawing.Size(210, 42)
         Me.BtnDelete.TabIndex = 3
         Me.BtnDelete.Text = "Delete"
         Me.BtnDelete.UseVisualStyleBackColor = False
@@ -355,7 +355,7 @@ Partial Class FormBook
         Me.BtnSave.Location = New System.Drawing.Point(32, 102)
         Me.BtnSave.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BtnSave.Name = "BtnSave"
-        Me.BtnSave.Size = New System.Drawing.Size(149, 42)
+        Me.BtnSave.Size = New System.Drawing.Size(210, 42)
         Me.BtnSave.TabIndex = 1
         Me.BtnSave.Text = "Save"
         Me.BtnSave.UseVisualStyleBackColor = False
@@ -370,7 +370,7 @@ Partial Class FormBook
         Me.BtnNew.Location = New System.Drawing.Point(32, 27)
         Me.BtnNew.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BtnNew.Name = "BtnNew"
-        Me.BtnNew.Size = New System.Drawing.Size(149, 42)
+        Me.BtnNew.Size = New System.Drawing.Size(210, 42)
         Me.BtnNew.TabIndex = 0
         Me.BtnNew.Text = "New"
         Me.BtnNew.UseVisualStyleBackColor = False
@@ -382,20 +382,22 @@ Partial Class FormBook
         Me.GridBook.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GridBook.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
         Me.GridBook.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.GridBook.GridColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.GridBook.Location = New System.Drawing.Point(46, 12)
         Me.GridBook.Name = "GridBook"
         Me.GridBook.ReadOnly = True
         Me.GridBook.RowHeadersWidth = 51
         Me.GridBook.RowTemplate.Height = 24
-        Me.GridBook.Size = New System.Drawing.Size(1379, 234)
+        Me.GridBook.Size = New System.Drawing.Size(1496, 155)
         Me.GridBook.TabIndex = 0
         '
         'FormBook
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1472, 692)
+        Me.ClientSize = New System.Drawing.Size(1589, 582)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "FormBook"

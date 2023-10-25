@@ -36,10 +36,10 @@ Public Class BibliotecarioDAO
                     ' Specify command type
                     command.CommandType = CommandType.StoredProcedure
                     ' Add Parameters for insert_autor
-                    command.Parameters.AddWithValue("@nombres", bibliotecario.Fname)
-                    command.Parameters.AddWithValue("@apellidos", bibliotecario.Lname)
-                    command.Parameters.AddWithValue("@direccion", bibliotecario.Address)
-                    command.Parameters.AddWithValue("@cargo", bibliotecario.Position)
+                    command.Parameters.AddWithValue("@_nombres", bibliotecario.Fname)
+                    command.Parameters.AddWithValue("@_apellidos", bibliotecario.Lname)
+                    command.Parameters.AddWithValue("@_direccion", bibliotecario.Address)
+                    command.Parameters.AddWithValue("@_cargo", bibliotecario.Position)
                     ' Execute query
                     command.ExecuteNonQuery()
                 End Using

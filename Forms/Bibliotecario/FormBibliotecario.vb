@@ -67,15 +67,15 @@ Public Class FormBibliotecario
             Dim bibliotecarioDao As New BibliotecarioDAO()
             ' Verify if bibliotecario is editable or not
             If (BtnSave.Text = "Edit") Then
-                bibliotecarioEditable.Fname = Me.FNameTxt.Text
-                bibliotecarioEditable.Lname = Me.LNameTxt.Text
-                bibliotecarioEditable.Address = Me.AddressTxt.Text
-                bibliotecarioEditable.Position = Me.PositionTxt.Text
+                bibliotecarioEditable.Fname = Me.FNameTxt.Text.Trim()
+                bibliotecarioEditable.Lname = Me.LNameTxt.Text.Trim()
+                bibliotecarioEditable.Address = Me.AddressTxt.Text.Trim()
+                bibliotecarioEditable.Position = Me.PositionTxt.Text.Trim()
                 bibliotecarioDao.ModifyBibliotecario(bibliotecarioEditable)
                 rot = "Modified"
             Else
                 ' In Case it's not editable, insert a new one
-                Dim bibliotecario As New Bibliotecario(FNameTxt.Text, LNameTxt.Text, AddressTxt.Text, PositionTxt.Text)
+                Dim bibliotecario As New Bibliotecario(FNameTxt.Text.Trim(), LNameTxt.Text.Trim(), AddressTxt.Text.Trim(), PositionTxt.Text.Trim())
                 bibliotecarioDao.InsertBibliotecario(bibliotecario)
                 rot = "Saved"
             End If
@@ -119,24 +119,8 @@ Public Class FormBibliotecario
     End Sub
 
     Private Sub BtnClose_Click(sender As Object, e As EventArgs) Handles BtnClose.Click
-        Me.Close()
+        FormPresentation.Close()
     End Sub
-
-
-
-    Private Sub FormBibliotecario_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        If Not ClosingMessage() Then
-            e.Cancel = True
-        End If
-    End Sub
-    Private Function ClosingMessage() As Boolean
-        If MessageBox.Show("Do you want to close the app?", "Librery System",
-                       MessageBoxButtons.YesNo, MessageBoxIcon.Question,
-                       MessageBoxDefaultButton.Button1) = Windows.Forms.DialogResult.No Then
-            Return False
-        End If
-        Return True
-    End Function
 
     Private Sub GridBibliotecario_Click(sender As Object, e As EventArgs) Handles GridBibliotecario.Click
         Dim code As Integer = CInt(GridBibliotecario.CurrentRow.Cells(0).Value)

@@ -147,21 +147,6 @@ Public Class FormEditorial
     End Sub
 
     Private Sub BtnClose_Click(sender As Object, e As EventArgs) Handles BtnClose.Click
-        Me.Close()
+        FormPresentation.Close()
     End Sub
-
-    Private Sub FormEditorial_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        If Not ClosingMessage() Then
-            e.Cancel = True
-        End If
-    End Sub
-
-    Private Function ClosingMessage() As Boolean
-        If MessageBox.Show("Do you want to close the app?", "Librery System",
-                       MessageBoxButtons.YesNo, MessageBoxIcon.Question,
-                       MessageBoxDefaultButton.Button1) = Windows.Forms.DialogResult.No Then
-            Return False
-        End If
-        Return True
-    End Function
 End Class

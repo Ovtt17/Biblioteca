@@ -89,53 +89,53 @@
     <Compile Include="DAO\User\UserDAO.vb" />
     <Compile Include="DAO\Bibliotecario\BibliotecarioDAO.vb" />
     <Compile Include="DB\Conexion.vb" />
-    <Compile Include="FormAuthor.vb">
+    <Compile Include="Forms\Author\FormAuthor.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAuthor.Designer.vb">
+    <Compile Include="Forms\Author\FormAuthor.Designer.vb">
       <DependentUpon>FormAuthor.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormBibliotecario.Designer.vb">
+    <Compile Include="Forms\Bibliotecario\FormBibliotecario.Designer.vb">
       <DependentUpon>FormBibliotecario.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormBibliotecario.vb">
+    <Compile Include="Forms\Bibliotecario\FormBibliotecario.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormBook.Designer.vb">
+    <Compile Include="Forms\Book\FormBook.Designer.vb">
       <DependentUpon>FormBook.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormBook.vb">
+    <Compile Include="Forms\Book\FormBook.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormContainer.Designer.vb">
+    <Compile Include="Forms\Container\FormContainer.Designer.vb">
       <DependentUpon>FormContainer.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormContainer.vb">
+    <Compile Include="Forms\Container\FormContainer.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormEditorial.Designer.vb">
+    <Compile Include="Forms\Editorial\FormEditorial.Designer.vb">
       <DependentUpon>FormEditorial.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormEditorial.vb">
+    <Compile Include="Forms\Editorial\FormEditorial.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormLogin.Designer.vb">
+    <Compile Include="Forms\Login\FormLogin.Designer.vb">
       <DependentUpon>FormLogin.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormLogin.vb">
+    <Compile Include="Forms\Login\FormLogin.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormPresentation.Designer.vb">
+    <Compile Include="Forms\Login\FormPresentation.Designer.vb">
       <DependentUpon>FormPresentation.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormPresentation.vb">
+    <Compile Include="Forms\Login\FormPresentation.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormUsers.Designer.vb">
+    <Compile Include="Forms\User\FormUsers.Designer.vb">
       <DependentUpon>FormUsers.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormUsers.vb">
+    <Compile Include="Forms\User\FormUsers.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Models\Author\Author.vb" />
@@ -184,22 +184,25 @@
     <EmbeddedResource Include="src\FormUsers.resx">
       <DependentUpon>FormUsers.vb</DependentUpon>
     </EmbeddedResource> -->
-    <EmbeddedResource Include="FormAuthor.resx">
+    <EmbeddedResource Include="Forms\Author\FormAuthor.resx">
       <DependentUpon>FormAuthor.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormBibliotecario.resx">
+    <EmbeddedResource Include="Forms\Bibliotecario\FormBibliotecario.resx">
       <DependentUpon>FormBibliotecario.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormBook.resx">
+    <EmbeddedResource Include="Forms\Book\FormBook.resx">
       <DependentUpon>FormBook.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormContainer.resx">
+    <EmbeddedResource Include="Forms\Container\FormContainer.resx">
       <DependentUpon>FormContainer.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormLogin.resx">
+    <EmbeddedResource Include="Forms\Editorial\FormEditorial.resx">
+      <DependentUpon>FormEditorial.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Login\FormLogin.resx">
       <DependentUpon>FormLogin.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormUsers.resx">
+    <EmbeddedResource Include="Forms\User\FormUsers.resx">
       <DependentUpon>FormUsers.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
