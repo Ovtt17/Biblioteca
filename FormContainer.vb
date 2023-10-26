@@ -54,4 +54,8 @@
     Private Sub EditorialBtn_Click(sender As Object, e As EventArgs) Handles EditorialBtn.Click
         ShowForm(New FormEditorial())
     End Sub
+
+    Private Sub LoanBtn_Click(sender As Object, e As EventArgs) Handles LoanBtn.Click
+        ShowForm(New FormLoan())
+    End Sub
 End Class

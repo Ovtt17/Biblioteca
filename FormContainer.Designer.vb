@@ -23,18 +23,20 @@ Partial Class FormContainer
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.PanelOptions = New System.Windows.Forms.Panel()
-        Me.PanelContainer = New System.Windows.Forms.Panel()
         Me.EditorialBtn = New System.Windows.Forms.Button()
         Me.BibliotecarioBtn = New System.Windows.Forms.Button()
         Me.UsersBtn = New System.Windows.Forms.Button()
         Me.AuthorBtn = New System.Windows.Forms.Button()
         Me.BookBtn = New System.Windows.Forms.Button()
+        Me.PanelContainer = New System.Windows.Forms.Panel()
+        Me.LoanBtn = New System.Windows.Forms.Button()
         Me.PanelOptions.SuspendLayout()
         Me.SuspendLayout()
         '
         'PanelOptions
         '
         Me.PanelOptions.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.PanelOptions.Controls.Add(Me.LoanBtn)
         Me.PanelOptions.Controls.Add(Me.EditorialBtn)
         Me.PanelOptions.Controls.Add(Me.BibliotecarioBtn)
         Me.PanelOptions.Controls.Add(Me.UsersBtn)
@@ -46,21 +48,13 @@ Partial Class FormContainer
         Me.PanelOptions.Size = New System.Drawing.Size(307, 582)
         Me.PanelOptions.TabIndex = 0
         '
-        'PanelContainer
-        '
-        Me.PanelContainer.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PanelContainer.Location = New System.Drawing.Point(307, 0)
-        Me.PanelContainer.Name = "PanelContainer"
-        Me.PanelContainer.Size = New System.Drawing.Size(1589, 582)
-        Me.PanelContainer.TabIndex = 1
-        '
         'EditorialBtn
         '
         Me.EditorialBtn.BackColor = System.Drawing.Color.Navy
         Me.EditorialBtn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.EditorialBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.EditorialBtn.ForeColor = System.Drawing.SystemColors.Control
-        Me.EditorialBtn.Location = New System.Drawing.Point(0, 408)
+        Me.EditorialBtn.Location = New System.Drawing.Point(0, 488)
         Me.EditorialBtn.Name = "EditorialBtn"
         Me.EditorialBtn.Size = New System.Drawing.Size(307, 58)
         Me.EditorialBtn.TabIndex = 4
@@ -73,7 +67,7 @@ Partial Class FormContainer
         Me.BibliotecarioBtn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BibliotecarioBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BibliotecarioBtn.ForeColor = System.Drawing.SystemColors.Control
-        Me.BibliotecarioBtn.Location = New System.Drawing.Point(0, 321)
+        Me.BibliotecarioBtn.Location = New System.Drawing.Point(0, 401)
         Me.BibliotecarioBtn.Name = "BibliotecarioBtn"
         Me.BibliotecarioBtn.Size = New System.Drawing.Size(307, 58)
         Me.BibliotecarioBtn.TabIndex = 3
@@ -119,6 +113,27 @@ Partial Class FormContainer
         Me.BookBtn.Text = "Books"
         Me.BookBtn.UseVisualStyleBackColor = False
         '
+        'PanelContainer
+        '
+        Me.PanelContainer.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PanelContainer.Location = New System.Drawing.Point(307, 0)
+        Me.PanelContainer.Name = "PanelContainer"
+        Me.PanelContainer.Size = New System.Drawing.Size(1589, 582)
+        Me.PanelContainer.TabIndex = 1
+        '
+        'LoanBtn
+        '
+        Me.LoanBtn.BackColor = System.Drawing.Color.Navy
+        Me.LoanBtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.LoanBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LoanBtn.ForeColor = System.Drawing.SystemColors.Control
+        Me.LoanBtn.Location = New System.Drawing.Point(0, 318)
+        Me.LoanBtn.Name = "LoanBtn"
+        Me.LoanBtn.Size = New System.Drawing.Size(307, 58)
+        Me.LoanBtn.TabIndex = 5
+        Me.LoanBtn.Text = "Loan"
+        Me.LoanBtn.UseVisualStyleBackColor = False
+        '
         'FormContainer
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -143,4 +158,5 @@ Partial Class FormContainer
     Friend WithEvents UsersBtn As Button
     Friend WithEvents AuthorBtn As Button
     Friend WithEvents BookBtn As Button
+    Friend WithEvents LoanBtn As Button
 End Class
