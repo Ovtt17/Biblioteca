@@ -28,7 +28,7 @@ Public Class UserDAO
 
     Public Sub EnterUser(ByVal user As User)
         Try
-
+            ' llamada del procedimiento
             Using cx As MySqlConnection = Me.Connect()
                 Dim sql As String = "CALL Insertar_Usuario(@codIdent, @Name, @LastName, @Phone, @Address, @BirthDate, @Sex, @Status, @Study)"
                 Using command As New MySqlCommand(sql, cx)
@@ -41,8 +41,6 @@ Public Class UserDAO
                     command.Parameters.AddWithValue("@Sex", user.Sex)
                     command.Parameters.AddWithValue("@Status", user.Status)
                     command.Parameters.AddWithValue("@Study", user.Study)
-
-
                     command.ExecuteNonQuery()
                 End Using
             End Using
