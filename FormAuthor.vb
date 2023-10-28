@@ -87,13 +87,13 @@ Public Class FormAuthor
             Dim authorDao As New AuthorDAO()
             ' Verify if author is editable or not
             If (BtnSave.Text = "Edit") Then
-                authorEditable = New Author(Me.NameTxt.Text, Me.CountryCmb.SelectedIndex + 1)
+                authorEditable.Name = Me.NameTxt.Text
+                authorEditable.Country = Me.CountryCmb.SelectedIndex + 1
                 authorDao.ModifyAuthor(authorEditable)
                 rot = "Modified"
             Else
                 ' In Case it's not editable, insert a new one
-                Dim author As New Author(NameTxt.Text, CountryCmb.SelectedIndex + 1)
-                authorDao.InsertAuthor(author)
+                authorDao.InsertAuthor(New Author(NameTxt.Text, CountryCmb.SelectedIndex + 1))
                 rot = "Saved"
             End If
             MessageBox.Show($"Author {rot} Corretly.")

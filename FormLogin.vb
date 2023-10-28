@@ -9,6 +9,10 @@
             Me.Hide()
             Dim formContainer As New FormContainer()
             formContainer.Show()
+        Else
+            MessageBox.Show("The Username or password is incorrect.")
+            PassTxt.Text = ""
+            PassTxt.Focus()
         End If
     End Sub
 

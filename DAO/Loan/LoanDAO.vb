@@ -35,6 +35,67 @@ Public Class LoanDAO
         End Try
     End Sub
 
+    Public Sub ModifyLoan(loanEditable As Loan)
+        Try
+            Using cx As MySqlConnection = Me.Connect()
+                ' sql script only contains the name, then put the parameters 
+                Dim sql As String = "modificar_prestamo"
+
+                ' Create a MySqlCommand object with the SQL query and the database connection.
+                Using command As New MySqlCommand(sql, cx)
+                    ' Specify command type
+                    command.CommandType = CommandType.StoredProcedure
+                    ' Add Parameters for modificar_prestamo
+                    command.Parameters.AddWithValue("@_cod_prestamo", loanEditable.BookId)
+                    command.Parameters.AddWithValue("@_cod_libro", loanEditable.BookId)
+                    command.Parameters.AddWithValue("@_fecha_pres", loanEditable.LoanDate)
+                    command.Parameters.AddWithValue("@_fecha_ent", loanEditable.DueDate)
+                    command.Parameters.AddWithValue("@_cod_ident", loanEditable.UserId)
+                    command.Parameters.AddWithValue("@_tipo_prestamo", loanEditable.LoanType)
+                    command.Parameters.AddWithValue("@_cod_bibliotecario", loanEditable.LibrarianId)
+                    command.Parameters.AddWithValue("@_entregado", loanEditable.Delivered)
+                    command.Parameters.AddWithValue("@_multa", loanEditable.Ticket)
+
+                    ' Execute query
+                    command.ExecuteNonQuery()
+                End Using
+            End Using
+        Catch ex As MySqlException
+            MessageBox.Show("Error executing SQL query: " & ex.Message)
+        Catch ex As Exception
+            MessageBox.Show("General error: " & ex.Message)
+        End Try
+    End Sub
+
+    Public Sub DeleteLoan(currentRow As Integer)
+        Try
+            Using cx As MySqlConnection = Me.Connect()
+                ' sql script only contains the name, then put the parameters 
+                Dim sql As String = "borrar_prestamo"
+
+                ' Create a MySqlCommand object with the SQL query and the database connection.
+                Using command As New MySqlCommand(sql, cx)
+                    ' Specify command type
+                    command.CommandType = CommandType.StoredProcedure
+                    ' Add Parameters for borrar_autor
+                    command.Parameters.AddWithValue("@codigo", currentRow)
+                    ' Execute query
+                    command.ExecuteNonQuery()
+                End Using
+                Dim query As String = "ALTER TABLE prestamo AUTO_INCREMENT = " & currentRow
+                Using command As New MySqlCommand(query, cx)
+                    ' Execute query
+                    command.ExecuteNonQuery()
+                End Using
+                MessageBox.Show("Book Deleted!")
+            End Using
+        Catch ex As MySqlException
+            MessageBox.Show("Error executing SQL query: " & ex.Message)
+        Catch ex As Exception
+            MessageBox.Show("General error: " & ex.Message)
+        End Try
+    End Sub
+
     Public Sub ConsultLoan()
         Try
             ' create sql query
@@ -54,4 +115,37 @@ Public Class LoanDAO
             MessageBox.Show("General error: " & ex.Message)
         End Try
     End Sub
+
+    Public Function GetLoanById(currentRow As Integer) As Loan
+        Try
+            Dim sql As String = "ver_prestamo"
+            Using cx As MySqlConnection = Me.Connect()
+                Using command As New MySqlCommand(sql, cx)
+                    command.CommandType = CommandType.StoredProcedure
+                    command.Parameters.AddWithValue("@codigo", currentRow)
+                    Using reader As MySqlDataReader = command.ExecuteReader()
+                        If reader.Read() Then
+                            Dim loan As New Loan With {
+                                .LoanId = currentRow,
+                                .BookId = CInt(reader("cod_libro")),
+                                .LoanDate = CDate(reader("fecha_pres")),
+                                .DueDate = CDate(reader("fecha_ent")),
+                                .UserId = CInt(reader("cod_ident")),
+                                .LoanType = CStr(reader("tipo_prestamo")),
+                                .LibrarianId = CInt(reader("cod_bibliotecario")),
+                                .Delivered = CStr(reader("entregado")),
+                                .Ticket = CSng(reader("multa"))
+                            }
+                            Return loan
+                        End If
+                    End Using
+                End Using
+            End Using
+        Catch ex As MySqlException
+            MessageBox.Show("Error executing SQL query: " & ex.Message)
+        Catch ex As Exception
+            MessageBox.Show("General error: " & ex.Message)
+        End Try
+        Return Nothing
+    End Function
 End Class

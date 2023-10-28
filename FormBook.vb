@@ -91,7 +91,10 @@ Public Class FormBook
     End Sub
 
     Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
-        ValidateInputs()
+        If Not ValidateInputs() Then
+            Exit Sub ' or return False if this is a Function
+        End If
+
         If MessageBox.Show("Do you want to save the record?", "Library System",
             MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) =
             Windows.Forms.DialogResult.No Then
@@ -122,12 +125,19 @@ Public Class FormBook
             End If
 
             Dim language As String = LanguageCmb.SelectedItem.ToString().Trim()
-            Dim edition As Integer = EditionCmb.SelectedIndex
+            Dim edition As Integer = EditionCmb.SelectedIndex + 1
 
             Dim a() As String
             Dim total As Integer = AuthorsList.Items.Count - 1
 
             If (BtnSave.Text = "Edit") Then
+                bookEditable.Title = title
+                bookEditable.EditorialC = editorial
+                bookEditable.DatePublished = publicationDate
+                bookEditable.Examples = examples
+                bookEditable.PageNumbers = pages
+                bookEditable.Language = language
+                bookEditable.Edition = edition
                 bookDao.ModifyBook(bookEditable)
                 ' Obtener los autores antiguos
                 Dim oldAuthors As List(Of BookAuthor) = bookAuthorDao.GetBookAuthorsById(bookEditable.Id)
@@ -161,8 +171,7 @@ Public Class FormBook
                 Next
                 rot = "Modified"
             Else
-                Dim book As New Book(title, editorial, publicationDate, examples, pages, language, edition)
-                Dim bookId = bookDao.InsertBook(book)
+                Dim bookId = bookDao.InsertBook(New Book(title, editorial, publicationDate, examples, pages, language, edition))
                 For i = 0 To total
                     a = Split(AuthorsList.Items(i).ToString, "-")
                     Dim authorId As Integer = CInt(a(1))
@@ -182,44 +191,48 @@ Public Class FormBook
             MessageBox.Show("Error: " & ex.Message)
         End Try
     End Sub
-    Private Sub ValidateInputs()
+    Private Function ValidateInputs() As Boolean
         Dim controls As New Dictionary(Of Control, String) From {
-            {TitleTxt, "Enter the book bookTitle"},
-            {EditorialCmb, "Select the publisher"},
-            {DateTimer, "Select the publication date"},
-            {ExamplesTxt, "Enter the number of copies"},
-            {PageNumberTxt, "Enter the number of pages"},
-            {LanguageCmb, "Select the bookLanguage"},
-            {EditionCmb, "Select the bookEdition"}
-        }
+        {TitleTxt, "Enter the book bookTitle"},
+        {EditorialCmb, "Select the publisher"},
+        {DateTimer, "Select the publication date"},
+        {ExamplesTxt, "Enter the number of copies"},
+        {PageNumberTxt, "Enter the number of pages"},
+        {LanguageCmb, "Select the bookLanguage"},
+        {EditionCmb, "Select the bookEdition"}
+    }
 
         For Each control In controls
             If TypeOf control.Key Is TextBox Then
                 If control.Key.Text = "" Then
                     MessageBox.Show(control.Value)
                     control.Key.Focus()
-                    Exit Sub
+                    Return False
                 End If
             ElseIf TypeOf control.Key Is ComboBox Then
                 Dim comboBox = CType(control.Key, ComboBox)
                 If comboBox.SelectedIndex = -1 Then
                     MessageBox.Show(control.Value)
                     comboBox.Focus()
-                    Exit Sub
+                    Return False
                 End If
             ElseIf TypeOf control.Key Is DateTimePicker Then
                 If control.Key.Text = "" Then
                     MessageBox.Show(control.Value)
                     control.Key.Focus()
-                    Exit Sub
+                    Return False
                 End If
             End If
         Next
-    End Sub
+
+        Return True
+    End Function
 
     Private Sub BtnDelete_Click(sender As Object, e As EventArgs) Handles BtnDelete.Click
         Dim currentRow As Integer = CInt(GridBook.CurrentRow.Cells(0).Value)
-        ValidateInputs()
+        If Not ValidateInputs() Then
+            Exit Sub ' or return False if this is a Function
+        End If
         If MessageBox.Show("Do you want to delete the selected book?", "Library System",
             MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) =
             Windows.Forms.DialogResult.No Then
@@ -250,7 +263,7 @@ Public Class FormBook
                 Me.ExamplesTxt.Text = CStr(bookEditable.Examples)
                 Me.PageNumberTxt.Text = CStr(bookEditable.PageNumbers)
                 Me.LanguageCmb.SelectedItem = bookEditable.Language
-                Me.EditionCmb.SelectedIndex = bookEditable.Edition
+                Me.EditionCmb.SelectedIndex = bookEditable.Edition - 1
 
                 Dim bookAuthorDao As New BookAuthorDAO()
                 authorsEditablesList = bookAuthorDao.GetBookAuthorsById(code)

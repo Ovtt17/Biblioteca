@@ -9,6 +9,10 @@
     Private _delivered As String
     Private _ticket As Single?
 
+    Public Sub New()
+    End Sub
+
+
     ' insert
     Public Sub New(bookId As Integer, loanDate As Date, dueDate As Date, userId As Integer, loanType As String, librarianId As Integer, delivered As String, ticket As Single?)
         Me.BookId = bookId

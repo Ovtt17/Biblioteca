@@ -1,4 +1,5 @@
 ﻿Public Class FormLoan
+    Private loanEditable As Loan
     Private Sub FormLoan_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ShowData()
     End Sub
@@ -24,7 +25,9 @@
     End Sub
 
     Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
-        ValidateInputs()
+        If Not ValidateInputs() Then
+            Exit Sub ' or return False if this is a Function
+        End If
         If MessageBox.Show("Do you want to save the record?", "Library System",
             MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) =
             Windows.Forms.DialogResult.No Then
@@ -32,6 +35,7 @@
         End If
 
         Try
+            Dim loanDao As New LoanDAO()
             Dim bookId As Integer
             Dim userId As Integer
             Dim librarianId As Integer
@@ -46,17 +50,28 @@
             Dim dueDate As Date = DateDue.Value.Date
             If loanDate < DateTime.Today OrElse dueDate < DateTime.Today Then
                 MessageBox.Show("The loan and return dates cannot be earlier than the current day.")
-                Return
+                Exit Sub
             End If
 
             Dim loanType As String = TypeLoanCmb.SelectedItem.ToString()
             Dim delivered As String = DeliveredCmb.SelectedItem.ToString()
             Dim ticket As Single? = If(String.IsNullOrEmpty(TicketTxt.Text), Nothing, CSng(TicketTxt.Text))
 
-            Dim loan As New Loan(bookId, loanDate, dueDate, userId, loanType, librarianId, delivered, ticket)
+            If (BtnSave.Text = "Edit") Then
+                loanEditable.BookId = CInt(IdBookTxt.Text)
+                loanEditable.LoanDate = DateLoan.Value.Date
+                loanEditable.DueDate = DateDue.Value.Date
+                loanEditable.UserId = CInt(IdUserTxt.Text)
+                loanEditable.LoanType = CStr(TypeLoanCmb.SelectedItem)
+                loanEditable.LibrarianId = CInt(IdLibrarianTxt.Text)
+                loanEditable.LibrarianId = CInt(IdLibrarianTxt.Text)
+                loanEditable.Delivered = CStr(DeliveredCmb.SelectedItem)
+                loanEditable.Ticket = CType(TicketTxt.Text, Single?)
+                loanDao.ModifyLoan(loanEditable)
+            Else
+                loanDao.InsertLoan(New Loan(bookId, loanDate, dueDate, userId, loanType, librarianId, delivered, ticket))
+            End If
 
-            Dim loanDao As New LoanDAO()
-            loanDao.InsertLoan(loan)
             ShowData()
             CleanFields()
         Catch ex As Exception
@@ -64,40 +79,40 @@
         End Try
     End Sub
 
-
-
-    Private Sub ValidateInputs()
+    Private Function ValidateInputs() As Boolean
         Dim controls As New Dictionary(Of Control, String) From {
-            {IdBookTxt, "Enter the book id"},
-            {IdUserTxt, "Enter the user id"},
-            {TypeLoanCmb, "Select a Loan Type"},
-            {IdLibrarianTxt, "Enter the librarian id"},
-            {DeliveredCmb, "Select delivered value"}
-        }
+        {IdBookTxt, "Enter the book id"},
+        {IdUserTxt, "Enter the user id"},
+        {TypeLoanCmb, "Select a Loan Type"},
+        {IdLibrarianTxt, "Enter the librarian id"},
+        {DeliveredCmb, "Select delivered value"}
+    }
 
         For Each control In controls
             If TypeOf control.Key Is TextBox Then
                 If control.Key.Text = "" Then
                     MessageBox.Show(control.Value)
                     control.Key.Focus()
-                    Exit Sub
+                    Return False
                 End If
             ElseIf TypeOf control.Key Is ComboBox Then
                 Dim comboBox = CType(control.Key, ComboBox)
                 If comboBox.SelectedIndex = -1 Then
                     MessageBox.Show(control.Value)
                     comboBox.Focus()
-                    Exit Sub
+                    Return False
                 End If
             ElseIf TypeOf control.Key Is DateTimePicker Then
                 If control.Key.Text = "" Then
                     MessageBox.Show(control.Value)
                     control.Key.Focus()
-                    Exit Sub
+                    Return False
                 End If
             End If
         Next
-    End Sub
+
+        Return True
+    End Function
     Private Function ValidateIntegers(ByVal txtBook As TextBox, ByVal txtUser As TextBox, ByVal txtLibrarian As TextBox) As Tuple(Of Integer, Integer, Integer)
         Dim bookId As Integer
         If Not Integer.TryParse(txtBook.Text, bookId) OrElse bookId < 1 Then
@@ -123,5 +138,54 @@
 
     Private Sub BtnNew_Click(sender As Object, e As EventArgs) Handles BtnNew.Click
         CleanFields()
+    End Sub
+
+    Private Sub GridLoan_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles GridLoan.CellClick
+        Dim currentRow As Integer = CInt(GridLoan.CurrentRow.Cells(0).Value)
+        Try
+            Dim loanDao As New LoanDAO()
+            loanEditable = loanDao.GetLoanById(currentRow)
+            If loanEditable IsNot Nothing Then
+                IdBookTxt.Text = loanEditable.BookId.ToString()
+                DateLoan.Value = loanEditable.LoanDate
+                DateDue.Value = loanEditable.DueDate
+                IdUserTxt.Text = loanEditable.UserId.ToString()
+                TypeLoanCmb.SelectedItem = loanEditable.LoanType
+                IdLibrarianTxt.Text = loanEditable.LibrarianId.ToString()
+                DeliveredCmb.SelectedItem = loanEditable.Delivered
+                TicketTxt.Text = loanEditable.Ticket.ToString()
+            End If
+
+            BtnSave.Text = "Edit"
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message)
+        End Try
+    End Sub
+
+    Private Sub BtnDelete_Click(sender As Object, e As EventArgs) Handles BtnDelete.Click
+        Dim currentRow As Integer = CInt(GridLoan.CurrentRow.Cells(0).Value)
+        If Not ValidateInputs() Then
+            Exit Sub ' or return False if this is a Function
+        End If
+        If MessageBox.Show("Do you want to delete the selected loan?", "Library System",
+            MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) =
+            Windows.Forms.DialogResult.No Then
+            Exit Sub
+        End If
+
+        Try
+            Dim loanDAO As New LoanDAO()
+            loanDAO.DeleteLoan(currentRow)
+            ' Load table again
+            ShowData()
+            ' Clean all the fields to add new authors
+            CleanFields()
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    Private Sub BtnClose_Click(sender As Object, e As EventArgs) Handles BtnClose.Click
+        FormPresentation.Close()
     End Sub
 End Class

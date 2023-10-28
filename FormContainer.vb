@@ -20,13 +20,11 @@
     End Function
 
     Private Sub BookBtn_Click(sender As Object, e As EventArgs) Handles BookBtn.Click
-        Dim formBook As New FormBook()
-        ShowForm(formBook)
+        ShowForm(New FormBook())
     End Sub
 
     Private Sub AuthorBtn_Click(sender As Object, e As EventArgs) Handles AuthorBtn.Click
-        Dim formAuthor As New FormAuthor()
-        ShowForm(formAuthor)
+        ShowForm(New FormAuthor())
     End Sub
     Public Sub ShowForm(form As Form)
         ' Cierra todos los formularios existentes en PanelContainer

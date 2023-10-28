@@ -24,6 +24,12 @@ Partial Class FormLoan
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.TicketTxt = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.DeliveredCmb = New System.Windows.Forms.ComboBox()
+        Me.IdLibrarianTxt = New System.Windows.Forms.TextBox()
+        Me.DateDue = New System.Windows.Forms.DateTimePicker()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.DateLoan = New System.Windows.Forms.DateTimePicker()
         Me.DeliveredLbl = New System.Windows.Forms.Label()
         Me.TypeLoanCmb = New System.Windows.Forms.ComboBox()
@@ -40,12 +46,6 @@ Partial Class FormLoan
         Me.BtnSave = New System.Windows.Forms.Button()
         Me.BtnNew = New System.Windows.Forms.Button()
         Me.GridLoan = New System.Windows.Forms.DataGridView()
-        Me.DateDue = New System.Windows.Forms.DateTimePicker()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.IdLibrarianTxt = New System.Windows.Forms.TextBox()
-        Me.DeliveredCmb = New System.Windows.Forms.ComboBox()
-        Me.TicketTxt = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -88,6 +88,65 @@ Partial Class FormLoan
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(1095, 316)
         Me.Panel2.TabIndex = 21
+        '
+        'TicketTxt
+        '
+        Me.TicketTxt.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TicketTxt.Location = New System.Drawing.Point(779, 72)
+        Me.TicketTxt.Name = "TicketTxt"
+        Me.TicketTxt.Size = New System.Drawing.Size(216, 27)
+        Me.TicketTxt.TabIndex = 44
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label2.Location = New System.Drawing.Point(673, 73)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(79, 22)
+        Me.Label2.TabIndex = 43
+        Me.Label2.Text = "Ticket $:"
+        '
+        'DeliveredCmb
+        '
+        Me.DeliveredCmb.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.DeliveredCmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.DeliveredCmb.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DeliveredCmb.FormattingEnabled = True
+        Me.DeliveredCmb.Items.AddRange(New Object() {"Yes", "No"})
+        Me.DeliveredCmb.Location = New System.Drawing.Point(779, 28)
+        Me.DeliveredCmb.Name = "DeliveredCmb"
+        Me.DeliveredCmb.Size = New System.Drawing.Size(145, 28)
+        Me.DeliveredCmb.TabIndex = 42
+        '
+        'IdLibrarianTxt
+        '
+        Me.IdLibrarianTxt.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.IdLibrarianTxt.Location = New System.Drawing.Point(127, 270)
+        Me.IdLibrarianTxt.Name = "IdLibrarianTxt"
+        Me.IdLibrarianTxt.Size = New System.Drawing.Size(216, 27)
+        Me.IdLibrarianTxt.TabIndex = 41
+        '
+        'DateDue
+        '
+        Me.DateDue.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.DateDue.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateDue.Location = New System.Drawing.Point(127, 125)
+        Me.DateDue.Name = "DateDue"
+        Me.DateDue.Size = New System.Drawing.Size(364, 27)
+        Me.DateDue.TabIndex = 40
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label1.Location = New System.Drawing.Point(12, 126)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(91, 22)
+        Me.Label1.TabIndex = 39
+        Me.Label1.Text = "Due Date:"
         '
         'DateLoan
         '
@@ -287,65 +346,6 @@ Partial Class FormLoan
         Me.GridLoan.RowTemplate.Height = 24
         Me.GridLoan.Size = New System.Drawing.Size(1496, 155)
         Me.GridLoan.TabIndex = 0
-        '
-        'DateDue
-        '
-        Me.DateDue.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.DateDue.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateDue.Location = New System.Drawing.Point(127, 125)
-        Me.DateDue.Name = "DateDue"
-        Me.DateDue.Size = New System.Drawing.Size(364, 27)
-        Me.DateDue.TabIndex = 40
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label1.Location = New System.Drawing.Point(12, 126)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(91, 22)
-        Me.Label1.TabIndex = 39
-        Me.Label1.Text = "Due Date:"
-        '
-        'IdLibrarianTxt
-        '
-        Me.IdLibrarianTxt.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.IdLibrarianTxt.Location = New System.Drawing.Point(127, 270)
-        Me.IdLibrarianTxt.Name = "IdLibrarianTxt"
-        Me.IdLibrarianTxt.Size = New System.Drawing.Size(216, 27)
-        Me.IdLibrarianTxt.TabIndex = 41
-        '
-        'DeliveredCmb
-        '
-        Me.DeliveredCmb.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.DeliveredCmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.DeliveredCmb.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DeliveredCmb.FormattingEnabled = True
-        Me.DeliveredCmb.Items.AddRange(New Object() {"Yes", "No"})
-        Me.DeliveredCmb.Location = New System.Drawing.Point(779, 28)
-        Me.DeliveredCmb.Name = "DeliveredCmb"
-        Me.DeliveredCmb.Size = New System.Drawing.Size(145, 28)
-        Me.DeliveredCmb.TabIndex = 42
-        '
-        'TicketTxt
-        '
-        Me.TicketTxt.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TicketTxt.Location = New System.Drawing.Point(779, 72)
-        Me.TicketTxt.Name = "TicketTxt"
-        Me.TicketTxt.Size = New System.Drawing.Size(216, 27)
-        Me.TicketTxt.TabIndex = 44
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label2.Location = New System.Drawing.Point(673, 73)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(79, 22)
-        Me.Label2.TabIndex = 43
-        Me.Label2.Text = "Ticket $:"
         '
         'FormLoan
         '
