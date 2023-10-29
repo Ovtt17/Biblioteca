@@ -122,10 +122,9 @@ Public Class FormBibliotecario
         FormPresentation.Close()
     End Sub
 
-    Private Sub GridBibliotecario_Click(sender As Object, e As EventArgs) Handles GridBibliotecario.Click
-        Dim code As Integer = CInt(GridBibliotecario.CurrentRow.Cells(0).Value)
-
+    Private Sub GridBibliotecario_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles GridBibliotecario.CellClick
         Try
+            Dim code As Integer = CInt(GridBibliotecario.CurrentRow.Cells(0).Value)
             Dim bibliotecarioDAO As New BibliotecarioDAO()
             bibliotecarioEditable = bibliotecarioDAO.Row(code)
             If bibliotecarioEditable IsNot Nothing Then

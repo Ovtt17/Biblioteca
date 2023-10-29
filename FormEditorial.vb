@@ -100,7 +100,7 @@ Public Class FormEditorial
         End Try
     End Sub
 
-    Private Sub GridEditorial_Click(sender As Object, e As EventArgs) Handles GridEditorial.Click
+    Private Sub GridEditorial_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles GridEditorial.CellClick
         Try
             Dim code As Integer = CInt(GridEditorial.CurrentRow.Cells(0).Value)
             Dim editorialDAO As New EditorialDAO()

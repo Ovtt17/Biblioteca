@@ -72,7 +72,7 @@ Partial Class FormBibliotecario
         Me.Panel2.Controls.Add(Me.FNameTxt)
         Me.Panel2.Controls.Add(Me.AuthorLbl)
         Me.Panel2.Location = New System.Drawing.Point(21, 287)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(1224, 267)
         Me.Panel2.TabIndex = 5
@@ -265,7 +265,7 @@ Partial Class FormBibliotecario
         Me.ClientSize = New System.Drawing.Size(1589, 582)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "FormBibliotecario"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormBibliotecario"
