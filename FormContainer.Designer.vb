@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FormContainer
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class FormContainer
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.PanelOptions = New System.Windows.Forms.Panel()
         Me.EditorialBtn = New System.Windows.Forms.Button()
@@ -29,6 +29,7 @@ Partial Class FormContainer
         Me.AuthorBtn = New System.Windows.Forms.Button()
         Me.BookBtn = New System.Windows.Forms.Button()
         Me.PanelContainer = New System.Windows.Forms.Panel()
+        Me.BookCountrybtn = New System.Windows.Forms.Button()
         Me.LoanBtn = New System.Windows.Forms.Button()
         Me.PanelOptions.SuspendLayout()
         Me.SuspendLayout()
@@ -37,6 +38,7 @@ Partial Class FormContainer
         '
         Me.PanelOptions.BackColor = System.Drawing.Color.LightSkyBlue
         Me.PanelOptions.Controls.Add(Me.LoanBtn)
+        Me.PanelOptions.Controls.Add(Me.BookCountrybtn)
         Me.PanelOptions.Controls.Add(Me.EditorialBtn)
         Me.PanelOptions.Controls.Add(Me.BibliotecarioBtn)
         Me.PanelOptions.Controls.Add(Me.UsersBtn)
@@ -133,6 +135,21 @@ Partial Class FormContainer
         Me.LoanBtn.TabIndex = 5
         Me.LoanBtn.Text = "Loan"
         Me.LoanBtn.UseVisualStyleBackColor = False
+
+        '
+        'BookCountrybtn
+        '
+        Me.BookCountrybtn.BackColor = System.Drawing.Color.Navy
+        Me.BookCountrybtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BookCountrybtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BookCountrybtn.ForeColor = System.Drawing.SystemColors.Control
+        Me.BookCountrybtn.Location = New System.Drawing.Point(0, 395)
+        Me.BookCountrybtn.Margin = New System.Windows.Forms.Padding(2)
+        Me.BookCountrybtn.Name = "BookCountrybtn"
+        Me.BookCountrybtn.Size = New System.Drawing.Size(307, 58)
+        Me.BookCountrybtn.TabIndex = 5
+        Me.BookCountrybtn.Text = "Book By Country"
+        Me.BookCountrybtn.UseVisualStyleBackColor = False
         '
         'FormContainer
         '
@@ -159,4 +176,5 @@ Partial Class FormContainer
     Friend WithEvents AuthorBtn As Button
     Friend WithEvents BookBtn As Button
     Friend WithEvents LoanBtn As Button
+    Friend WithEvents BookCountrybtn As Button
 End Class

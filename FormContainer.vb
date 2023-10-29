@@ -56,4 +56,8 @@
     Private Sub LoanBtn_Click(sender As Object, e As EventArgs) Handles LoanBtn.Click
         ShowForm(New FormLoan())
     End Sub
+
+    Private Sub BookCountrybtn_Click(sender As Object, e As EventArgs) Handles BookCountrybtn.Click
+        ShowForm(New FormSearchBook())
+    End Sub
 End Class
