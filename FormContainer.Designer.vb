@@ -23,14 +23,14 @@ Partial Class FormContainer
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.PanelOptions = New System.Windows.Forms.Panel()
+        Me.LoanBtn = New System.Windows.Forms.Button()
+        Me.BookCountrybtn = New System.Windows.Forms.Button()
         Me.EditorialBtn = New System.Windows.Forms.Button()
         Me.BibliotecarioBtn = New System.Windows.Forms.Button()
         Me.UsersBtn = New System.Windows.Forms.Button()
         Me.AuthorBtn = New System.Windows.Forms.Button()
         Me.BookBtn = New System.Windows.Forms.Button()
         Me.PanelContainer = New System.Windows.Forms.Panel()
-        Me.BookCountrybtn = New System.Windows.Forms.Button()
-        Me.LoanBtn = New System.Windows.Forms.Button()
         Me.PanelOptions.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -50,13 +50,40 @@ Partial Class FormContainer
         Me.PanelOptions.Size = New System.Drawing.Size(307, 582)
         Me.PanelOptions.TabIndex = 0
         '
+        'LoanBtn
+        '
+        Me.LoanBtn.BackColor = System.Drawing.Color.Navy
+        Me.LoanBtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.LoanBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LoanBtn.ForeColor = System.Drawing.SystemColors.Control
+        Me.LoanBtn.Location = New System.Drawing.Point(0, 280)
+        Me.LoanBtn.Name = "LoanBtn"
+        Me.LoanBtn.Size = New System.Drawing.Size(307, 58)
+        Me.LoanBtn.TabIndex = 5
+        Me.LoanBtn.Text = "Loan"
+        Me.LoanBtn.UseVisualStyleBackColor = False
+        '
+        'BookCountrybtn
+        '
+        Me.BookCountrybtn.BackColor = System.Drawing.Color.Navy
+        Me.BookCountrybtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BookCountrybtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BookCountrybtn.ForeColor = System.Drawing.SystemColors.Control
+        Me.BookCountrybtn.Location = New System.Drawing.Point(0, 438)
+        Me.BookCountrybtn.Margin = New System.Windows.Forms.Padding(2)
+        Me.BookCountrybtn.Name = "BookCountrybtn"
+        Me.BookCountrybtn.Size = New System.Drawing.Size(307, 58)
+        Me.BookCountrybtn.TabIndex = 5
+        Me.BookCountrybtn.Text = "Book By Country"
+        Me.BookCountrybtn.UseVisualStyleBackColor = False
+        '
         'EditorialBtn
         '
         Me.EditorialBtn.BackColor = System.Drawing.Color.Navy
         Me.EditorialBtn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.EditorialBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.EditorialBtn.ForeColor = System.Drawing.SystemColors.Control
-        Me.EditorialBtn.Location = New System.Drawing.Point(0, 488)
+        Me.EditorialBtn.Location = New System.Drawing.Point(0, 512)
         Me.EditorialBtn.Name = "EditorialBtn"
         Me.EditorialBtn.Size = New System.Drawing.Size(307, 58)
         Me.EditorialBtn.TabIndex = 4
@@ -69,7 +96,7 @@ Partial Class FormContainer
         Me.BibliotecarioBtn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BibliotecarioBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BibliotecarioBtn.ForeColor = System.Drawing.SystemColors.Control
-        Me.BibliotecarioBtn.Location = New System.Drawing.Point(0, 401)
+        Me.BibliotecarioBtn.Location = New System.Drawing.Point(0, 363)
         Me.BibliotecarioBtn.Name = "BibliotecarioBtn"
         Me.BibliotecarioBtn.Size = New System.Drawing.Size(307, 58)
         Me.BibliotecarioBtn.TabIndex = 3
@@ -82,7 +109,7 @@ Partial Class FormContainer
         Me.UsersBtn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.UsersBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UsersBtn.ForeColor = System.Drawing.SystemColors.Control
-        Me.UsersBtn.Location = New System.Drawing.Point(3, 238)
+        Me.UsersBtn.Location = New System.Drawing.Point(3, 200)
         Me.UsersBtn.Name = "UsersBtn"
         Me.UsersBtn.Size = New System.Drawing.Size(304, 58)
         Me.UsersBtn.TabIndex = 2
@@ -95,7 +122,7 @@ Partial Class FormContainer
         Me.AuthorBtn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.AuthorBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.AuthorBtn.ForeColor = System.Drawing.SystemColors.Control
-        Me.AuthorBtn.Location = New System.Drawing.Point(0, 152)
+        Me.AuthorBtn.Location = New System.Drawing.Point(0, 114)
         Me.AuthorBtn.Name = "AuthorBtn"
         Me.AuthorBtn.Size = New System.Drawing.Size(307, 58)
         Me.AuthorBtn.TabIndex = 1
@@ -108,7 +135,7 @@ Partial Class FormContainer
         Me.BookBtn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BookBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BookBtn.ForeColor = System.Drawing.SystemColors.Control
-        Me.BookBtn.Location = New System.Drawing.Point(0, 71)
+        Me.BookBtn.Location = New System.Drawing.Point(0, 33)
         Me.BookBtn.Name = "BookBtn"
         Me.BookBtn.Size = New System.Drawing.Size(307, 58)
         Me.BookBtn.TabIndex = 0
@@ -122,34 +149,6 @@ Partial Class FormContainer
         Me.PanelContainer.Name = "PanelContainer"
         Me.PanelContainer.Size = New System.Drawing.Size(1589, 582)
         Me.PanelContainer.TabIndex = 1
-        '
-        'LoanBtn
-        '
-        Me.LoanBtn.BackColor = System.Drawing.Color.Navy
-        Me.LoanBtn.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.LoanBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LoanBtn.ForeColor = System.Drawing.SystemColors.Control
-        Me.LoanBtn.Location = New System.Drawing.Point(0, 318)
-        Me.LoanBtn.Name = "LoanBtn"
-        Me.LoanBtn.Size = New System.Drawing.Size(307, 58)
-        Me.LoanBtn.TabIndex = 5
-        Me.LoanBtn.Text = "Loan"
-        Me.LoanBtn.UseVisualStyleBackColor = False
-
-        '
-        'BookCountrybtn
-        '
-        Me.BookCountrybtn.BackColor = System.Drawing.Color.Navy
-        Me.BookCountrybtn.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BookCountrybtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BookCountrybtn.ForeColor = System.Drawing.SystemColors.Control
-        Me.BookCountrybtn.Location = New System.Drawing.Point(0, 395)
-        Me.BookCountrybtn.Margin = New System.Windows.Forms.Padding(2)
-        Me.BookCountrybtn.Name = "BookCountrybtn"
-        Me.BookCountrybtn.Size = New System.Drawing.Size(307, 58)
-        Me.BookCountrybtn.TabIndex = 5
-        Me.BookCountrybtn.Text = "Book By Country"
-        Me.BookCountrybtn.UseVisualStyleBackColor = False
         '
         'FormContainer
         '
