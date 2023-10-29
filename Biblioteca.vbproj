@@ -84,6 +84,7 @@
     <Compile Include="DAO\Author\AuthorDAO.vb" />
     <Compile Include="DAO\Book\BookAuthorDAO.vb" />
     <Compile Include="DAO\Book\BookDAO.vb" />
+    <Compile Include="DAO\Book\BooksConsultDAO.vb" />
     <Compile Include="DAO\Editorial\EditorialDAO.vb" />
     <Compile Include="DAO\Loan\LoanDAO.vb" />
     <Compile Include="DAO\Login\LoginDAO.vb" />
@@ -107,6 +108,12 @@
       <DependentUpon>FormBook.vb</DependentUpon>
     </Compile>
     <Compile Include="FormBook.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBookConsult.Designer.vb">
+      <DependentUpon>FormBookConsult.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormBookConsult.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormContainer.Designer.vb">
@@ -148,6 +155,7 @@
     <Compile Include="Models\Author\Author.vb" />
     <Compile Include="Models\Book\Book.vb" />
     <Compile Include="Models\Book\BookAuthor.vb" />
+    <Compile Include="Models\Book\BookConsult.vb" />
     <Compile Include="Models\Editorial\Editorial.vb" />
     <Compile Include="Models\Loan\Loan.vb" />
     <Compile Include="Models\Login\Login.vb" />
@@ -201,6 +209,9 @@
     <EmbeddedResource Include="FormBook.resx">
       <DependentUpon>FormBook.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormBookConsult.resx">
+      <DependentUpon>FormBookConsult.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormContainer.resx">
       <DependentUpon>FormContainer.vb</DependentUpon>
     </EmbeddedResource>
@@ -212,6 +223,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPresentation.resx">
+      <DependentUpon>FormPresentation.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormUsers.resx">
       <DependentUpon>FormUsers.vb</DependentUpon>

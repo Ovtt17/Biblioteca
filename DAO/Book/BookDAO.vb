@@ -165,7 +165,7 @@ Public Class BookDAO
                     ' Execute query
                     command.ExecuteNonQuery()
                 End Using
-                Dim query As String = "ALTER TABLE autor AUTO_INCREMENT = " & currentRow
+                Dim query As String = "ALTER TABLE libro AUTO_INCREMENT = " & currentRow
                 Using command As New MySqlCommand(query, cx)
                     ' Execute query
                     command.ExecuteNonQuery()

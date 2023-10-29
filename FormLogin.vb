@@ -17,7 +17,7 @@
     End Sub
 
     Private Sub ConsultBooksBtn_Click(sender As Object, e As EventArgs) Handles ConsultBooksBtn.Click
-
+        FormBookConsult.Show()
     End Sub
 
     Private Sub FormLogin_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
