@@ -88,6 +88,7 @@
     <Compile Include="DAO\Editorial\EditorialDAO.vb" />
     <Compile Include="DAO\Loan\LoanDAO.vb" />
     <Compile Include="DAO\Login\LoginDAO.vb" />
+    <Compile Include="DAO\SearchBook\SearchBookDAO.vb" />
     <Compile Include="DAO\User\UserDAO.vb" />
     <Compile Include="DAO\Bibliotecario\BibliotecarioDAO.vb" />
     <Compile Include="DB\Conexion.vb" />
@@ -144,6 +145,12 @@
       <DependentUpon>FormPresentation.vb</DependentUpon>
     </Compile>
     <Compile Include="FormPresentation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSearchBook.Designer.vb">
+      <DependentUpon>FormSearchBook.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormSearchBook.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormUsers.Designer.vb">
@@ -226,6 +233,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormPresentation.resx">
       <DependentUpon>FormPresentation.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSearchBook.resx">
+      <DependentUpon>FormSearchBook.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormUsers.resx">
       <DependentUpon>FormUsers.vb</DependentUpon>

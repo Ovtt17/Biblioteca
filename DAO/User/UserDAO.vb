@@ -28,7 +28,7 @@ Public Class UserDAO
 
     Public Sub EnterUser(ByVal user As User)
         Try
-
+            ' llamada del procedimiento
             Using cx As MySqlConnection = Me.Connect()
                 Dim sql As String = "CALL Insertar_Usuario(@codIdent, @Name, @LastName, @Phone, @Address, @BirthDate, @Sex, @Status, @Study)"
                 Using command As New MySqlCommand(sql, cx)
@@ -41,8 +41,6 @@ Public Class UserDAO
                     command.Parameters.AddWithValue("@Sex", user.Sex)
                     command.Parameters.AddWithValue("@Status", user.Status)
                     command.Parameters.AddWithValue("@Study", user.Study)
-
-
                     command.ExecuteNonQuery()
                 End Using
             End Using
@@ -57,35 +55,34 @@ Public Class UserDAO
     Public Sub ModifyUser(ByVal user As User)
         Try
             Using cx As MySqlConnection = Me.Connect()
-                ' sql script only contains the name, then put the parameters 
-                Dim sql As String = "modificar_autor"
 
-                ' Create a MySqlCommand object with the SQL query and the database connection.
+                Dim sql As String = "Modificar_Usuario"
+
                 Using command As New MySqlCommand(sql, cx)
-                    ' Specify command type
                     command.CommandType = CommandType.StoredProcedure
-                    ' Add Parameters for modificar_autor
-                    command.Parameters.AddWithValue("@codigo", user.codeIdent)
-                    command.Parameters.AddWithValue("@nombre", user.Name)
-                    command.Parameters.AddWithValue("@Segundo Nombre", user.LastName)
-                    command.Parameters.AddWithValue("@Telefono", user.Phone)
-                    command.Parameters.AddWithValue("@Direccion", user.Address)
-                    command.Parameters.AddWithValue("BirthDate", user.Birthdate)
-                    command.Parameters.AddWithValue("@Sex", user.Sex)
-                    command.Parameters.AddWithValue("@Estado Civil", user.Status)
-                    command.Parameters.AddWithValue("@Educacion", user.Study)
+
+                    ' Parámetros para el procedimiento almacenado
+                    command.Parameters.AddWithValue("@cod_ident_usuario", user.codeIdent)
+                    command.Parameters.AddWithValue("@nuevo_nombre", user.Name)
+                    command.Parameters.AddWithValue("@nuevo_apellido", user.LastName)
+                    command.Parameters.AddWithValue("@nuevo_telefono", user.Phone)
+                    command.Parameters.AddWithValue("@nueva_direccion", user.Address)
+                    command.Parameters.AddWithValue("@nueva_fecha_nacimiento", user.Birthdate)
+                    command.Parameters.AddWithValue("@nuevo_sexo", user.Sex)
+                    command.Parameters.AddWithValue("@nuevo_estado_civil", user.Status)
+                    command.Parameters.AddWithValue("@nuevo_centro_estudio", user.Study)
 
 
-                    ' Execute query
                     command.ExecuteNonQuery()
                 End Using
             End Using
         Catch ex As MySqlException
-            MessageBox.Show("Error executing SQL query: " & ex.Message)
+            MessageBox.Show("Error al ejecutar la consulta SQL: " & ex.Message)
         Catch ex As Exception
-            MessageBox.Show("General error: " & ex.Message)
+            MessageBox.Show("Error general: " & ex.Message)
         End Try
     End Sub
+
 
     Public Sub DeleteUser(currentRow As Integer)
         Try
@@ -103,7 +100,7 @@ Public Class UserDAO
                     command.ExecuteNonQuery()
                     MessageBox.Show("User Deleted!")
                 End Using
-                Dim query As String = "ALTER TABLE usuario AUTO_INCREMENT = " & currentRow
+                Dim query As String = "ALTER TABLE autor AUTO_INCREMENT = " & currentRow
                 Using command As New MySqlCommand(query, cx)
                     ' Execute query
                     command.ExecuteNonQuery()
@@ -116,37 +113,43 @@ Public Class UserDAO
         End Try
     End Sub
 
-    Public Function Row(ByVal code As Integer) As Editorial
+    Public Function GetUser(ByVal code As Integer) As User
         Try
-            Dim sql As String = "ver_editorial"
-            dataSet.Tables.Clear()
+            Dim sql As String = "ver_Usuario"
 
             Using cx As MySqlConnection = Me.Connect()
                 Using command As New MySqlCommand(sql, cx)
-
                     command.CommandType = CommandType.StoredProcedure
-                    command.Parameters.AddWithValue("@editorial", code)
+                    command.Parameters.AddWithValue("@codigo", code)
+
                     Using reader As MySqlDataReader = command.ExecuteReader()
                         If reader.Read() Then
-                            Dim editorial As New Editorial With {
-                                .Code = CInt(reader("cod_editorial")),
-                                .Name = reader("nombre_editorial").ToString(),
-                                .Country = CInt(reader("cod_pais"))
+                            Dim user As New User With {
+                                .codeIdent = CInt(reader("cod_ident")),
+                                .Name = reader("nombres").ToString(),
+                                .LastName = reader("apellidos").ToString(),
+                                .Phone = reader("telefono").ToString(),
+                                .Address = reader("direccion").ToString(),
+                                .Birthdate = CDate(reader("fecha_nac")),
+                                .Sex = reader("sexo").ToString(),
+                                .Status = reader("estado_civil").ToString(),
+                                .Study = reader("centro_estudio").ToString()
                             }
-                            Return editorial
+                            Return user
                         End If
                     End Using
                 End Using
             End Using
         Catch ex As MySqlException
-            MessageBox.Show("Error executing SQL query: " & ex.Message)
+            MessageBox.Show("Error al ejecutar la consulta SQL: " & ex.Message)
             Return Nothing
         Catch ex As Exception
-            MessageBox.Show("General error: " & ex.Message)
+            MessageBox.Show("Error general: " & ex.Message)
             Return Nothing
         End Try
         Return Nothing
     End Function
+
 
 
 End Class

@@ -29,7 +29,21 @@ Public Class FormUsers
         End Try
 
     End Sub
-    Private Sub BtnNew_Click(sender As Object, e As EventArgs)
+
+    Private Sub codidenttxt_KeyPress(sender As Object, e As KeyPressEventArgs) Handles codidenttxt.KeyPress
+        If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+            ' El carácter ingresado no puede ser escrito con letras
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub phonetxt_KeyPress(sender As Object, e As KeyPressEventArgs) Handles phonetxt.KeyPress
+        If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+            ' El carácter ingresado no es un número 
+            e.Handled = True
+        End If
+    End Sub
+    Private Sub BtnNew_Click_1(sender As Object, e As EventArgs) Handles BtnNew.Click
         CleanField()
     End Sub
     Private Sub CleanField()
@@ -48,8 +62,7 @@ Public Class FormUsers
 
     End Sub
 
-    Private Sub BtnSave_Click(sender As Object, e As EventArgs)
-
+    Private Sub BtnSave_Click_1(sender As Object, e As EventArgs) Handles BtnSave.Click
         Dim rot As String
         ' Check if the NameTxt TextBox is empty or null.
         ' If it is, display an error message instructing the user to input the author's nameAuthor.
@@ -120,7 +133,7 @@ Public Class FormUsers
         End Try
     End Sub
 
-    Private Sub BtnDelete_Click(sender As Object, e As EventArgs)
+    Private Sub BtnDelete_Click_1(sender As Object, e As EventArgs) Handles BtnDelete.Click
         Dim currentRow As Integer = CInt(GridUser.CurrentRow.Cells(0).Value)
         'If NameTxt.Text Is Nothing Or sexcmb.SelectedIndex = -1 Then
         '    MessageBox.Show("Select an author to delete it")
@@ -149,4 +162,29 @@ Public Class FormUsers
     Private Sub BtnClose_Click_1(sender As Object, e As EventArgs) Handles BtnClose.Click
         FormPresentation.Close()
     End Sub
+
+    Private Sub GridUser_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles GridUser.CellContentClick
+
+        Dim code As Integer = CInt(GridUser.CurrentRow.Cells("YourColumnNameForCode").Value) ' Reemplaza "YourColumnNameForCode" con el nombre real de la columna que contiene el código de usuario
+
+        Try
+            Dim userDAO As New UserDAO()
+            userEditable = userDAO.GetUser(code)
+
+            If userEditable IsNot Nothing Then
+                Me.NameTxt.Text = userEditable.Name
+                ' Asigna otros valores a los controles correspondientes aquí
+                Me.BtnSave.Text = "Edit"
+            Else
+                MessageBox.Show("El usuario con el código proporcionado no se encontró.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            End If
+        Catch ex As InvalidCastException
+            MessageBox.Show("La celda está vacía. Selecciona otra.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+
+
 End Class
