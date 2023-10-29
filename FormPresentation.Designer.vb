@@ -58,6 +58,8 @@ Partial Class FormPresentation
         Me.ClientSize = New System.Drawing.Size(1274, 667)
         Me.Controls.Add(Me.ProgressBar1)
         Me.Controls.Add(Me.TitleTxt)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "FormPresentation"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Presentation"

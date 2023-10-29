@@ -84,7 +84,9 @@
     <Compile Include="DAO\Author\AuthorDAO.vb" />
     <Compile Include="DAO\Book\BookAuthorDAO.vb" />
     <Compile Include="DAO\Book\BookDAO.vb" />
+    <Compile Include="DAO\Book\BooksConsultDAO.vb" />
     <Compile Include="DAO\Editorial\EditorialDAO.vb" />
+    <Compile Include="DAO\Loan\LoanDAO.vb" />
     <Compile Include="DAO\Login\LoginDAO.vb" />
     <Compile Include="DAO\SearchBook\SearchBookDAO.vb" />
     <Compile Include="DAO\User\UserDAO.vb" />
@@ -109,6 +111,12 @@
     <Compile Include="FormBook.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormBookConsult.Designer.vb">
+      <DependentUpon>FormBookConsult.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormBookConsult.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormContainer.Designer.vb">
       <DependentUpon>FormContainer.vb</DependentUpon>
     </Compile>
@@ -119,6 +127,12 @@
       <DependentUpon>FormEditorial.vb</DependentUpon>
     </Compile>
     <Compile Include="FormEditorial.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLoan.Designer.vb">
+      <DependentUpon>FormLoan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormLoan.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormLogin.Designer.vb">
@@ -148,7 +162,9 @@
     <Compile Include="Models\Author\Author.vb" />
     <Compile Include="Models\Book\Book.vb" />
     <Compile Include="Models\Book\BookAuthor.vb" />
+    <Compile Include="Models\Book\BookConsult.vb" />
     <Compile Include="Models\Editorial\Editorial.vb" />
+    <Compile Include="Models\Loan\Loan.vb" />
     <Compile Include="Models\Login\Login.vb" />
     <Compile Include="Models\User\User.vb" />
     <Compile Include="Models\Bibliotecario\Bibliotecario.vb" />
@@ -200,14 +216,23 @@
     <EmbeddedResource Include="FormBook.resx">
       <DependentUpon>FormBook.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormBookConsult.resx">
+      <DependentUpon>FormBookConsult.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormContainer.resx">
       <DependentUpon>FormContainer.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormEditorial.resx">
       <DependentUpon>FormEditorial.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormLoan.resx">
+      <DependentUpon>FormLoan.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPresentation.resx">
+      <DependentUpon>FormPresentation.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSearchBook.resx">
       <DependentUpon>FormSearchBook.vb</DependentUpon>

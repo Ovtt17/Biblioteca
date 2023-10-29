@@ -44,7 +44,7 @@ Public Class BookDAO
                 Using command As New MySqlCommand(sql, cx)
                     ' Specify command type
                     command.CommandType = CommandType.StoredProcedure
-                    ' Add Parameters for modificar_autor
+                    ' Add Parameters for modificar_libro
                     command.Parameters.AddWithValue("@_codigo", book.Id)
                     command.Parameters.AddWithValue("@_titulo", book.Title)
                     command.Parameters.AddWithValue("@_cod_editorial", book.EditorialC)
@@ -165,7 +165,7 @@ Public Class BookDAO
                     ' Execute query
                     command.ExecuteNonQuery()
                 End Using
-                Dim query As String = "ALTER TABLE autor AUTO_INCREMENT = " & currentRow
+                Dim query As String = "ALTER TABLE libro AUTO_INCREMENT = " & currentRow
                 Using command As New MySqlCommand(query, cx)
                     ' Execute query
                     command.ExecuteNonQuery()
