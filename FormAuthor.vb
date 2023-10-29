@@ -135,10 +135,9 @@ Public Class FormAuthor
 
     End Sub
 
-    Private Sub GridAutor_Click(sender As Object, e As EventArgs) Handles GridAutor.Click
-        Dim code As Integer = CInt(GridAutor.CurrentRow.Cells(0).Value)
-
+    Private Sub GridAutor_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles GridAutor.CellClick
         Try
+            Dim code As Integer = CInt(GridAutor.CurrentRow.Cells(0).Value)
             Dim authorDAO As New AuthorDAO()
             authorEditable = authorDAO.GetAuthorById(code)
             If authorEditable IsNot Nothing Then

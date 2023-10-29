@@ -94,13 +94,12 @@ Public Class UserDAO
                 Using command As New MySqlCommand(sql, cx)
                     ' Specify command type
                     command.CommandType = CommandType.StoredProcedure
-                    ' Add Parameters for borrar_autor
+                    ' Add Parameters for borrar_usuario
                     command.Parameters.AddWithValue("@Codigo", currentRow)
                     ' Execute query
                     command.ExecuteNonQuery()
-                    MessageBox.Show("User Deleted!")
                 End Using
-                Dim query As String = "ALTER TABLE autor AUTO_INCREMENT = " & currentRow
+                Dim query As String = "ALTER TABLE usuario AUTO_INCREMENT = " & currentRow
                 Using command As New MySqlCommand(query, cx)
                     ' Execute query
                     command.ExecuteNonQuery()

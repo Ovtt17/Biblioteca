@@ -251,9 +251,9 @@ Public Class FormBook
         End Try
     End Sub
 
-    Private Sub GridBook_Click(sender As Object, e As EventArgs) Handles GridBook.Click
-        Dim code As Integer = CInt(GridBook.CurrentRow.Cells(0).Value)
+    Private Sub GridBook_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles GridBook.CellClick
         Try
+            Dim code As Integer = CInt(GridBook.CurrentRow.Cells(0).Value)
             Dim bookDao As New BookDAO()
             bookEditable = bookDao.GetBookById(code)
             If bookEditable IsNot Nothing Then
@@ -283,7 +283,6 @@ Public Class FormBook
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
-
     End Sub
 
     Private Sub BtnClose_Click(sender As Object, e As EventArgs) Handles BtnClose.Click

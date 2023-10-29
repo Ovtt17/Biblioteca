@@ -102,14 +102,14 @@ Public Class FormUsers
             ' Verificar si el autor es editable o no
             If (BtnSave.Text = "Edit") Then
                 userEditable.codeIdent = CInt(Me.codidenttxt.Text)
-                userEditable.Name = Me.NameTxt.Text
-                userEditable.LastName = Me.name2txt.Text
-                userEditable.Phone = Me.phonetxt.Text
-                userEditable.Address = Me.addrtxt.Text
-                userEditable.Birthdate = DateTimePicker1.Value.Date
-                userEditable.Sex = CStr(Me.sexcmb.SelectedIndex + 1)
-                userEditable.Status = CStr(Me.statuscmb.SelectedIndex + 1)
-                userEditable.Study = Me.studytxt.Text
+                userEditable.Name = Name
+                userEditable.LastName = LastName
+                userEditable.Phone = Phone
+                userEditable.Address = Address
+                userEditable.Birthdate = BirthDate
+                userEditable.Sex = Sex
+                userEditable.Status = Status
+                userEditable.Study = Study
                 userDao.ModifyUser(userEditable)
                 rot = "Modificado"
             Else
@@ -135,10 +135,10 @@ Public Class FormUsers
 
     Private Sub BtnDelete_Click_1(sender As Object, e As EventArgs) Handles BtnDelete.Click
         Dim currentRow As Integer = CInt(GridUser.CurrentRow.Cells(0).Value)
-        'If NameTxt.Text Is Nothing Or sexcmb.SelectedIndex = -1 Then
-        '    MessageBox.Show("Select an author to delete it")
-        '    Exit Sub
-        'End If
+        If NameTxt.Text Is Nothing Or sexcmb.SelectedIndex = -1 Then
+            MessageBox.Show("Select an author to delete it")
+            Exit Sub
+        End If
         If MessageBox.Show("Do you want to delete the record?", "Library System",
                            MessageBoxButtons.YesNo, MessageBoxIcon.Question,
                            MessageBoxDefaultButton.Button1) = Windows.Forms.DialogResult.No Then
@@ -163,16 +163,24 @@ Public Class FormUsers
         FormPresentation.Close()
     End Sub
 
-    Private Sub GridUser_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles GridUser.CellContentClick
-
-        Dim code As Integer = CInt(GridUser.CurrentRow.Cells("YourColumnNameForCode").Value) ' Reemplaza "YourColumnNameForCode" con el nombre real de la columna que contiene el código de usuario
+    Private Sub GridUser_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles GridUser.CellClick
+        Dim code As Integer = CInt(GridUser.CurrentRow.Cells(0).Value)
 
         Try
             Dim userDAO As New UserDAO()
             userEditable = userDAO.GetUser(code)
 
             If userEditable IsNot Nothing Then
+                Me.codidenttxt.Text = CStr(userEditable.codeIdent)
                 Me.NameTxt.Text = userEditable.Name
+                Me.name2txt.Text = userEditable.LastName
+                Me.phonetxt.Text = userEditable.Phone
+                Me.addrtxt.Text = userEditable.Address
+                DateTimePicker1.Value = userEditable.Birthdate
+                Me.sexcmb.SelectedItem = userEditable.Sex
+                Me.statuscmb.SelectedItem = userEditable.Status
+                Me.studytxt.Text = userEditable.Study
+
                 ' Asigna otros valores a los controles correspondientes aquí
                 Me.BtnSave.Text = "Edit"
             Else
@@ -184,7 +192,4 @@ Public Class FormUsers
             MessageBox.Show("Error: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
-
-
-
 End Class
