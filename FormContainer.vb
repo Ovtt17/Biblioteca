@@ -54,4 +54,8 @@
     Private Sub EditorialBtn_Click(sender As Object, e As EventArgs) Handles EditorialBtn.Click
         ShowForm(New FormEditorial())
     End Sub
+
+    Private Sub BookCountrybtn_Click(sender As Object, e As EventArgs) Handles BookCountrybtn.Click
+        ShowForm(New FormSearchBook())
+    End Sub
 End Class
