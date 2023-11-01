@@ -37,7 +37,7 @@
     End Sub
 
     Private Sub BtnClose_Click(sender As Object, e As EventArgs) Handles BtnClose.Click
-        FormContainer.Close()
+        FormPresentation.Close()
     End Sub
 
     Private Sub BtnSearch_Click(sender As Object, e As EventArgs) Handles BtnSearch.Click
@@ -52,9 +52,5 @@
                 MessageBox.Show("Error: " & ex.Message)
             End Try
         End If
-    End Sub
-
-    Private Sub CountryCmb_SelectedIndexChanged(sender As Object, e As EventArgs)
-
     End Sub
 End Class

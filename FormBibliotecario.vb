@@ -119,7 +119,7 @@ Public Class FormBibliotecario
     End Sub
 
     Private Sub BtnClose_Click(sender As Object, e As EventArgs) Handles BtnClose.Click
-        FormContainer.Close()
+        FormPresentation.Close()
     End Sub
 
     Private Sub GridBibliotecario_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles GridBibliotecario.CellClick

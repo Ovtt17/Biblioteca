@@ -1,23 +1,12 @@
 ﻿Public Class FormContainer
+    Private random As New Random()
     Private Sub FormContainer_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ShowForm(New FormBook())
     End Sub
 
     Private Sub FormContainer_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        If Not ClosingMessage() Then
-            e.Cancel = True
-        End If
         FormPresentation.Close()
     End Sub
-
-    Private Function ClosingMessage() As Boolean
-        If MessageBox.Show("Do you want to close the app?", "Librery System",
-                       MessageBoxButtons.YesNo, MessageBoxIcon.Question,
-                       MessageBoxDefaultButton.Button1) = Windows.Forms.DialogResult.No Then
-            Return False
-        End If
-        Return True
-    End Function
 
     Private Sub BookBtn_Click(sender As Object, e As EventArgs) Handles BookBtn.Click
         ShowForm(New FormBook())
@@ -59,5 +48,17 @@
 
     Private Sub BookCountrybtn_Click(sender As Object, e As EventArgs) Handles BookCountrybtn.Click
         ShowForm(New FormSearchBook())
+    End Sub
+
+    Private Sub BookBtn_MouseHover(sender As Object, e As EventArgs) Handles BookBtn.MouseHover, AuthorBtn.MouseHover, UsersBtn.MouseHover, LoanBtn.MouseHover, BibliotecarioBtn.MouseHover, BookCountrybtn.MouseHover, EditorialBtn.MouseHover
+        Dim color As Color = Color.FromArgb(random.Next(0, 256), random.Next(0, 256), random.Next(0, 256))
+        Dim button As Button = CType(sender, Button)
+        button.FlatAppearance.MouseOverBackColor = color
+        button.ImageAlign = ContentAlignment.MiddleRight
+    End Sub
+
+    Private Sub BookBtn_MouseLeave(sender As Object, e As EventArgs) Handles BookBtn.MouseLeave, AuthorBtn.MouseLeave, UsersBtn.MouseLeave, LoanBtn.MouseLeave, BibliotecarioBtn.MouseLeave, BookCountrybtn.MouseLeave, EditorialBtn.MouseLeave
+        Dim button As Button = CType(sender, Button)
+        button.ImageAlign = ContentAlignment.MiddleLeft
     End Sub
 End Class
