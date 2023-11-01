@@ -51,14 +51,14 @@
     End Sub
 
     Private Sub BookBtn_MouseHover(sender As Object, e As EventArgs) Handles BookBtn.MouseHover, AuthorBtn.MouseHover, UsersBtn.MouseHover, LoanBtn.MouseHover, BibliotecarioBtn.MouseHover, BookCountrybtn.MouseHover, EditorialBtn.MouseHover
-        Dim color As Color = Color.FromArgb(random.Next(0, 256), random.Next(0, 256), random.Next(0, 256))
         Dim button As Button = CType(sender, Button)
-        button.FlatAppearance.MouseOverBackColor = color
         button.ImageAlign = ContentAlignment.MiddleRight
     End Sub
 
     Private Sub BookBtn_MouseLeave(sender As Object, e As EventArgs) Handles BookBtn.MouseLeave, AuthorBtn.MouseLeave, UsersBtn.MouseLeave, LoanBtn.MouseLeave, BibliotecarioBtn.MouseLeave, BookCountrybtn.MouseLeave, EditorialBtn.MouseLeave
+        Dim color As Color = Color.FromArgb(random.Next(0, 256), random.Next(0, 256), random.Next(0, 256))
         Dim button As Button = CType(sender, Button)
+        button.FlatAppearance.MouseOverBackColor = color
         button.ImageAlign = ContentAlignment.MiddleLeft
     End Sub
 End Class
