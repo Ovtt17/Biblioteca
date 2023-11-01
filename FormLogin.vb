@@ -21,14 +21,10 @@
     End Sub
 
     Private Sub FormLogin_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        FormPresentation.Close()
+        Application.Exit()
     End Sub
 
     Private Sub CancelBtn_Click(sender As Object, e As EventArgs) Handles CancelBtn.Click
-        FormPresentation.Close()
-    End Sub
-
-    Private Sub FormLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        Application.Exit()
     End Sub
 End Class

@@ -4,10 +4,6 @@
         ShowForm(New FormBook())
     End Sub
 
-    Private Sub FormContainer_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        FormPresentation.Close()
-    End Sub
-
     Private Sub BookBtn_Click(sender As Object, e As EventArgs) Handles BookBtn.Click
         ShowForm(New FormBook())
     End Sub
@@ -60,5 +56,9 @@
         Dim button As Button = CType(sender, Button)
         button.FlatAppearance.MouseOverBackColor = color
         button.ImageAlign = ContentAlignment.MiddleLeft
+    End Sub
+
+    Private Sub FormContainer_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        Application.Exit()
     End Sub
 End Class

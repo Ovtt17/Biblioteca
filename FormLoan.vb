@@ -9,10 +9,29 @@
             loanDao.ConsultLoan()
             GridLoan.DataSource = loanDao.dataSet.Tables(0)
             GridLoan.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+
+            RemoveEventHandlers()
+            Dim monthAgo As Date = Date.Now.AddMonths(-1)
+            DateStartFilter.Value = monthAgo.Date
+            DateEndFilter.Value = Date.Now
+            OverdueLoanCheck.Checked = False
+            AddEventHandlers()
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message)
         End Try
     End Sub
+    Private Sub RemoveEventHandlers()
+        RemoveHandler DateEndFilter.ValueChanged, AddressOf DateEndFilter_ValueChanged
+        RemoveHandler DateStartFilter.ValueChanged, AddressOf DateEndFilter_ValueChanged
+        RemoveHandler OverdueLoanCheck.CheckedChanged, AddressOf OverdueLoanCheck_CheckedChanged
+    End Sub
+
+    Private Sub AddEventHandlers()
+        AddHandler DateEndFilter.ValueChanged, AddressOf DateEndFilter_ValueChanged
+        AddHandler DateStartFilter.ValueChanged, AddressOf DateEndFilter_ValueChanged
+        AddHandler OverdueLoanCheck.CheckedChanged, AddressOf OverdueLoanCheck_CheckedChanged
+    End Sub
+
     Private Sub CleanFields()
         IdBookTxt.Text = ""
         DateLoan.Value = Date.Now
@@ -22,6 +41,7 @@
         IdLibrarianTxt.Text = ""
         DeliveredCmb.SelectedIndex = -1
         TicketTxt.Text = ""
+        BtnSave.Text = "Save"
     End Sub
 
     Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
@@ -186,6 +206,29 @@
     End Sub
 
     Private Sub BtnClose_Click(sender As Object, e As EventArgs) Handles BtnClose.Click
-        FormPresentation.Close()
+        Application.Exit()
+    End Sub
+
+    Private Sub DateEndFilter_ValueChanged(sender As Object, e As EventArgs) Handles DateEndFilter.ValueChanged, DateStartFilter.ValueChanged
+        FilteredConsult()
+    End Sub
+    Private Sub OverdueLoanCheck_CheckedChanged(sender As Object, e As EventArgs) Handles OverdueLoanCheck.CheckedChanged
+        FilteredConsult()
+    End Sub
+    Private Sub FilteredConsult()
+        Try
+            Dim dao As New LoanDAO()
+            Dim dateStart As Date = DateStartFilter.Value.Date
+            Dim dateEnd As Date = DateEndFilter.Value.Date
+            Dim overdueLoan As Boolean = OverdueLoanCheck.Checked
+            dao.ConsultLoanByRangeDate(dateStart, dateEnd, overdueLoan)
+            GridLoan.DataSource = dao.dataSet.Tables(0)
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    Private Sub BtnCleanFilters_Click(sender As Object, e As EventArgs) Handles BtnCleanFilters.Click
+        ShowData()
     End Sub
 End Class

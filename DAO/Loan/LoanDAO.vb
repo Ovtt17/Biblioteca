@@ -1,4 +1,5 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports System.Windows.Automation.Peers
+Imports MySql.Data.MySqlClient
 
 Public Class LoanDAO
     Inherits Conexion
@@ -148,4 +149,24 @@ Public Class LoanDAO
         End Try
         Return Nothing
     End Function
+
+    Public Sub ConsultLoanByRangeDate(dateStar As Date, dateEnd As Date, overdueLoan As Boolean)
+        Try
+            Using conn As MySqlConnection = Me.Connect()
+                Dim sql As String = "buscar_prestamos_por_fecha"
+                dataSet.Tables.Clear()
+                Using dataAdapter As New MySqlDataAdapter(sql, conn)
+                    dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure
+                    dataAdapter.SelectCommand.Parameters.AddWithValue("@fecha_inicio", dateStar)
+                    dataAdapter.SelectCommand.Parameters.AddWithValue("@fecha_fin", dateEnd)
+                    dataAdapter.SelectCommand.Parameters.AddWithValue("@buscar_vencidos", overdueLoan)
+                    dataAdapter.Fill(dataSet)
+                End Using
+            End Using
+        Catch ex As MySqlException
+            MessageBox.Show("Error executing SQL query: " & ex.Message)
+        Catch ex As Exception
+            MessageBox.Show("General error: " & ex.Message)
+        End Try
+    End Sub
 End Class

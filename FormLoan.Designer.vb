@@ -23,6 +23,11 @@ Partial Class FormLoan
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.OverdueLoanCheck = New System.Windows.Forms.CheckBox()
+        Me.DateEndFilter = New System.Windows.Forms.DateTimePicker()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.DateStartFilter = New System.Windows.Forms.DateTimePicker()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.TicketTxt = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -46,6 +51,7 @@ Partial Class FormLoan
         Me.BtnSave = New System.Windows.Forms.Button()
         Me.BtnNew = New System.Windows.Forms.Button()
         Me.GridLoan = New System.Windows.Forms.DataGridView()
+        Me.BtnCleanFilters = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -56,6 +62,12 @@ Partial Class FormLoan
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(68, Byte), Integer))
         Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.Panel1.Controls.Add(Me.BtnCleanFilters)
+        Me.Panel1.Controls.Add(Me.OverdueLoanCheck)
+        Me.Panel1.Controls.Add(Me.DateEndFilter)
+        Me.Panel1.Controls.Add(Me.Label4)
+        Me.Panel1.Controls.Add(Me.DateStartFilter)
+        Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Controls.Add(Me.GroupBox1)
         Me.Panel1.Controls.Add(Me.GridLoan)
@@ -64,6 +76,59 @@ Partial Class FormLoan
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1589, 582)
         Me.Panel1.TabIndex = 1
+        '
+        'OverdueLoanCheck
+        '
+        Me.OverdueLoanCheck.AutoSize = True
+        Me.OverdueLoanCheck.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.OverdueLoanCheck.ForeColor = System.Drawing.Color.White
+        Me.OverdueLoanCheck.Location = New System.Drawing.Point(1114, 32)
+        Me.OverdueLoanCheck.Name = "OverdueLoanCheck"
+        Me.OverdueLoanCheck.Size = New System.Drawing.Size(199, 33)
+        Me.OverdueLoanCheck.TabIndex = 39
+        Me.OverdueLoanCheck.Text = "Overdue Loans"
+        Me.OverdueLoanCheck.UseVisualStyleBackColor = True
+        '
+        'DateEndFilter
+        '
+        Me.DateEndFilter.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.DateEndFilter.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateEndFilter.Location = New System.Drawing.Point(621, 32)
+        Me.DateEndFilter.Name = "DateEndFilter"
+        Me.DateEndFilter.Size = New System.Drawing.Size(364, 27)
+        Me.DateEndFilter.TabIndex = 37
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label4.Location = New System.Drawing.Point(558, 35)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(37, 22)
+        Me.Label4.TabIndex = 36
+        Me.Label4.Text = "To:"
+        '
+        'DateStartFilter
+        '
+        Me.DateStartFilter.Checked = False
+        Me.DateStartFilter.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.DateStartFilter.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateStartFilter.Location = New System.Drawing.Point(164, 32)
+        Me.DateStartFilter.Name = "DateStartFilter"
+        Me.DateStartFilter.Size = New System.Drawing.Size(364, 27)
+        Me.DateStartFilter.TabIndex = 35
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.SystemColors.Control
+        Me.Label3.Location = New System.Drawing.Point(49, 33)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(60, 22)
+        Me.Label3.TabIndex = 34
+        Me.Label3.Text = "Since:"
         '
         'Panel2
         '
@@ -84,7 +149,7 @@ Partial Class FormLoan
         Me.Panel2.Controls.Add(Me.UserLbl)
         Me.Panel2.Controls.Add(Me.DateLbl)
         Me.Panel2.Controls.Add(Me.BookIdLbl)
-        Me.Panel2.Location = New System.Drawing.Point(46, 204)
+        Me.Panel2.Location = New System.Drawing.Point(46, 215)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(1095, 316)
         Me.Panel2.TabIndex = 21
@@ -206,7 +271,7 @@ Partial Class FormLoan
         Me.TypeLoanLbl.Name = "TypeLoanLbl"
         Me.TypeLoanLbl.Size = New System.Drawing.Size(101, 22)
         Me.TypeLoanLbl.TabIndex = 25
-        Me.TypeLoanLbl.Text = "Type Loan:"
+        Me.TypeLoanLbl.Text = "Loan Type:"
         '
         'LibrarianLbl
         '
@@ -261,7 +326,7 @@ Partial Class FormLoan
         Me.GroupBox1.Controls.Add(Me.BtnDelete)
         Me.GroupBox1.Controls.Add(Me.BtnSave)
         Me.GroupBox1.Controls.Add(Me.BtnNew)
-        Me.GroupBox1.Location = New System.Drawing.Point(1281, 204)
+        Me.GroupBox1.Location = New System.Drawing.Point(1281, 215)
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
@@ -347,13 +412,31 @@ Partial Class FormLoan
         Me.GridLoan.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
         Me.GridLoan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.GridLoan.GridColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.GridLoan.Location = New System.Drawing.Point(46, 12)
+        Me.GridLoan.Location = New System.Drawing.Point(46, 74)
         Me.GridLoan.Name = "GridLoan"
         Me.GridLoan.ReadOnly = True
         Me.GridLoan.RowHeadersWidth = 51
         Me.GridLoan.RowTemplate.Height = 24
-        Me.GridLoan.Size = New System.Drawing.Size(1496, 155)
+        Me.GridLoan.Size = New System.Drawing.Size(1496, 93)
         Me.GridLoan.TabIndex = 0
+        '
+        'BtnCleanFilters
+        '
+        Me.BtnCleanFilters.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BtnCleanFilters.BackColor = System.Drawing.Color.Green
+        Me.BtnCleanFilters.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnCleanFilters.FlatAppearance.BorderSize = 0
+        Me.BtnCleanFilters.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnCleanFilters.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnCleanFilters.ForeColor = System.Drawing.SystemColors.Window
+        Me.BtnCleanFilters.Location = New System.Drawing.Point(1332, 22)
+        Me.BtnCleanFilters.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BtnCleanFilters.Name = "BtnCleanFilters"
+        Me.BtnCleanFilters.Size = New System.Drawing.Size(210, 42)
+        Me.BtnCleanFilters.TabIndex = 5
+        Me.BtnCleanFilters.Text = "Clean Filters"
+        Me.BtnCleanFilters.UseVisualStyleBackColor = False
         '
         'FormLoan
         '
@@ -366,6 +449,7 @@ Partial Class FormLoan
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormLoan"
         Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
@@ -398,4 +482,10 @@ Partial Class FormLoan
     Friend WithEvents DeliveredCmb As ComboBox
     Friend WithEvents TicketTxt As TextBox
     Friend WithEvents Label2 As Label
+    Friend WithEvents DateEndFilter As DateTimePicker
+    Friend WithEvents Label4 As Label
+    Friend WithEvents DateStartFilter As DateTimePicker
+    Friend WithEvents Label3 As Label
+    Friend WithEvents OverdueLoanCheck As CheckBox
+    Friend WithEvents BtnCleanFilters As Button
 End Class

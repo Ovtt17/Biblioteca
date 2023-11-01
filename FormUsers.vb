@@ -160,7 +160,7 @@ Public Class FormUsers
     End Sub
 
     Private Sub BtnClose_Click_1(sender As Object, e As EventArgs) Handles BtnClose.Click
-        FormPresentation.Close()
+        Application.Exit()
     End Sub
 
     Private Sub GridUser_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles GridUser.CellClick
