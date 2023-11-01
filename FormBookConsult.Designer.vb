@@ -39,6 +39,7 @@ Partial Class FormBookConsult
         '
         'Panel1
         '
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(68, Byte), Integer))
         Me.Panel1.Controls.Add(Me.LanguageCmb)
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.EditorialCmb)
@@ -71,6 +72,7 @@ Partial Class FormBookConsult
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.White
         Me.Label3.Location = New System.Drawing.Point(29, 525)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(115, 25)
@@ -92,6 +94,7 @@ Partial Class FormBookConsult
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.White
         Me.Label2.Location = New System.Drawing.Point(29, 474)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(97, 25)
@@ -103,6 +106,8 @@ Partial Class FormBookConsult
         Me.BtnCleanFields.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.BtnCleanFields.BackColor = System.Drawing.Color.Green
         Me.BtnCleanFields.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnCleanFields.FlatAppearance.BorderSize = 0
+        Me.BtnCleanFields.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnCleanFields.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnCleanFields.ForeColor = System.Drawing.SystemColors.Window
         Me.BtnCleanFields.Location = New System.Drawing.Point(1310, 461)
@@ -139,6 +144,7 @@ Partial Class FormBookConsult
         '
         Me.LabelFilter.AutoSize = True
         Me.LabelFilter.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelFilter.ForeColor = System.Drawing.Color.White
         Me.LabelFilter.Location = New System.Drawing.Point(29, 412)
         Me.LabelFilter.Name = "LabelFilter"
         Me.LabelFilter.Size = New System.Drawing.Size(83, 25)
@@ -149,6 +155,7 @@ Partial Class FormBookConsult
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
         Me.Label1.Location = New System.Drawing.Point(29, 347)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(61, 25)

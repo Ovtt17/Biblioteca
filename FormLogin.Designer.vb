@@ -73,6 +73,8 @@ Partial Class FormLogin
         '
         Me.LoginBtn.BackColor = System.Drawing.Color.Green
         Me.LoginBtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.LoginBtn.FlatAppearance.BorderSize = 0
+        Me.LoginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.LoginBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LoginBtn.ForeColor = System.Drawing.SystemColors.Control
         Me.LoginBtn.Location = New System.Drawing.Point(215, 302)
@@ -86,6 +88,8 @@ Partial Class FormLogin
         '
         Me.CancelBtn.BackColor = System.Drawing.Color.Red
         Me.CancelBtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.CancelBtn.FlatAppearance.BorderSize = 0
+        Me.CancelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CancelBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CancelBtn.ForeColor = System.Drawing.SystemColors.Control
         Me.CancelBtn.Location = New System.Drawing.Point(462, 302)
@@ -99,6 +103,8 @@ Partial Class FormLogin
         '
         Me.ConsultBooksBtn.BackColor = System.Drawing.Color.Green
         Me.ConsultBooksBtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.ConsultBooksBtn.FlatAppearance.BorderSize = 0
+        Me.ConsultBooksBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ConsultBooksBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ConsultBooksBtn.ForeColor = System.Drawing.SystemColors.Control
         Me.ConsultBooksBtn.Location = New System.Drawing.Point(723, 455)
@@ -112,7 +118,7 @@ Partial Class FormLogin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.MidnightBlue
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(68, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(916, 579)
         Me.Controls.Add(Me.ConsultBooksBtn)
         Me.Controls.Add(Me.CancelBtn)

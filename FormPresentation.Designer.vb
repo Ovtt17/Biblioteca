@@ -54,7 +54,7 @@ Partial Class FormPresentation
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.MidnightBlue
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(68, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1274, 667)
         Me.Controls.Add(Me.ProgressBar1)
         Me.Controls.Add(Me.TitleTxt)

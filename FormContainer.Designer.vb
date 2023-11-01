@@ -36,7 +36,7 @@ Partial Class FormContainer
         '
         'PanelOptions
         '
-        Me.PanelOptions.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.PanelOptions.BackColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(68, Byte), Integer))
         Me.PanelOptions.Controls.Add(Me.LoanBtn)
         Me.PanelOptions.Controls.Add(Me.BookCountrybtn)
         Me.PanelOptions.Controls.Add(Me.EditorialBtn)
@@ -54,6 +54,8 @@ Partial Class FormContainer
         '
         Me.LoanBtn.BackColor = System.Drawing.Color.Navy
         Me.LoanBtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.LoanBtn.FlatAppearance.BorderSize = 0
+        Me.LoanBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.LoanBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LoanBtn.ForeColor = System.Drawing.SystemColors.Control
         Me.LoanBtn.Location = New System.Drawing.Point(0, 280)
@@ -67,6 +69,8 @@ Partial Class FormContainer
         '
         Me.BookCountrybtn.BackColor = System.Drawing.Color.Navy
         Me.BookCountrybtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BookCountrybtn.FlatAppearance.BorderSize = 0
+        Me.BookCountrybtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BookCountrybtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BookCountrybtn.ForeColor = System.Drawing.SystemColors.Control
         Me.BookCountrybtn.Location = New System.Drawing.Point(0, 438)
@@ -81,6 +85,8 @@ Partial Class FormContainer
         '
         Me.EditorialBtn.BackColor = System.Drawing.Color.Navy
         Me.EditorialBtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.EditorialBtn.FlatAppearance.BorderSize = 0
+        Me.EditorialBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.EditorialBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.EditorialBtn.ForeColor = System.Drawing.SystemColors.Control
         Me.EditorialBtn.Location = New System.Drawing.Point(0, 512)
@@ -94,6 +100,8 @@ Partial Class FormContainer
         '
         Me.BibliotecarioBtn.BackColor = System.Drawing.Color.Navy
         Me.BibliotecarioBtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BibliotecarioBtn.FlatAppearance.BorderSize = 0
+        Me.BibliotecarioBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BibliotecarioBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BibliotecarioBtn.ForeColor = System.Drawing.SystemColors.Control
         Me.BibliotecarioBtn.Location = New System.Drawing.Point(0, 363)
@@ -107,6 +115,8 @@ Partial Class FormContainer
         '
         Me.UsersBtn.BackColor = System.Drawing.Color.Navy
         Me.UsersBtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.UsersBtn.FlatAppearance.BorderSize = 0
+        Me.UsersBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.UsersBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UsersBtn.ForeColor = System.Drawing.SystemColors.Control
         Me.UsersBtn.Location = New System.Drawing.Point(3, 200)
@@ -120,6 +130,8 @@ Partial Class FormContainer
         '
         Me.AuthorBtn.BackColor = System.Drawing.Color.Navy
         Me.AuthorBtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.AuthorBtn.FlatAppearance.BorderSize = 0
+        Me.AuthorBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.AuthorBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.AuthorBtn.ForeColor = System.Drawing.SystemColors.Control
         Me.AuthorBtn.Location = New System.Drawing.Point(0, 114)
@@ -133,6 +145,8 @@ Partial Class FormContainer
         '
         Me.BookBtn.BackColor = System.Drawing.Color.Navy
         Me.BookBtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BookBtn.FlatAppearance.BorderSize = 0
+        Me.BookBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BookBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BookBtn.ForeColor = System.Drawing.SystemColors.Control
         Me.BookBtn.Location = New System.Drawing.Point(0, 33)
@@ -144,6 +158,7 @@ Partial Class FormContainer
         '
         'PanelContainer
         '
+        Me.PanelContainer.BackColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(68, Byte), Integer))
         Me.PanelContainer.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelContainer.Location = New System.Drawing.Point(307, 0)
         Me.PanelContainer.Name = "PanelContainer"

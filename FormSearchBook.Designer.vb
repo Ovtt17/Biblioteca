@@ -34,18 +34,17 @@ Partial Class FormSearchBook
         '
         'Panel1
         '
-        Me.Panel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.BackColor = System.Drawing.Color.MidnightBlue
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(68, Byte), Integer))
         Me.Panel1.Controls.Add(Me.BtnClose)
         Me.Panel1.Controls.Add(Me.CountryLbl)
         Me.Panel1.Controls.Add(Me.CountryCmb)
         Me.Panel1.Controls.Add(Me.BtnSearch)
         Me.Panel1.Controls.Add(Me.GridSearch)
-        Me.Panel1.Location = New System.Drawing.Point(-1, 0)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1024, 485)
+        Me.Panel1.Size = New System.Drawing.Size(1365, 534)
         Me.Panel1.TabIndex = 0
         '
         'BtnClose
@@ -53,12 +52,14 @@ Partial Class FormSearchBook
         Me.BtnClose.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.BtnClose.BackColor = System.Drawing.Color.Orange
         Me.BtnClose.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnClose.FlatAppearance.BorderSize = 0
+        Me.BtnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnClose.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnClose.ForeColor = System.Drawing.SystemColors.Window
-        Me.BtnClose.Location = New System.Drawing.Point(654, 342)
-        Me.BtnClose.Margin = New System.Windows.Forms.Padding(2)
+        Me.BtnClose.Location = New System.Drawing.Point(872, 358)
+        Me.BtnClose.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BtnClose.Name = "BtnClose"
-        Me.BtnClose.Size = New System.Drawing.Size(130, 37)
+        Me.BtnClose.Size = New System.Drawing.Size(173, 46)
         Me.BtnClose.TabIndex = 13
         Me.BtnClose.Text = "Close"
         Me.BtnClose.UseVisualStyleBackColor = False
@@ -69,10 +70,9 @@ Partial Class FormSearchBook
         Me.CountryLbl.AutoSize = True
         Me.CountryLbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CountryLbl.ForeColor = System.Drawing.SystemColors.Window
-        Me.CountryLbl.Location = New System.Drawing.Point(115, 294)
-        Me.CountryLbl.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.CountryLbl.Location = New System.Drawing.Point(153, 299)
         Me.CountryLbl.Name = "CountryLbl"
-        Me.CountryLbl.Size = New System.Drawing.Size(68, 20)
+        Me.CountryLbl.Size = New System.Drawing.Size(87, 25)
         Me.CountryLbl.TabIndex = 12
         Me.CountryLbl.Text = "Country:"
         '
@@ -83,10 +83,10 @@ Partial Class FormSearchBook
         Me.CountryCmb.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CountryCmb.FormattingEnabled = True
         Me.CountryCmb.Items.AddRange(New Object() {"NICARAGUA", "EL SALVADOR", "COSTA RICA"})
-        Me.CountryCmb.Location = New System.Drawing.Point(221, 291)
-        Me.CountryCmb.Margin = New System.Windows.Forms.Padding(2)
+        Me.CountryCmb.Location = New System.Drawing.Point(295, 295)
+        Me.CountryCmb.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.CountryCmb.Name = "CountryCmb"
-        Me.CountryCmb.Size = New System.Drawing.Size(370, 28)
+        Me.CountryCmb.Size = New System.Drawing.Size(492, 33)
         Me.CountryCmb.TabIndex = 11
         '
         'BtnSearch
@@ -94,12 +94,14 @@ Partial Class FormSearchBook
         Me.BtnSearch.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.BtnSearch.BackColor = System.Drawing.Color.Green
         Me.BtnSearch.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnSearch.FlatAppearance.BorderSize = 0
+        Me.BtnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnSearch.ForeColor = System.Drawing.SystemColors.Window
-        Me.BtnSearch.Location = New System.Drawing.Point(654, 284)
-        Me.BtnSearch.Margin = New System.Windows.Forms.Padding(2)
+        Me.BtnSearch.Location = New System.Drawing.Point(872, 287)
+        Me.BtnSearch.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BtnSearch.Name = "BtnSearch"
-        Me.BtnSearch.Size = New System.Drawing.Size(130, 34)
+        Me.BtnSearch.Size = New System.Drawing.Size(173, 42)
         Me.BtnSearch.TabIndex = 3
         Me.BtnSearch.Text = "Search"
         Me.BtnSearch.UseVisualStyleBackColor = False
@@ -114,21 +116,22 @@ Partial Class FormSearchBook
         Me.GridSearch.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
         Me.GridSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.GridSearch.GridColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.GridSearch.Location = New System.Drawing.Point(12, 11)
-        Me.GridSearch.Margin = New System.Windows.Forms.Padding(2)
+        Me.GridSearch.Location = New System.Drawing.Point(16, 14)
+        Me.GridSearch.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GridSearch.Name = "GridSearch"
         Me.GridSearch.ReadOnly = True
         Me.GridSearch.RowHeadersWidth = 51
         Me.GridSearch.RowTemplate.Height = 24
-        Me.GridSearch.Size = New System.Drawing.Size(988, 185)
+        Me.GridSearch.Size = New System.Drawing.Size(1317, 165)
         Me.GridSearch.TabIndex = 2
         '
         'FormSearchBook
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1024, 434)
+        Me.ClientSize = New System.Drawing.Size(1365, 534)
         Me.Controls.Add(Me.Panel1)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "FormSearchBook"
         Me.Text = "FormSearchBook"
         Me.Panel1.ResumeLayout(False)

@@ -42,7 +42,7 @@ Partial Class FormEditorial
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.MidnightBlue
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(68, Byte), Integer))
         Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Controls.Add(Me.GroupBox1)
         Me.Panel1.Controls.Add(Me.GridEditorial)
@@ -135,6 +135,8 @@ Partial Class FormEditorial
         Me.BtnClose.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.BtnClose.BackColor = System.Drawing.Color.Orange
         Me.BtnClose.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnClose.FlatAppearance.BorderSize = 0
+        Me.BtnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnClose.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnClose.ForeColor = System.Drawing.SystemColors.Window
         Me.BtnClose.Location = New System.Drawing.Point(32, 239)
@@ -150,6 +152,8 @@ Partial Class FormEditorial
         Me.BtnDelete.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.BtnDelete.BackColor = System.Drawing.Color.Crimson
         Me.BtnDelete.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnDelete.FlatAppearance.BorderSize = 0
+        Me.BtnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnDelete.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnDelete.ForeColor = System.Drawing.SystemColors.Window
         Me.BtnDelete.Location = New System.Drawing.Point(32, 171)
@@ -165,6 +169,8 @@ Partial Class FormEditorial
         Me.BtnSave.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.BtnSave.BackColor = System.Drawing.Color.Purple
         Me.BtnSave.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnSave.FlatAppearance.BorderSize = 0
+        Me.BtnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnSave.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnSave.ForeColor = System.Drawing.SystemColors.Window
         Me.BtnSave.Location = New System.Drawing.Point(32, 102)
@@ -180,6 +186,8 @@ Partial Class FormEditorial
         Me.BtnNew.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.BtnNew.BackColor = System.Drawing.Color.Green
         Me.BtnNew.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnNew.FlatAppearance.BorderSize = 0
+        Me.BtnNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnNew.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnNew.ForeColor = System.Drawing.SystemColors.Window
         Me.BtnNew.Location = New System.Drawing.Point(32, 27)
