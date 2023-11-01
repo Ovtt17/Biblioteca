@@ -12,17 +12,12 @@
 
     End Sub
 
-    Private Sub FormPresentation_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        If Not ClosingMessage() Then
-            e.Cancel = True
-        End If
-    End Sub
-    Private Function ClosingMessage() As Boolean
-        If MessageBox.Show("Do you want to close the app?", "Librery System",
-                       MessageBoxButtons.YesNo, MessageBoxIcon.Question,
-                       MessageBoxDefaultButton.Button1) = Windows.Forms.DialogResult.No Then
+    Public Function ShowClosingDialog() As Boolean
+        Dim dialog As DialogResult = MessageBox.Show("¿Realmente quieres cerrar la aplicación?", "Cerrar", MessageBoxButtons.YesNo)
+        If dialog = DialogResult.No Then
             Return False
+        Else
+            Return True
         End If
-        Return True
     End Function
 End Class
