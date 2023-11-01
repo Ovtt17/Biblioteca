@@ -48,4 +48,12 @@
     Private Sub BookCountrybtn_Click(sender As Object, e As EventArgs) Handles BookCountrybtn.Click
         ShowForm(New FormSearchBook())
     End Sub
+
+    Private Sub BookBtn_MouseHover(sender As Object, e As EventArgs) Handles BookBtn.MouseHover
+        BookBtn.ImageAlign = ContentAlignment.MiddleRight
+    End Sub
+
+    Private Sub BookBtn_MouseLeave(sender As Object, e As EventArgs) Handles BookBtn.MouseLeave
+        BookBtn.ImageAlign = ContentAlignment.MiddleLeft
+    End Sub
 End Class

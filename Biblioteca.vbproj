@@ -260,11 +260,20 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\" />
     <Folder Include="src\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\IconMain.png" />
+    <Content Include="Resources\IconAdmin.png" />
+    <Content Include="Resources\IconAuthors.png" />
+    <Content Include="Resources\IconBook.png" />
+    <Content Include="Resources\IconBookByCountry.png" />
+    <Content Include="Resources\IconEditorial.png" />
+    <Content Include="Resources\IconLoan.png" />
+    <Content Include="Resources\IconUser.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
