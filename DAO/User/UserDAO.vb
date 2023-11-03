@@ -111,6 +111,29 @@ Public Class UserDAO
             MessageBox.Show("General error: " & ex.Message)
         End Try
     End Sub
+    Public Sub FinedUsers()
+        Try
+            ' Crear la consulta SQL
+            Dim sql As String = "buscar_usuarios_con_multas"
+            ' Limpiar los datos.
+            dataSet.Tables.Clear()
+            ' Abrir la conexión
+            Using cx As MySqlConnection = Me.Connect()
+                ' Crear un nuevo comando MySQL
+                Using cmd As New MySqlCommand(sql, cx)
+                    cmd.CommandType = CommandType.StoredProcedure
+                    ' Llenar la tabla con los resultados de la base de datos
+                    Using da As New MySqlDataAdapter(cmd)
+                        da.Fill(dataSet)
+                    End Using
+                End Using
+            End Using
+        Catch ex As MySqlException
+            MessageBox.Show("Error al ejecutar la consulta SQL: " & ex.Message)
+        Catch ex As Exception
+            MessageBox.Show("Error general: " & ex.Message)
+        End Try
+    End Sub
 
     Public Function GetUser(ByVal code As Integer) As User
         Try
