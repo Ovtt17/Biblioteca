@@ -192,4 +192,23 @@ Public Class FormUsers
             MessageBox.Show("Error: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
+
+    Private Sub FinedUsersCheck_CheckedChanged(sender As Object, e As EventArgs) Handles FinedUsersCheck.CheckedChanged
+        If FinedUsersCheck.Checked Then
+            FinedUsers()
+        Else
+            Showdata()
+        End If
+    End Sub
+    Private Sub FinedUsers()
+        Try
+            Dim finedusersDao As New UserDAO()
+            finedusersDao.FinedUsers()
+            GridUser.DataSource = finedusersDao.dataSet.Tables(0)
+            GridUser.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message)
+        End Try
+    End Sub
+
 End Class
