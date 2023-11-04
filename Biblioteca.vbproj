@@ -52,6 +52,10 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="MySql.Data, Version=8.2.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector NET 8.2.0\MySql.Data.dll</HintPath>
@@ -96,6 +100,7 @@
     <Compile Include="DAO\User\UserDAO.vb" />
     <Compile Include="DAO\Bibliotecario\BibliotecarioDAO.vb" />
     <Compile Include="DB\Conexion.vb" />
+    <Compile Include="Export\ExportToExcel.vb" />
     <Compile Include="FormAuthor.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -264,13 +269,12 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="src\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\IconExcel.png" />
     <Content Include="Resources\IconLogin.png" />
     <Content Include="Resources\IconMain.png" />
     <Content Include="Resources\IconAdmin.png" />

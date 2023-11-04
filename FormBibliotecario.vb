@@ -144,4 +144,9 @@ Public Class FormBibliotecario
             MessageBox.Show("Error: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
+
+    Private Sub BtnExcel_Click(sender As Object, e As EventArgs) Handles BtnExcel.Click
+        Dim export As New ExportToExcel()
+        export.ExportData(GridBibliotecario)
+    End Sub
 End Class

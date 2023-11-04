@@ -53,4 +53,9 @@
             End Try
         End If
     End Sub
+
+    Private Sub BtnExcel_Click(sender As Object, e As EventArgs) Handles BtnExcel.Click
+        Dim export As New ExportToExcel()
+        export.ExportData(GridSearch)
+    End Sub
 End Class

@@ -22,6 +22,7 @@ Partial Class FormEditorial
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormEditorial))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.CountryCmb = New System.Windows.Forms.ComboBox()
@@ -34,6 +35,7 @@ Partial Class FormEditorial
         Me.BtnSave = New System.Windows.Forms.Button()
         Me.BtnNew = New System.Windows.Forms.Button()
         Me.GridEditorial = New System.Windows.Forms.DataGridView()
+        Me.BtnExcel = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -43,6 +45,7 @@ Partial Class FormEditorial
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(68, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.BtnExcel)
         Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Controls.Add(Me.GroupBox1)
         Me.Panel1.Controls.Add(Me.GridEditorial)
@@ -208,14 +211,31 @@ Partial Class FormEditorial
         Me.GridEditorial.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
         Me.GridEditorial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.GridEditorial.GridColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.GridEditorial.Location = New System.Drawing.Point(21, 14)
+        Me.GridEditorial.Location = New System.Drawing.Point(21, 62)
         Me.GridEditorial.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GridEditorial.Name = "GridEditorial"
         Me.GridEditorial.ReadOnly = True
         Me.GridEditorial.RowHeadersWidth = 51
         Me.GridEditorial.RowTemplate.Height = 24
-        Me.GridEditorial.Size = New System.Drawing.Size(1541, 213)
+        Me.GridEditorial.Size = New System.Drawing.Size(1541, 165)
         Me.GridEditorial.TabIndex = 1
+        '
+        'BtnExcel
+        '
+        Me.BtnExcel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BtnExcel.BackColor = System.Drawing.Color.Transparent
+        Me.BtnExcel.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnExcel.FlatAppearance.BorderSize = 0
+        Me.BtnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnExcel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnExcel.ForeColor = System.Drawing.SystemColors.Window
+        Me.BtnExcel.Image = CType(resources.GetObject("BtnExcel.Image"), System.Drawing.Image)
+        Me.BtnExcel.Location = New System.Drawing.Point(1486, 11)
+        Me.BtnExcel.Margin = New System.Windows.Forms.Padding(2)
+        Me.BtnExcel.Name = "BtnExcel"
+        Me.BtnExcel.Size = New System.Drawing.Size(76, 42)
+        Me.BtnExcel.TabIndex = 7
+        Me.BtnExcel.UseVisualStyleBackColor = False
         '
         'FormEditorial
         '
@@ -249,4 +269,5 @@ Partial Class FormEditorial
     Friend WithEvents NameTxt As TextBox
     Friend WithEvents CountryLbl As Label
     Friend WithEvents AuthorLbl As Label
+    Friend WithEvents BtnExcel As Button
 End Class

@@ -22,6 +22,7 @@ Partial Class FormBookConsult
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormBookConsult))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.LanguageCmb = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -33,6 +34,7 @@ Partial Class FormBookConsult
         Me.LabelFilter = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GridBookConsult = New System.Windows.Forms.DataGridView()
+        Me.BtnExcel = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.GridBookConsult, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -40,6 +42,7 @@ Partial Class FormBookConsult
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(68, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.BtnExcel)
         Me.Panel1.Controls.Add(Me.LanguageCmb)
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.EditorialCmb)
@@ -172,13 +175,30 @@ Partial Class FormBookConsult
         Me.GridBookConsult.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
         Me.GridBookConsult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.GridBookConsult.GridColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.GridBookConsult.Location = New System.Drawing.Point(24, 31)
+        Me.GridBookConsult.Location = New System.Drawing.Point(24, 58)
         Me.GridBookConsult.Name = "GridBookConsult"
         Me.GridBookConsult.ReadOnly = True
         Me.GridBookConsult.RowHeadersWidth = 51
         Me.GridBookConsult.RowTemplate.Height = 24
-        Me.GridBookConsult.Size = New System.Drawing.Size(1496, 267)
+        Me.GridBookConsult.Size = New System.Drawing.Size(1496, 240)
         Me.GridBookConsult.TabIndex = 1
+        '
+        'BtnExcel
+        '
+        Me.BtnExcel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BtnExcel.BackColor = System.Drawing.Color.Transparent
+        Me.BtnExcel.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnExcel.FlatAppearance.BorderSize = 0
+        Me.BtnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnExcel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnExcel.ForeColor = System.Drawing.SystemColors.Window
+        Me.BtnExcel.Image = CType(resources.GetObject("BtnExcel.Image"), System.Drawing.Image)
+        Me.BtnExcel.Location = New System.Drawing.Point(1444, 11)
+        Me.BtnExcel.Margin = New System.Windows.Forms.Padding(2)
+        Me.BtnExcel.Name = "BtnExcel"
+        Me.BtnExcel.Size = New System.Drawing.Size(76, 42)
+        Me.BtnExcel.TabIndex = 15
+        Me.BtnExcel.UseVisualStyleBackColor = False
         '
         'FormBookConsult
         '
@@ -209,4 +229,5 @@ Partial Class FormBookConsult
     Friend WithEvents Label3 As Label
     Friend WithEvents EditorialCmb As ComboBox
     Friend WithEvents Label2 As Label
+    Friend WithEvents BtnExcel As Button
 End Class

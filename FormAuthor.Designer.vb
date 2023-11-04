@@ -22,6 +22,7 @@ Partial Class FormAuthor
     'Do not modify it using the codeAuthor editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormAuthor))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.CountryCmb = New System.Windows.Forms.ComboBox()
@@ -34,6 +35,7 @@ Partial Class FormAuthor
         Me.BtnSave = New System.Windows.Forms.Button()
         Me.BtnNew = New System.Windows.Forms.Button()
         Me.GridAutor = New System.Windows.Forms.DataGridView()
+        Me.BtnExcel = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -43,6 +45,7 @@ Partial Class FormAuthor
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(68, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.BtnExcel)
         Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Controls.Add(Me.GroupBox1)
         Me.Panel1.Controls.Add(Me.GridAutor)
@@ -208,14 +211,31 @@ Partial Class FormAuthor
         Me.GridAutor.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
         Me.GridAutor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.GridAutor.GridColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.GridAutor.Location = New System.Drawing.Point(16, 11)
+        Me.GridAutor.Location = New System.Drawing.Point(16, 57)
         Me.GridAutor.Margin = New System.Windows.Forms.Padding(2)
         Me.GridAutor.Name = "GridAutor"
         Me.GridAutor.ReadOnly = True
         Me.GridAutor.RowHeadersWidth = 51
         Me.GridAutor.RowTemplate.Height = 24
-        Me.GridAutor.Size = New System.Drawing.Size(1541, 188)
+        Me.GridAutor.Size = New System.Drawing.Size(1541, 142)
         Me.GridAutor.TabIndex = 1
+        '
+        'BtnExcel
+        '
+        Me.BtnExcel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BtnExcel.BackColor = System.Drawing.Color.Transparent
+        Me.BtnExcel.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnExcel.FlatAppearance.BorderSize = 0
+        Me.BtnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnExcel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnExcel.ForeColor = System.Drawing.SystemColors.Window
+        Me.BtnExcel.Image = CType(resources.GetObject("BtnExcel.Image"), System.Drawing.Image)
+        Me.BtnExcel.Location = New System.Drawing.Point(1481, 11)
+        Me.BtnExcel.Margin = New System.Windows.Forms.Padding(2)
+        Me.BtnExcel.Name = "BtnExcel"
+        Me.BtnExcel.Size = New System.Drawing.Size(76, 42)
+        Me.BtnExcel.TabIndex = 5
+        Me.BtnExcel.UseVisualStyleBackColor = False
         '
         'FormAuthor
         '
@@ -249,4 +269,5 @@ Partial Class FormAuthor
     Friend WithEvents NameTxt As TextBox
     Friend WithEvents CountryLbl As Label
     Friend WithEvents AuthorLbl As Label
+    Friend WithEvents BtnExcel As Button
 End Class

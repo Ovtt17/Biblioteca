@@ -22,7 +22,9 @@ Partial Class FormSearchBook
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormSearchBook))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.BtnExcel = New System.Windows.Forms.Button()
         Me.BtnClose = New System.Windows.Forms.Button()
         Me.CountryLbl = New System.Windows.Forms.Label()
         Me.CountryCmb = New System.Windows.Forms.ComboBox()
@@ -35,6 +37,7 @@ Partial Class FormSearchBook
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(68, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.BtnExcel)
         Me.Panel1.Controls.Add(Me.BtnClose)
         Me.Panel1.Controls.Add(Me.CountryLbl)
         Me.Panel1.Controls.Add(Me.CountryCmb)
@@ -42,10 +45,27 @@ Partial Class FormSearchBook
         Me.Panel1.Controls.Add(Me.GridSearch)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1365, 534)
         Me.Panel1.TabIndex = 0
+        '
+        'BtnExcel
+        '
+        Me.BtnExcel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BtnExcel.BackColor = System.Drawing.Color.Transparent
+        Me.BtnExcel.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnExcel.FlatAppearance.BorderSize = 0
+        Me.BtnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnExcel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnExcel.ForeColor = System.Drawing.SystemColors.Window
+        Me.BtnExcel.Image = CType(resources.GetObject("BtnExcel.Image"), System.Drawing.Image)
+        Me.BtnExcel.Location = New System.Drawing.Point(1265, 11)
+        Me.BtnExcel.Margin = New System.Windows.Forms.Padding(2)
+        Me.BtnExcel.Name = "BtnExcel"
+        Me.BtnExcel.Size = New System.Drawing.Size(76, 42)
+        Me.BtnExcel.TabIndex = 14
+        Me.BtnExcel.UseVisualStyleBackColor = False
         '
         'BtnClose
         '
@@ -116,7 +136,7 @@ Partial Class FormSearchBook
         Me.GridSearch.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
         Me.GridSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.GridSearch.GridColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.GridSearch.Location = New System.Drawing.Point(16, 14)
+        Me.GridSearch.Location = New System.Drawing.Point(24, 65)
         Me.GridSearch.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GridSearch.Name = "GridSearch"
         Me.GridSearch.ReadOnly = True
@@ -131,7 +151,7 @@ Partial Class FormSearchBook
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1365, 534)
         Me.Controls.Add(Me.Panel1)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "FormSearchBook"
         Me.Text = "FormSearchBook"
         Me.Panel1.ResumeLayout(False)
@@ -147,4 +167,5 @@ Partial Class FormSearchBook
     Friend WithEvents CountryCmb As ComboBox
     Friend WithEvents CountryLbl As Label
     Friend WithEvents BtnClose As Button
+    Friend WithEvents BtnExcel As Button
 End Class

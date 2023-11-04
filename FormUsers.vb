@@ -30,14 +30,14 @@ Public Class FormUsers
 
     End Sub
 
-    Private Sub codidenttxt_KeyPress(sender As Object, e As KeyPressEventArgs) Handles codidenttxt.KeyPress
+    Private Sub Codidenttxt_KeyPress(sender As Object, e As KeyPressEventArgs) Handles codidenttxt.KeyPress
         If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
             ' El carácter ingresado no puede ser escrito con letras
             e.Handled = True
         End If
     End Sub
 
-    Private Sub phonetxt_KeyPress(sender As Object, e As KeyPressEventArgs) Handles phonetxt.KeyPress
+    Private Sub Phonetxt_KeyPress(sender As Object, e As KeyPressEventArgs) Handles phonetxt.KeyPress
         If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
             ' El carácter ingresado no es un número 
             e.Handled = True
@@ -211,4 +211,8 @@ Public Class FormUsers
         End Try
     End Sub
 
+    Private Sub BtnExcel_Click(sender As Object, e As EventArgs) Handles BtnExcel.Click
+        Dim export As New ExportToExcel()
+        export.ExportData(GridUser)
+    End Sub
 End Class

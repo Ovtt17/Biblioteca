@@ -288,4 +288,9 @@ Public Class FormBook
     Private Sub BtnClose_Click(sender As Object, e As EventArgs) Handles BtnClose.Click
         Application.Exit()
     End Sub
+
+    Private Sub BtnExcel_Click(sender As Object, e As EventArgs) Handles BtnExcel.Click
+        Dim export As New ExportToExcel()
+        export.ExportData(GridBook)
+    End Sub
 End Class

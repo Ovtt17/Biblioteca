@@ -149,4 +149,9 @@ Public Class FormEditorial
     Private Sub BtnClose_Click(sender As Object, e As EventArgs) Handles BtnClose.Click
         FormContainer.Close()
     End Sub
+
+    Private Sub BtnExcel_Click(sender As Object, e As EventArgs) Handles BtnExcel.Click
+        Dim export As New ExportToExcel()
+        export.ExportData(GridEditorial)
+    End Sub
 End Class
