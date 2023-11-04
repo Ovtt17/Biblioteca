@@ -22,7 +22,9 @@ Partial Class FormLoan
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormLoan))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.BtnCleanFilters = New System.Windows.Forms.Button()
         Me.OverdueLoanCheck = New System.Windows.Forms.CheckBox()
         Me.DateEndFilter = New System.Windows.Forms.DateTimePicker()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -51,7 +53,7 @@ Partial Class FormLoan
         Me.BtnSave = New System.Windows.Forms.Button()
         Me.BtnNew = New System.Windows.Forms.Button()
         Me.GridLoan = New System.Windows.Forms.DataGridView()
-        Me.BtnCleanFilters = New System.Windows.Forms.Button()
+        Me.BtnExcel = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -62,6 +64,7 @@ Partial Class FormLoan
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(68, Byte), Integer))
         Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.Panel1.Controls.Add(Me.BtnExcel)
         Me.Panel1.Controls.Add(Me.BtnCleanFilters)
         Me.Panel1.Controls.Add(Me.OverdueLoanCheck)
         Me.Panel1.Controls.Add(Me.DateEndFilter)
@@ -77,12 +80,30 @@ Partial Class FormLoan
         Me.Panel1.Size = New System.Drawing.Size(1589, 582)
         Me.Panel1.TabIndex = 1
         '
+        'BtnCleanFilters
+        '
+        Me.BtnCleanFilters.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BtnCleanFilters.BackColor = System.Drawing.Color.Green
+        Me.BtnCleanFilters.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnCleanFilters.FlatAppearance.BorderSize = 0
+        Me.BtnCleanFilters.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnCleanFilters.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnCleanFilters.ForeColor = System.Drawing.SystemColors.Window
+        Me.BtnCleanFilters.Location = New System.Drawing.Point(1220, 17)
+        Me.BtnCleanFilters.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BtnCleanFilters.Name = "BtnCleanFilters"
+        Me.BtnCleanFilters.Size = New System.Drawing.Size(210, 42)
+        Me.BtnCleanFilters.TabIndex = 5
+        Me.BtnCleanFilters.Text = "Clean Filters"
+        Me.BtnCleanFilters.UseVisualStyleBackColor = False
+        '
         'OverdueLoanCheck
         '
         Me.OverdueLoanCheck.AutoSize = True
         Me.OverdueLoanCheck.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.OverdueLoanCheck.ForeColor = System.Drawing.Color.White
-        Me.OverdueLoanCheck.Location = New System.Drawing.Point(1114, 32)
+        Me.OverdueLoanCheck.Location = New System.Drawing.Point(1002, 27)
         Me.OverdueLoanCheck.Name = "OverdueLoanCheck"
         Me.OverdueLoanCheck.Size = New System.Drawing.Size(199, 33)
         Me.OverdueLoanCheck.TabIndex = 39
@@ -417,26 +438,25 @@ Partial Class FormLoan
         Me.GridLoan.ReadOnly = True
         Me.GridLoan.RowHeadersWidth = 51
         Me.GridLoan.RowTemplate.Height = 24
-        Me.GridLoan.Size = New System.Drawing.Size(1496, 93)
+        Me.GridLoan.Size = New System.Drawing.Size(1496, 101)
         Me.GridLoan.TabIndex = 0
         '
-        'BtnCleanFilters
+        'BtnExcel
         '
-        Me.BtnCleanFilters.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.BtnCleanFilters.BackColor = System.Drawing.Color.Green
-        Me.BtnCleanFilters.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnCleanFilters.FlatAppearance.BorderSize = 0
-        Me.BtnCleanFilters.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnCleanFilters.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnCleanFilters.ForeColor = System.Drawing.SystemColors.Window
-        Me.BtnCleanFilters.Location = New System.Drawing.Point(1332, 22)
-        Me.BtnCleanFilters.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.BtnCleanFilters.Name = "BtnCleanFilters"
-        Me.BtnCleanFilters.Size = New System.Drawing.Size(210, 42)
-        Me.BtnCleanFilters.TabIndex = 5
-        Me.BtnCleanFilters.Text = "Clean Filters"
-        Me.BtnCleanFilters.UseVisualStyleBackColor = False
+        Me.BtnExcel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BtnExcel.BackColor = System.Drawing.Color.Transparent
+        Me.BtnExcel.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnExcel.FlatAppearance.BorderSize = 0
+        Me.BtnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnExcel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnExcel.ForeColor = System.Drawing.SystemColors.Window
+        Me.BtnExcel.Image = CType(resources.GetObject("BtnExcel.Image"), System.Drawing.Image)
+        Me.BtnExcel.Location = New System.Drawing.Point(1466, 18)
+        Me.BtnExcel.Margin = New System.Windows.Forms.Padding(2)
+        Me.BtnExcel.Name = "BtnExcel"
+        Me.BtnExcel.Size = New System.Drawing.Size(76, 42)
+        Me.BtnExcel.TabIndex = 40
+        Me.BtnExcel.UseVisualStyleBackColor = False
         '
         'FormLoan
         '
@@ -488,4 +508,5 @@ Partial Class FormLoan
     Friend WithEvents Label3 As Label
     Friend WithEvents OverdueLoanCheck As CheckBox
     Friend WithEvents BtnCleanFilters As Button
+    Friend WithEvents BtnExcel As Button
 End Class

@@ -22,7 +22,9 @@ Partial Class FormBook
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormBook))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.BtnExcel = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.RemoveAuthorBtn = New System.Windows.Forms.Button()
         Me.AddAuthorBtn = New System.Windows.Forms.Button()
@@ -59,6 +61,7 @@ Partial Class FormBook
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(68, Byte), Integer))
         Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.Panel1.Controls.Add(Me.BtnExcel)
         Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Controls.Add(Me.GroupBox1)
         Me.Panel1.Controls.Add(Me.GridBook)
@@ -67,6 +70,23 @@ Partial Class FormBook
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1589, 582)
         Me.Panel1.TabIndex = 0
+        '
+        'BtnExcel
+        '
+        Me.BtnExcel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BtnExcel.BackColor = System.Drawing.Color.Transparent
+        Me.BtnExcel.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnExcel.FlatAppearance.BorderSize = 0
+        Me.BtnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnExcel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnExcel.ForeColor = System.Drawing.SystemColors.Window
+        Me.BtnExcel.Image = CType(resources.GetObject("BtnExcel.Image"), System.Drawing.Image)
+        Me.BtnExcel.Location = New System.Drawing.Point(1466, 11)
+        Me.BtnExcel.Margin = New System.Windows.Forms.Padding(2)
+        Me.BtnExcel.Name = "BtnExcel"
+        Me.BtnExcel.Size = New System.Drawing.Size(76, 33)
+        Me.BtnExcel.TabIndex = 22
+        Me.BtnExcel.UseVisualStyleBackColor = False
         '
         'Panel2
         '
@@ -393,12 +413,12 @@ Partial Class FormBook
         Me.GridBook.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
         Me.GridBook.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.GridBook.GridColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.GridBook.Location = New System.Drawing.Point(46, 12)
+        Me.GridBook.Location = New System.Drawing.Point(46, 49)
         Me.GridBook.Name = "GridBook"
         Me.GridBook.ReadOnly = True
         Me.GridBook.RowHeadersWidth = 51
         Me.GridBook.RowTemplate.Height = 24
-        Me.GridBook.Size = New System.Drawing.Size(1496, 155)
+        Me.GridBook.Size = New System.Drawing.Size(1496, 132)
         Me.GridBook.TabIndex = 0
         '
         'FormBook
@@ -447,4 +467,5 @@ Partial Class FormBook
     Friend WithEvents DateLbl As Label
     Friend WithEvents EditorialLbl As Label
     Friend WithEvents TitleLbl As Label
+    Friend WithEvents BtnExcel As Button
 End Class

@@ -11,7 +11,7 @@
             GridLoan.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
 
             RemoveEventHandlers()
-            Dim monthAgo As Date = Date.Now.AddMonths(-1)
+            Dim monthAgo As Date = Date.Now.AddMonths(-12)
             DateStartFilter.Value = monthAgo.Date
             DateEndFilter.Value = Date.Now
             OverdueLoanCheck.Checked = False
@@ -68,8 +68,8 @@
 
             Dim loanDate As Date = DateLoan.Value.Date
             Dim dueDate As Date = DateDue.Value.Date
-            If loanDate < DateTime.Today OrElse dueDate < DateTime.Today Then
-                MessageBox.Show("The loan and return dates cannot be earlier than the current day.")
+            If loanDate > dueDate Then
+                MessageBox.Show("The loan date cannot be later than due day.")
                 Exit Sub
             End If
 
@@ -89,6 +89,10 @@
                 loanEditable.Ticket = CType(TicketTxt.Text, Single?)
                 loanDao.ModifyLoan(loanEditable)
             Else
+                If loanDate < DateTime.Today OrElse dueDate < DateTime.Today Then
+                    MessageBox.Show("The loan and return dates cannot be earlier than current day.")
+                    Exit Sub
+                End If
                 loanDao.InsertLoan(New Loan(bookId, loanDate, dueDate, userId, loanType, librarianId, delivered, ticket))
             End If
 
@@ -230,5 +234,10 @@
 
     Private Sub BtnCleanFilters_Click(sender As Object, e As EventArgs) Handles BtnCleanFilters.Click
         ShowData()
+    End Sub
+
+    Private Sub BtnExcel_Click(sender As Object, e As EventArgs) Handles BtnExcel.Click
+        Dim export As New ExportToExcel()
+        export.ExportData(GridLoan)
     End Sub
 End Class

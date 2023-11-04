@@ -78,10 +78,10 @@
 
             ' si el texto cambia, quiere decir que debemos obtener el texto
             If (v) Then
-                bookConsult.Title = If(TitleCmb.Text IsNot Nothing, TitleCmb.Text, String.Empty)
-                bookConsult.Author = If(AuthorCmb.Text IsNot Nothing, AuthorCmb.Text, String.Empty)
-                bookConsult.Editorial = If(EditorialCmb.Text IsNot Nothing, EditorialCmb.Text, String.Empty)
-                bookConsult.Language = If(LanguageCmb.Text IsNot Nothing, LanguageCmb.Text, String.Empty)
+                bookConsult.Title = If(TitleCmb.Text, String.Empty)
+                bookConsult.Author = If(AuthorCmb.Text, String.Empty)
+                bookConsult.Editorial = If(EditorialCmb.Text, String.Empty)
+                bookConsult.Language = If(LanguageCmb.Text, String.Empty)
             Else
                 ' en caso de que sea falso, tenemos que obtener lo que arroja el combobox
                 bookConsult.Title = If(rowViewTitle IsNot Nothing, rowViewTitle("titulo").ToString(), String.Empty)
@@ -97,5 +97,10 @@
         Catch ex As Exception
             MessageBox.Show("General error: " & ex.Message)
         End Try
+    End Sub
+
+    Private Sub BtnExcel_Click(sender As Object, e As EventArgs) Handles BtnExcel.Click
+        Dim export As New ExportToExcel()
+        export.ExportData(GridBookConsult)
     End Sub
 End Class
