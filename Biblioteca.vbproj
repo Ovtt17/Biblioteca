@@ -274,6 +274,10 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\IconClean.png" />
+    <Content Include="Resources\IconCloseBtn.png" />
+    <Content Include="Resources\IconDeleteBtn.png" />
+    <Content Include="Resources\IconEditBtn.png" />
     <Content Include="Resources\IconExcel.png" />
     <Content Include="Resources\IconLogin.png" />
     <Content Include="Resources\IconMain.png" />
@@ -283,6 +287,9 @@
     <Content Include="Resources\IconBookByCountry.png" />
     <Content Include="Resources\IconEditorial.png" />
     <Content Include="Resources\IconLoan.png" />
+    <Content Include="Resources\IconNewBtn.png" />
+    <Content Include="Resources\IconSaveBtn.png" />
+    <Content Include="Resources\IconSearch.png" />
     <Content Include="Resources\IconUser.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

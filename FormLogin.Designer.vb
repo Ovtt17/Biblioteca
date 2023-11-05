@@ -110,9 +110,11 @@ Partial Class FormLogin
         Me.ConsultBooksBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ConsultBooksBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ConsultBooksBtn.ForeColor = System.Drawing.SystemColors.Control
-        Me.ConsultBooksBtn.Location = New System.Drawing.Point(736, 32)
+        Me.ConsultBooksBtn.Image = CType(resources.GetObject("ConsultBooksBtn.Image"), System.Drawing.Image)
+        Me.ConsultBooksBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.ConsultBooksBtn.Location = New System.Drawing.Point(684, 32)
         Me.ConsultBooksBtn.Name = "ConsultBooksBtn"
-        Me.ConsultBooksBtn.Size = New System.Drawing.Size(145, 88)
+        Me.ConsultBooksBtn.Size = New System.Drawing.Size(197, 88)
         Me.ConsultBooksBtn.TabIndex = 6
         Me.ConsultBooksBtn.Text = "Consult Books"
         Me.ConsultBooksBtn.UseVisualStyleBackColor = False

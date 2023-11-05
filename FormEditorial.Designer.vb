@@ -24,6 +24,7 @@ Partial Class FormEditorial
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormEditorial))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.BtnExcel = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.CountryCmb = New System.Windows.Forms.ComboBox()
         Me.NameTxt = New System.Windows.Forms.TextBox()
@@ -35,7 +36,7 @@ Partial Class FormEditorial
         Me.BtnSave = New System.Windows.Forms.Button()
         Me.BtnNew = New System.Windows.Forms.Button()
         Me.GridEditorial = New System.Windows.Forms.DataGridView()
-        Me.BtnExcel = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -45,6 +46,7 @@ Partial Class FormEditorial
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(68, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.BtnExcel)
         Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Controls.Add(Me.GroupBox1)
@@ -57,6 +59,23 @@ Partial Class FormEditorial
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1589, 582)
         Me.Panel1.TabIndex = 1
+        '
+        'BtnExcel
+        '
+        Me.BtnExcel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BtnExcel.BackColor = System.Drawing.Color.Transparent
+        Me.BtnExcel.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnExcel.FlatAppearance.BorderSize = 0
+        Me.BtnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnExcel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnExcel.ForeColor = System.Drawing.SystemColors.Window
+        Me.BtnExcel.Image = CType(resources.GetObject("BtnExcel.Image"), System.Drawing.Image)
+        Me.BtnExcel.Location = New System.Drawing.Point(1486, 15)
+        Me.BtnExcel.Margin = New System.Windows.Forms.Padding(2)
+        Me.BtnExcel.Name = "BtnExcel"
+        Me.BtnExcel.Size = New System.Drawing.Size(76, 42)
+        Me.BtnExcel.TabIndex = 7
+        Me.BtnExcel.UseVisualStyleBackColor = False
         '
         'Panel2
         '
@@ -142,6 +161,8 @@ Partial Class FormEditorial
         Me.BtnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnClose.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnClose.ForeColor = System.Drawing.SystemColors.Window
+        Me.BtnClose.Image = CType(resources.GetObject("BtnClose.Image"), System.Drawing.Image)
+        Me.BtnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BtnClose.Location = New System.Drawing.Point(32, 239)
         Me.BtnClose.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BtnClose.Name = "BtnClose"
@@ -159,6 +180,8 @@ Partial Class FormEditorial
         Me.BtnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnDelete.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnDelete.ForeColor = System.Drawing.SystemColors.Window
+        Me.BtnDelete.Image = CType(resources.GetObject("BtnDelete.Image"), System.Drawing.Image)
+        Me.BtnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BtnDelete.Location = New System.Drawing.Point(32, 171)
         Me.BtnDelete.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BtnDelete.Name = "BtnDelete"
@@ -176,6 +199,8 @@ Partial Class FormEditorial
         Me.BtnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnSave.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnSave.ForeColor = System.Drawing.SystemColors.Window
+        Me.BtnSave.Image = CType(resources.GetObject("BtnSave.Image"), System.Drawing.Image)
+        Me.BtnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BtnSave.Location = New System.Drawing.Point(32, 102)
         Me.BtnSave.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BtnSave.Name = "BtnSave"
@@ -193,6 +218,8 @@ Partial Class FormEditorial
         Me.BtnNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnNew.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnNew.ForeColor = System.Drawing.SystemColors.Window
+        Me.BtnNew.Image = CType(resources.GetObject("BtnNew.Image"), System.Drawing.Image)
+        Me.BtnNew.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BtnNew.Location = New System.Drawing.Point(32, 27)
         Me.BtnNew.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BtnNew.Name = "BtnNew"
@@ -211,31 +238,28 @@ Partial Class FormEditorial
         Me.GridEditorial.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
         Me.GridEditorial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.GridEditorial.GridColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.GridEditorial.Location = New System.Drawing.Point(21, 62)
+        Me.GridEditorial.Location = New System.Drawing.Point(21, 74)
         Me.GridEditorial.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GridEditorial.Name = "GridEditorial"
         Me.GridEditorial.ReadOnly = True
         Me.GridEditorial.RowHeadersWidth = 51
         Me.GridEditorial.RowTemplate.Height = 24
-        Me.GridEditorial.Size = New System.Drawing.Size(1541, 165)
+        Me.GridEditorial.Size = New System.Drawing.Size(1541, 153)
         Me.GridEditorial.TabIndex = 1
         '
-        'BtnExcel
+        'Label2
         '
-        Me.BtnExcel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.BtnExcel.BackColor = System.Drawing.Color.Transparent
-        Me.BtnExcel.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnExcel.FlatAppearance.BorderSize = 0
-        Me.BtnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnExcel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnExcel.ForeColor = System.Drawing.SystemColors.Window
-        Me.BtnExcel.Image = CType(resources.GetObject("BtnExcel.Image"), System.Drawing.Image)
-        Me.BtnExcel.Location = New System.Drawing.Point(1486, 11)
-        Me.BtnExcel.Margin = New System.Windows.Forms.Padding(2)
-        Me.BtnExcel.Name = "BtnExcel"
-        Me.BtnExcel.Size = New System.Drawing.Size(76, 42)
-        Me.BtnExcel.TabIndex = 7
-        Me.BtnExcel.UseVisualStyleBackColor = False
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Yu Gothic", 22.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.Image = CType(resources.GetObject("Label2.Image"), System.Drawing.Image)
+        Me.Label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Label2.Location = New System.Drawing.Point(22, 9)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(217, 48)
+        Me.Label2.TabIndex = 25
+        Me.Label2.Text = "    Editorial"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'FormEditorial
         '
@@ -249,6 +273,7 @@ Partial Class FormEditorial
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Editorial Catalog."
         Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
@@ -270,4 +295,5 @@ Partial Class FormEditorial
     Friend WithEvents CountryLbl As Label
     Friend WithEvents AuthorLbl As Label
     Friend WithEvents BtnExcel As Button
+    Friend WithEvents Label2 As Label
 End Class

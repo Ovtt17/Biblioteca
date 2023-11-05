@@ -118,6 +118,17 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="ConsultBooksBtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAAABGdBTUEAALGPC/xhBQAAAVlJREFUWEft
+        lzlOxEAQRU1KxhKQIFIGLsApyOAGhERIBFyCBDgBCQkHIJlJSAkQRIhNAhIClguYV4sZC7XkbtuIRf2k
+        L3mq61d/tR30FJl/QVmWG+gcvaMuvKEjNO+j08B4IFN65tTHx4Np1byf3KFLe1Qe0ShBr6hizreJA8OF
+        +ZQdr63ZT2VPGyOhXwJVDLzcDM1T5lGuvfxjYZbNo4y8LPV1Kyn7Xo6C/nqYJS83Q3MOE4TmHCYIzTlM
+        EJpzmCA05zBBaM5hgtD8q8IMzKPIpejGHnuj9RXiO2h9MhVy7ZSjTtU9qvOCJn2rZmheVNuYbV9KBu/Q
+        RijHaNaX4sBQP5krL7cC/7ONUdKCCJimzat0DfNkY5T0MALGB/MrW15OBu+JjVDkNc34UjyYNtU+5haF
+        PtAmff2A5b/XhG8TD6ZdtffPgm+RBsYVdIjqr60LZz468xcpig/vmXj/P8oshgAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="PictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAARgAAAEYCAYAAACHjumMAAAABGdBTUEAALGPC/xhBQAAFtlJREFUeF7t

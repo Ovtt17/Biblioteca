@@ -30,6 +30,7 @@ Partial Class FormSearchBook
         Me.CountryCmb = New System.Windows.Forms.ComboBox()
         Me.BtnSearch = New System.Windows.Forms.Button()
         Me.GridSearch = New System.Windows.Forms.DataGridView()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.GridSearch, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -37,6 +38,7 @@ Partial Class FormSearchBook
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(68, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.BtnExcel)
         Me.Panel1.Controls.Add(Me.BtnClose)
         Me.Panel1.Controls.Add(Me.CountryLbl)
@@ -60,7 +62,7 @@ Partial Class FormSearchBook
         Me.BtnExcel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnExcel.ForeColor = System.Drawing.SystemColors.Window
         Me.BtnExcel.Image = CType(resources.GetObject("BtnExcel.Image"), System.Drawing.Image)
-        Me.BtnExcel.Location = New System.Drawing.Point(1265, 11)
+        Me.BtnExcel.Location = New System.Drawing.Point(1265, 32)
         Me.BtnExcel.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnExcel.Name = "BtnExcel"
         Me.BtnExcel.Size = New System.Drawing.Size(76, 42)
@@ -76,7 +78,9 @@ Partial Class FormSearchBook
         Me.BtnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnClose.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnClose.ForeColor = System.Drawing.SystemColors.Window
-        Me.BtnClose.Location = New System.Drawing.Point(872, 358)
+        Me.BtnClose.Image = CType(resources.GetObject("BtnClose.Image"), System.Drawing.Image)
+        Me.BtnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnClose.Location = New System.Drawing.Point(872, 391)
         Me.BtnClose.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BtnClose.Name = "BtnClose"
         Me.BtnClose.Size = New System.Drawing.Size(173, 46)
@@ -90,7 +94,7 @@ Partial Class FormSearchBook
         Me.CountryLbl.AutoSize = True
         Me.CountryLbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CountryLbl.ForeColor = System.Drawing.SystemColors.Window
-        Me.CountryLbl.Location = New System.Drawing.Point(153, 299)
+        Me.CountryLbl.Location = New System.Drawing.Point(153, 332)
         Me.CountryLbl.Name = "CountryLbl"
         Me.CountryLbl.Size = New System.Drawing.Size(87, 25)
         Me.CountryLbl.TabIndex = 12
@@ -103,7 +107,7 @@ Partial Class FormSearchBook
         Me.CountryCmb.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CountryCmb.FormattingEnabled = True
         Me.CountryCmb.Items.AddRange(New Object() {"NICARAGUA", "EL SALVADOR", "COSTA RICA"})
-        Me.CountryCmb.Location = New System.Drawing.Point(295, 295)
+        Me.CountryCmb.Location = New System.Drawing.Point(295, 328)
         Me.CountryCmb.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.CountryCmb.Name = "CountryCmb"
         Me.CountryCmb.Size = New System.Drawing.Size(492, 33)
@@ -118,7 +122,9 @@ Partial Class FormSearchBook
         Me.BtnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnSearch.ForeColor = System.Drawing.SystemColors.Window
-        Me.BtnSearch.Location = New System.Drawing.Point(872, 287)
+        Me.BtnSearch.Image = CType(resources.GetObject("BtnSearch.Image"), System.Drawing.Image)
+        Me.BtnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnSearch.Location = New System.Drawing.Point(872, 320)
         Me.BtnSearch.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BtnSearch.Name = "BtnSearch"
         Me.BtnSearch.Size = New System.Drawing.Size(173, 42)
@@ -136,7 +142,7 @@ Partial Class FormSearchBook
         Me.GridSearch.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
         Me.GridSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.GridSearch.GridColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.GridSearch.Location = New System.Drawing.Point(24, 65)
+        Me.GridSearch.Location = New System.Drawing.Point(24, 98)
         Me.GridSearch.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GridSearch.Name = "GridSearch"
         Me.GridSearch.ReadOnly = True
@@ -144,6 +150,20 @@ Partial Class FormSearchBook
         Me.GridSearch.RowTemplate.Height = 24
         Me.GridSearch.Size = New System.Drawing.Size(1317, 165)
         Me.GridSearch.TabIndex = 2
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Yu Gothic", 22.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.Image = CType(resources.GetObject("Label2.Image"), System.Drawing.Image)
+        Me.Label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Label2.Location = New System.Drawing.Point(16, 26)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(155, 48)
+        Me.Label2.TabIndex = 25
+        Me.Label2.Text = "    Book"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'FormSearchBook
         '
@@ -168,4 +188,5 @@ Partial Class FormSearchBook
     Friend WithEvents CountryLbl As Label
     Friend WithEvents BtnClose As Button
     Friend WithEvents BtnExcel As Button
+    Friend WithEvents Label2 As Label
 End Class
