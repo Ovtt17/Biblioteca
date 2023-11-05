@@ -51,6 +51,7 @@ Partial Class FormBook
         Me.BtnSave = New System.Windows.Forms.Button()
         Me.BtnNew = New System.Windows.Forms.Button()
         Me.GridBook = New System.Windows.Forms.DataGridView()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -61,6 +62,7 @@ Partial Class FormBook
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(68, Byte), Integer))
         Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.BtnExcel)
         Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Controls.Add(Me.GroupBox1)
@@ -84,7 +86,7 @@ Partial Class FormBook
         Me.BtnExcel.Location = New System.Drawing.Point(1466, 11)
         Me.BtnExcel.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnExcel.Name = "BtnExcel"
-        Me.BtnExcel.Size = New System.Drawing.Size(76, 33)
+        Me.BtnExcel.Size = New System.Drawing.Size(76, 44)
         Me.BtnExcel.TabIndex = 22
         Me.BtnExcel.UseVisualStyleBackColor = False
         '
@@ -110,7 +112,7 @@ Partial Class FormBook
         Me.Panel2.Controls.Add(Me.DateLbl)
         Me.Panel2.Controls.Add(Me.EditorialLbl)
         Me.Panel2.Controls.Add(Me.TitleLbl)
-        Me.Panel2.Location = New System.Drawing.Point(46, 204)
+        Me.Panel2.Location = New System.Drawing.Point(46, 226)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(1095, 316)
         Me.Panel2.TabIndex = 21
@@ -327,7 +329,7 @@ Partial Class FormBook
         Me.GroupBox1.Controls.Add(Me.BtnDelete)
         Me.GroupBox1.Controls.Add(Me.BtnSave)
         Me.GroupBox1.Controls.Add(Me.BtnNew)
-        Me.GroupBox1.Location = New System.Drawing.Point(1281, 204)
+        Me.GroupBox1.Location = New System.Drawing.Point(1281, 226)
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
@@ -344,6 +346,8 @@ Partial Class FormBook
         Me.BtnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnClose.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnClose.ForeColor = System.Drawing.SystemColors.Window
+        Me.BtnClose.Image = CType(resources.GetObject("BtnClose.Image"), System.Drawing.Image)
+        Me.BtnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BtnClose.Location = New System.Drawing.Point(32, 239)
         Me.BtnClose.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BtnClose.Name = "BtnClose"
@@ -361,6 +365,8 @@ Partial Class FormBook
         Me.BtnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnDelete.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnDelete.ForeColor = System.Drawing.SystemColors.Window
+        Me.BtnDelete.Image = CType(resources.GetObject("BtnDelete.Image"), System.Drawing.Image)
+        Me.BtnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BtnDelete.Location = New System.Drawing.Point(32, 171)
         Me.BtnDelete.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BtnDelete.Name = "BtnDelete"
@@ -378,6 +384,8 @@ Partial Class FormBook
         Me.BtnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnSave.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnSave.ForeColor = System.Drawing.SystemColors.Window
+        Me.BtnSave.Image = CType(resources.GetObject("BtnSave.Image"), System.Drawing.Image)
+        Me.BtnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BtnSave.Location = New System.Drawing.Point(32, 102)
         Me.BtnSave.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BtnSave.Name = "BtnSave"
@@ -395,6 +403,8 @@ Partial Class FormBook
         Me.BtnNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnNew.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnNew.ForeColor = System.Drawing.SystemColors.Window
+        Me.BtnNew.Image = CType(resources.GetObject("BtnNew.Image"), System.Drawing.Image)
+        Me.BtnNew.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BtnNew.Location = New System.Drawing.Point(32, 27)
         Me.BtnNew.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BtnNew.Name = "BtnNew"
@@ -413,13 +423,27 @@ Partial Class FormBook
         Me.GridBook.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
         Me.GridBook.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.GridBook.GridColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.GridBook.Location = New System.Drawing.Point(46, 49)
+        Me.GridBook.Location = New System.Drawing.Point(46, 71)
         Me.GridBook.Name = "GridBook"
         Me.GridBook.ReadOnly = True
         Me.GridBook.RowHeadersWidth = 51
         Me.GridBook.RowTemplate.Height = 24
         Me.GridBook.Size = New System.Drawing.Size(1496, 132)
         Me.GridBook.TabIndex = 0
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Yu Gothic", 22.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.Image = CType(resources.GetObject("Label2.Image"), System.Drawing.Image)
+        Me.Label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Label2.Location = New System.Drawing.Point(38, 9)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(155, 48)
+        Me.Label2.TabIndex = 24
+        Me.Label2.Text = "    Book"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'FormBook
         '
@@ -432,6 +456,7 @@ Partial Class FormBook
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormBooks"
         Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
@@ -468,4 +493,5 @@ Partial Class FormBook
     Friend WithEvents EditorialLbl As Label
     Friend WithEvents TitleLbl As Label
     Friend WithEvents BtnExcel As Button
+    Friend WithEvents Label2 As Label
 End Class

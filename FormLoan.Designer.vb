@@ -24,6 +24,7 @@ Partial Class FormLoan
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormLoan))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.BtnExcel = New System.Windows.Forms.Button()
         Me.BtnCleanFilters = New System.Windows.Forms.Button()
         Me.OverdueLoanCheck = New System.Windows.Forms.CheckBox()
         Me.DateEndFilter = New System.Windows.Forms.DateTimePicker()
@@ -53,7 +54,7 @@ Partial Class FormLoan
         Me.BtnSave = New System.Windows.Forms.Button()
         Me.BtnNew = New System.Windows.Forms.Button()
         Me.GridLoan = New System.Windows.Forms.DataGridView()
-        Me.BtnExcel = New System.Windows.Forms.Button()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -64,6 +65,7 @@ Partial Class FormLoan
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(68, Byte), Integer))
         Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Controls.Add(Me.BtnExcel)
         Me.Panel1.Controls.Add(Me.BtnCleanFilters)
         Me.Panel1.Controls.Add(Me.OverdueLoanCheck)
@@ -80,22 +82,41 @@ Partial Class FormLoan
         Me.Panel1.Size = New System.Drawing.Size(1589, 582)
         Me.Panel1.TabIndex = 1
         '
+        'BtnExcel
+        '
+        Me.BtnExcel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BtnExcel.BackColor = System.Drawing.Color.Transparent
+        Me.BtnExcel.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnExcel.FlatAppearance.BorderSize = 0
+        Me.BtnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnExcel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnExcel.ForeColor = System.Drawing.SystemColors.Window
+        Me.BtnExcel.Image = CType(resources.GetObject("BtnExcel.Image"), System.Drawing.Image)
+        Me.BtnExcel.Location = New System.Drawing.Point(1481, 50)
+        Me.BtnExcel.Margin = New System.Windows.Forms.Padding(2)
+        Me.BtnExcel.Name = "BtnExcel"
+        Me.BtnExcel.Size = New System.Drawing.Size(76, 42)
+        Me.BtnExcel.TabIndex = 40
+        Me.BtnExcel.UseVisualStyleBackColor = False
+        '
         'BtnCleanFilters
         '
-        Me.BtnCleanFilters.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BtnCleanFilters.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.BtnCleanFilters.BackColor = System.Drawing.Color.Green
         Me.BtnCleanFilters.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnCleanFilters.FlatAppearance.BorderSize = 0
         Me.BtnCleanFilters.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnCleanFilters.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnCleanFilters.ForeColor = System.Drawing.SystemColors.Window
-        Me.BtnCleanFilters.Location = New System.Drawing.Point(1220, 17)
+        Me.BtnCleanFilters.Image = CType(resources.GetObject("BtnCleanFilters.Image"), System.Drawing.Image)
+        Me.BtnCleanFilters.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnCleanFilters.Location = New System.Drawing.Point(1278, 49)
         Me.BtnCleanFilters.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BtnCleanFilters.Name = "BtnCleanFilters"
-        Me.BtnCleanFilters.Size = New System.Drawing.Size(210, 42)
+        Me.BtnCleanFilters.Size = New System.Drawing.Size(175, 42)
         Me.BtnCleanFilters.TabIndex = 5
         Me.BtnCleanFilters.Text = "Clean Filters"
+        Me.BtnCleanFilters.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnCleanFilters.UseVisualStyleBackColor = False
         '
         'OverdueLoanCheck
@@ -103,7 +124,7 @@ Partial Class FormLoan
         Me.OverdueLoanCheck.AutoSize = True
         Me.OverdueLoanCheck.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.OverdueLoanCheck.ForeColor = System.Drawing.Color.White
-        Me.OverdueLoanCheck.Location = New System.Drawing.Point(1002, 27)
+        Me.OverdueLoanCheck.Location = New System.Drawing.Point(1073, 55)
         Me.OverdueLoanCheck.Name = "OverdueLoanCheck"
         Me.OverdueLoanCheck.Size = New System.Drawing.Size(199, 33)
         Me.OverdueLoanCheck.TabIndex = 39
@@ -114,7 +135,7 @@ Partial Class FormLoan
         '
         Me.DateEndFilter.Cursor = System.Windows.Forms.Cursors.Hand
         Me.DateEndFilter.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateEndFilter.Location = New System.Drawing.Point(621, 32)
+        Me.DateEndFilter.Location = New System.Drawing.Point(692, 60)
         Me.DateEndFilter.Name = "DateEndFilter"
         Me.DateEndFilter.Size = New System.Drawing.Size(364, 27)
         Me.DateEndFilter.TabIndex = 37
@@ -124,7 +145,7 @@ Partial Class FormLoan
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label4.Location = New System.Drawing.Point(558, 35)
+        Me.Label4.Location = New System.Drawing.Point(649, 64)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(37, 22)
         Me.Label4.TabIndex = 36
@@ -135,9 +156,9 @@ Partial Class FormLoan
         Me.DateStartFilter.Checked = False
         Me.DateStartFilter.Cursor = System.Windows.Forms.Cursors.Hand
         Me.DateStartFilter.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateStartFilter.Location = New System.Drawing.Point(164, 32)
+        Me.DateStartFilter.Location = New System.Drawing.Point(285, 61)
         Me.DateStartFilter.Name = "DateStartFilter"
-        Me.DateStartFilter.Size = New System.Drawing.Size(364, 27)
+        Me.DateStartFilter.Size = New System.Drawing.Size(345, 27)
         Me.DateStartFilter.TabIndex = 35
         '
         'Label3
@@ -145,7 +166,7 @@ Partial Class FormLoan
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label3.Location = New System.Drawing.Point(49, 33)
+        Me.Label3.Location = New System.Drawing.Point(209, 61)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(60, 22)
         Me.Label3.TabIndex = 34
@@ -170,7 +191,7 @@ Partial Class FormLoan
         Me.Panel2.Controls.Add(Me.UserLbl)
         Me.Panel2.Controls.Add(Me.DateLbl)
         Me.Panel2.Controls.Add(Me.BookIdLbl)
-        Me.Panel2.Location = New System.Drawing.Point(46, 215)
+        Me.Panel2.Location = New System.Drawing.Point(61, 231)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(1095, 316)
         Me.Panel2.TabIndex = 21
@@ -347,7 +368,7 @@ Partial Class FormLoan
         Me.GroupBox1.Controls.Add(Me.BtnDelete)
         Me.GroupBox1.Controls.Add(Me.BtnSave)
         Me.GroupBox1.Controls.Add(Me.BtnNew)
-        Me.GroupBox1.Location = New System.Drawing.Point(1281, 215)
+        Me.GroupBox1.Location = New System.Drawing.Point(1296, 231)
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
@@ -364,6 +385,8 @@ Partial Class FormLoan
         Me.BtnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnClose.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnClose.ForeColor = System.Drawing.SystemColors.Window
+        Me.BtnClose.Image = CType(resources.GetObject("BtnClose.Image"), System.Drawing.Image)
+        Me.BtnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BtnClose.Location = New System.Drawing.Point(32, 239)
         Me.BtnClose.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BtnClose.Name = "BtnClose"
@@ -381,6 +404,8 @@ Partial Class FormLoan
         Me.BtnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnDelete.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnDelete.ForeColor = System.Drawing.SystemColors.Window
+        Me.BtnDelete.Image = CType(resources.GetObject("BtnDelete.Image"), System.Drawing.Image)
+        Me.BtnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BtnDelete.Location = New System.Drawing.Point(32, 171)
         Me.BtnDelete.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BtnDelete.Name = "BtnDelete"
@@ -398,6 +423,8 @@ Partial Class FormLoan
         Me.BtnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnSave.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnSave.ForeColor = System.Drawing.SystemColors.Window
+        Me.BtnSave.Image = CType(resources.GetObject("BtnSave.Image"), System.Drawing.Image)
+        Me.BtnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BtnSave.Location = New System.Drawing.Point(32, 102)
         Me.BtnSave.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BtnSave.Name = "BtnSave"
@@ -415,6 +442,8 @@ Partial Class FormLoan
         Me.BtnNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnNew.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnNew.ForeColor = System.Drawing.SystemColors.Window
+        Me.BtnNew.Image = CType(resources.GetObject("BtnNew.Image"), System.Drawing.Image)
+        Me.BtnNew.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BtnNew.Location = New System.Drawing.Point(32, 27)
         Me.BtnNew.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BtnNew.Name = "BtnNew"
@@ -433,30 +462,27 @@ Partial Class FormLoan
         Me.GridLoan.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
         Me.GridLoan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.GridLoan.GridColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.GridLoan.Location = New System.Drawing.Point(46, 74)
+        Me.GridLoan.Location = New System.Drawing.Point(61, 105)
         Me.GridLoan.Name = "GridLoan"
         Me.GridLoan.ReadOnly = True
         Me.GridLoan.RowHeadersWidth = 51
         Me.GridLoan.RowTemplate.Height = 24
-        Me.GridLoan.Size = New System.Drawing.Size(1496, 101)
+        Me.GridLoan.Size = New System.Drawing.Size(1496, 86)
         Me.GridLoan.TabIndex = 0
         '
-        'BtnExcel
+        'Label5
         '
-        Me.BtnExcel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.BtnExcel.BackColor = System.Drawing.Color.Transparent
-        Me.BtnExcel.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnExcel.FlatAppearance.BorderSize = 0
-        Me.BtnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnExcel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnExcel.ForeColor = System.Drawing.SystemColors.Window
-        Me.BtnExcel.Image = CType(resources.GetObject("BtnExcel.Image"), System.Drawing.Image)
-        Me.BtnExcel.Location = New System.Drawing.Point(1466, 18)
-        Me.BtnExcel.Margin = New System.Windows.Forms.Padding(2)
-        Me.BtnExcel.Name = "BtnExcel"
-        Me.BtnExcel.Size = New System.Drawing.Size(76, 42)
-        Me.BtnExcel.TabIndex = 40
-        Me.BtnExcel.UseVisualStyleBackColor = False
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Yu Gothic", 22.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.Image = CType(resources.GetObject("Label5.Image"), System.Drawing.Image)
+        Me.Label5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Label5.Location = New System.Drawing.Point(53, 9)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(154, 48)
+        Me.Label5.TabIndex = 41
+        Me.Label5.Text = "    Loan"
+        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'FormLoan
         '
@@ -509,4 +535,5 @@ Partial Class FormLoan
     Friend WithEvents OverdueLoanCheck As CheckBox
     Friend WithEvents BtnCleanFilters As Button
     Friend WithEvents BtnExcel As Button
+    Friend WithEvents Label5 As Label
 End Class

@@ -24,6 +24,7 @@ Partial Class FormBibliotecario
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormBibliotecario))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.BtnExcel = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.AddressTxt = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -39,7 +40,7 @@ Partial Class FormBibliotecario
         Me.BtnSave = New System.Windows.Forms.Button()
         Me.BtnNew = New System.Windows.Forms.Button()
         Me.GridBibliotecario = New System.Windows.Forms.DataGridView()
-        Me.BtnExcel = New System.Windows.Forms.Button()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -49,6 +50,7 @@ Partial Class FormBibliotecario
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(68, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Controls.Add(Me.BtnExcel)
         Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Controls.Add(Me.GroupBox1)
@@ -61,6 +63,23 @@ Partial Class FormBibliotecario
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1589, 582)
         Me.Panel1.TabIndex = 2
+        '
+        'BtnExcel
+        '
+        Me.BtnExcel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BtnExcel.BackColor = System.Drawing.Color.Transparent
+        Me.BtnExcel.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnExcel.FlatAppearance.BorderSize = 0
+        Me.BtnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnExcel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnExcel.ForeColor = System.Drawing.SystemColors.Window
+        Me.BtnExcel.Image = CType(resources.GetObject("BtnExcel.Image"), System.Drawing.Image)
+        Me.BtnExcel.Location = New System.Drawing.Point(1486, 15)
+        Me.BtnExcel.Margin = New System.Windows.Forms.Padding(2)
+        Me.BtnExcel.Name = "BtnExcel"
+        Me.BtnExcel.Size = New System.Drawing.Size(76, 42)
+        Me.BtnExcel.TabIndex = 6
+        Me.BtnExcel.UseVisualStyleBackColor = False
         '
         'Panel2
         '
@@ -84,10 +103,10 @@ Partial Class FormBibliotecario
         '
         Me.AddressTxt.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.AddressTxt.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.AddressTxt.Location = New System.Drawing.Point(127, 144)
+        Me.AddressTxt.Location = New System.Drawing.Point(152, 144)
         Me.AddressTxt.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.AddressTxt.Name = "AddressTxt"
-        Me.AddressTxt.Size = New System.Drawing.Size(1077, 30)
+        Me.AddressTxt.Size = New System.Drawing.Size(1003, 30)
         Me.AddressTxt.TabIndex = 20
         '
         'Label3
@@ -106,10 +125,10 @@ Partial Class FormBibliotecario
         '
         Me.PositionTxt.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PositionTxt.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PositionTxt.Location = New System.Drawing.Point(127, 197)
+        Me.PositionTxt.Location = New System.Drawing.Point(152, 197)
         Me.PositionTxt.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.PositionTxt.Name = "PositionTxt"
-        Me.PositionTxt.Size = New System.Drawing.Size(1077, 30)
+        Me.PositionTxt.Size = New System.Drawing.Size(1003, 30)
         Me.PositionTxt.TabIndex = 18
         '
         'Label2
@@ -128,10 +147,10 @@ Partial Class FormBibliotecario
         '
         Me.LNameTxt.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LNameTxt.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LNameTxt.Location = New System.Drawing.Point(127, 93)
+        Me.LNameTxt.Location = New System.Drawing.Point(152, 93)
         Me.LNameTxt.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.LNameTxt.Name = "LNameTxt"
-        Me.LNameTxt.Size = New System.Drawing.Size(1077, 30)
+        Me.LNameTxt.Size = New System.Drawing.Size(1003, 30)
         Me.LNameTxt.TabIndex = 16
         '
         'Label1
@@ -150,10 +169,10 @@ Partial Class FormBibliotecario
         '
         Me.FNameTxt.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.FNameTxt.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FNameTxt.Location = New System.Drawing.Point(127, 38)
+        Me.FNameTxt.Location = New System.Drawing.Point(152, 38)
         Me.FNameTxt.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.FNameTxt.Name = "FNameTxt"
-        Me.FNameTxt.Size = New System.Drawing.Size(1076, 30)
+        Me.FNameTxt.Size = New System.Drawing.Size(1002, 30)
         Me.FNameTxt.TabIndex = 14
         '
         'AuthorLbl
@@ -192,6 +211,8 @@ Partial Class FormBibliotecario
         Me.BtnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnClose.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnClose.ForeColor = System.Drawing.SystemColors.Window
+        Me.BtnClose.Image = CType(resources.GetObject("BtnClose.Image"), System.Drawing.Image)
+        Me.BtnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BtnClose.Location = New System.Drawing.Point(25, 242)
         Me.BtnClose.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BtnClose.Name = "BtnClose"
@@ -209,6 +230,8 @@ Partial Class FormBibliotecario
         Me.BtnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnDelete.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnDelete.ForeColor = System.Drawing.SystemColors.Window
+        Me.BtnDelete.Image = CType(resources.GetObject("BtnDelete.Image"), System.Drawing.Image)
+        Me.BtnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BtnDelete.Location = New System.Drawing.Point(25, 174)
         Me.BtnDelete.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BtnDelete.Name = "BtnDelete"
@@ -226,6 +249,8 @@ Partial Class FormBibliotecario
         Me.BtnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnSave.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnSave.ForeColor = System.Drawing.SystemColors.Window
+        Me.BtnSave.Image = CType(resources.GetObject("BtnSave.Image"), System.Drawing.Image)
+        Me.BtnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BtnSave.Location = New System.Drawing.Point(25, 105)
         Me.BtnSave.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BtnSave.Name = "BtnSave"
@@ -243,6 +268,8 @@ Partial Class FormBibliotecario
         Me.BtnNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnNew.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnNew.ForeColor = System.Drawing.SystemColors.Window
+        Me.BtnNew.Image = CType(resources.GetObject("BtnNew.Image"), System.Drawing.Image)
+        Me.BtnNew.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BtnNew.Location = New System.Drawing.Point(25, 30)
         Me.BtnNew.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BtnNew.Name = "BtnNew"
@@ -260,31 +287,28 @@ Partial Class FormBibliotecario
         Me.GridBibliotecario.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
         Me.GridBibliotecario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.GridBibliotecario.GridColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.GridBibliotecario.Location = New System.Drawing.Point(21, 55)
+        Me.GridBibliotecario.Location = New System.Drawing.Point(21, 68)
         Me.GridBibliotecario.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GridBibliotecario.Name = "GridBibliotecario"
         Me.GridBibliotecario.ReadOnly = True
         Me.GridBibliotecario.RowHeadersWidth = 51
         Me.GridBibliotecario.RowTemplate.Height = 24
-        Me.GridBibliotecario.Size = New System.Drawing.Size(1541, 179)
+        Me.GridBibliotecario.Size = New System.Drawing.Size(1541, 166)
         Me.GridBibliotecario.TabIndex = 1
         '
-        'BtnExcel
+        'Label5
         '
-        Me.BtnExcel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.BtnExcel.BackColor = System.Drawing.Color.Transparent
-        Me.BtnExcel.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnExcel.FlatAppearance.BorderSize = 0
-        Me.BtnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnExcel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnExcel.ForeColor = System.Drawing.SystemColors.Window
-        Me.BtnExcel.Image = CType(resources.GetObject("BtnExcel.Image"), System.Drawing.Image)
-        Me.BtnExcel.Location = New System.Drawing.Point(1486, 9)
-        Me.BtnExcel.Margin = New System.Windows.Forms.Padding(2)
-        Me.BtnExcel.Name = "BtnExcel"
-        Me.BtnExcel.Size = New System.Drawing.Size(76, 42)
-        Me.BtnExcel.TabIndex = 6
-        Me.BtnExcel.UseVisualStyleBackColor = False
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Yu Gothic", 22.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.Image = CType(resources.GetObject("Label5.Image"), System.Drawing.Image)
+        Me.Label5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Label5.Location = New System.Drawing.Point(19, 9)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(229, 48)
+        Me.Label5.TabIndex = 10
+        Me.Label5.Text = "    Librarian"
+        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'FormBibliotecario
         '
@@ -298,6 +322,7 @@ Partial Class FormBibliotecario
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormBibliotecario"
         Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
@@ -323,4 +348,5 @@ Partial Class FormBibliotecario
     Friend WithEvents FNameTxt As TextBox
     Friend WithEvents AuthorLbl As Label
     Friend WithEvents BtnExcel As Button
+    Friend WithEvents Label5 As Label
 End Class

@@ -24,6 +24,7 @@ Partial Class FormBookConsult
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormBookConsult))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.BtnExcel = New System.Windows.Forms.Button()
         Me.LanguageCmb = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.EditorialCmb = New System.Windows.Forms.ComboBox()
@@ -34,7 +35,7 @@ Partial Class FormBookConsult
         Me.LabelFilter = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GridBookConsult = New System.Windows.Forms.DataGridView()
-        Me.BtnExcel = New System.Windows.Forms.Button()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.GridBookConsult, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -42,6 +43,7 @@ Partial Class FormBookConsult
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(68, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.BtnExcel)
         Me.Panel1.Controls.Add(Me.LanguageCmb)
         Me.Panel1.Controls.Add(Me.Label3)
@@ -58,6 +60,23 @@ Partial Class FormBookConsult
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1571, 583)
         Me.Panel1.TabIndex = 0
+        '
+        'BtnExcel
+        '
+        Me.BtnExcel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BtnExcel.BackColor = System.Drawing.Color.Transparent
+        Me.BtnExcel.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnExcel.FlatAppearance.BorderSize = 0
+        Me.BtnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnExcel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnExcel.ForeColor = System.Drawing.SystemColors.Window
+        Me.BtnExcel.Image = CType(resources.GetObject("BtnExcel.Image"), System.Drawing.Image)
+        Me.BtnExcel.Location = New System.Drawing.Point(1444, 17)
+        Me.BtnExcel.Margin = New System.Windows.Forms.Padding(2)
+        Me.BtnExcel.Name = "BtnExcel"
+        Me.BtnExcel.Size = New System.Drawing.Size(76, 42)
+        Me.BtnExcel.TabIndex = 15
+        Me.BtnExcel.UseVisualStyleBackColor = False
         '
         'LanguageCmb
         '
@@ -113,6 +132,8 @@ Partial Class FormBookConsult
         Me.BtnCleanFields.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnCleanFields.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnCleanFields.ForeColor = System.Drawing.SystemColors.Window
+        Me.BtnCleanFields.Image = CType(resources.GetObject("BtnCleanFields.Image"), System.Drawing.Image)
+        Me.BtnCleanFields.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BtnCleanFields.Location = New System.Drawing.Point(1310, 461)
         Me.BtnCleanFields.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BtnCleanFields.Name = "BtnCleanFields"
@@ -175,7 +196,7 @@ Partial Class FormBookConsult
         Me.GridBookConsult.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
         Me.GridBookConsult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.GridBookConsult.GridColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.GridBookConsult.Location = New System.Drawing.Point(24, 58)
+        Me.GridBookConsult.Location = New System.Drawing.Point(34, 72)
         Me.GridBookConsult.Name = "GridBookConsult"
         Me.GridBookConsult.ReadOnly = True
         Me.GridBookConsult.RowHeadersWidth = 51
@@ -183,22 +204,19 @@ Partial Class FormBookConsult
         Me.GridBookConsult.Size = New System.Drawing.Size(1496, 240)
         Me.GridBookConsult.TabIndex = 1
         '
-        'BtnExcel
+        'Label4
         '
-        Me.BtnExcel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.BtnExcel.BackColor = System.Drawing.Color.Transparent
-        Me.BtnExcel.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnExcel.FlatAppearance.BorderSize = 0
-        Me.BtnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnExcel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnExcel.ForeColor = System.Drawing.SystemColors.Window
-        Me.BtnExcel.Image = CType(resources.GetObject("BtnExcel.Image"), System.Drawing.Image)
-        Me.BtnExcel.Location = New System.Drawing.Point(1444, 11)
-        Me.BtnExcel.Margin = New System.Windows.Forms.Padding(2)
-        Me.BtnExcel.Name = "BtnExcel"
-        Me.BtnExcel.Size = New System.Drawing.Size(76, 42)
-        Me.BtnExcel.TabIndex = 15
-        Me.BtnExcel.UseVisualStyleBackColor = False
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Yu Gothic", 22.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.White
+        Me.Label4.Image = CType(resources.GetObject("Label4.Image"), System.Drawing.Image)
+        Me.Label4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Label4.Location = New System.Drawing.Point(26, 11)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(155, 48)
+        Me.Label4.TabIndex = 25
+        Me.Label4.Text = "    Book"
+        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'FormBookConsult
         '
@@ -230,4 +248,5 @@ Partial Class FormBookConsult
     Friend WithEvents EditorialCmb As ComboBox
     Friend WithEvents Label2 As Label
     Friend WithEvents BtnExcel As Button
+    Friend WithEvents Label4 As Label
 End Class
