@@ -142,7 +142,7 @@ Partial Class FormContainer
         Me.BibliotecarioBtn.Name = "BibliotecarioBtn"
         Me.BibliotecarioBtn.Size = New System.Drawing.Size(307, 58)
         Me.BibliotecarioBtn.TabIndex = 3
-        Me.BibliotecarioBtn.Text = "Bibliotecario"
+        Me.BibliotecarioBtn.Text = "Librarian"
         Me.BibliotecarioBtn.UseVisualStyleBackColor = False
         '
         'UsersBtn
