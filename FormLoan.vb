@@ -78,15 +78,14 @@
             Dim ticket As Single? = If(String.IsNullOrEmpty(TicketTxt.Text), Nothing, CSng(TicketTxt.Text))
 
             If (BtnSave.Text = "Edit") Then
-                loanEditable.BookId = CInt(IdBookTxt.Text)
-                loanEditable.LoanDate = DateLoan.Value.Date
-                loanEditable.DueDate = DateDue.Value.Date
-                loanEditable.UserId = CInt(IdUserTxt.Text)
-                loanEditable.LoanType = CStr(TypeLoanCmb.SelectedItem)
-                loanEditable.LibrarianId = CInt(IdLibrarianTxt.Text)
-                loanEditable.LibrarianId = CInt(IdLibrarianTxt.Text)
-                loanEditable.Delivered = CStr(DeliveredCmb.SelectedItem)
-                loanEditable.Ticket = CType(TicketTxt.Text, Single?)
+                loanEditable.BookId = bookId
+                loanEditable.LoanDate = loanDate
+                loanEditable.DueDate = dueDate
+                loanEditable.UserId = userId
+                loanEditable.LoanType = loanType
+                loanEditable.LibrarianId = librarianId
+                loanEditable.Delivered = delivered
+                loanEditable.Ticket = ticket
                 loanDao.ModifyLoan(loanEditable)
             Else
                 If loanDate < DateTime.Today OrElse dueDate < DateTime.Today Then
@@ -176,7 +175,14 @@
                 IdUserTxt.Text = loanEditable.UserId.ToString()
                 TypeLoanCmb.SelectedItem = loanEditable.LoanType
                 IdLibrarianTxt.Text = loanEditable.LibrarianId.ToString()
-                DeliveredCmb.SelectedItem = loanEditable.Delivered
+
+                Dim valorBuscado As String = loanEditable.Delivered
+                ' Busca el índice del ítem en el ComboBox
+                Dim indice As Integer = DeliveredCmb.FindStringExact(valorBuscado)
+                ' Si el ítem se encontró en el ComboBox, selecciona el ítem
+                If indice <> -1 Then
+                    DeliveredCmb.SelectedIndex = indice
+                End If
                 TicketTxt.Text = loanEditable.Ticket.ToString()
             End If
 

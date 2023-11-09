@@ -24,6 +24,7 @@ Partial Class FormLoan
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormLoan))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.BtnExcel = New System.Windows.Forms.Button()
         Me.BtnCleanFilters = New System.Windows.Forms.Button()
         Me.OverdueLoanCheck = New System.Windows.Forms.CheckBox()
@@ -54,7 +55,6 @@ Partial Class FormLoan
         Me.BtnSave = New System.Windows.Forms.Button()
         Me.BtnNew = New System.Windows.Forms.Button()
         Me.GridLoan = New System.Windows.Forms.DataGridView()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -81,6 +81,20 @@ Partial Class FormLoan
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1589, 582)
         Me.Panel1.TabIndex = 1
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Yu Gothic", 22.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.Image = CType(resources.GetObject("Label5.Image"), System.Drawing.Image)
+        Me.Label5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Label5.Location = New System.Drawing.Point(53, 9)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(154, 48)
+        Me.Label5.TabIndex = 41
+        Me.Label5.Text = "    Loan"
+        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'BtnExcel
         '
@@ -221,7 +235,7 @@ Partial Class FormLoan
         Me.DeliveredCmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.DeliveredCmb.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DeliveredCmb.FormattingEnabled = True
-        Me.DeliveredCmb.Items.AddRange(New Object() {"Yes", "No"})
+        Me.DeliveredCmb.Items.AddRange(New Object() {"yes", "no"})
         Me.DeliveredCmb.Location = New System.Drawing.Point(779, 28)
         Me.DeliveredCmb.Name = "DeliveredCmb"
         Me.DeliveredCmb.Size = New System.Drawing.Size(145, 28)
@@ -281,7 +295,7 @@ Partial Class FormLoan
         Me.TypeLoanCmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.TypeLoanCmb.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TypeLoanCmb.FormattingEnabled = True
-        Me.TypeLoanCmb.Items.AddRange(New Object() {"Individual", "Interlibrary", "Intercampus", "Network", "Collective"})
+        Me.TypeLoanCmb.Items.AddRange(New Object() {"Normal", "Interlibrary", "Intercampus", "Network", "Collective"})
         Me.TypeLoanCmb.Location = New System.Drawing.Point(127, 220)
         Me.TypeLoanCmb.Name = "TypeLoanCmb"
         Me.TypeLoanCmb.Size = New System.Drawing.Size(216, 28)
@@ -469,20 +483,6 @@ Partial Class FormLoan
         Me.GridLoan.RowTemplate.Height = 24
         Me.GridLoan.Size = New System.Drawing.Size(1496, 86)
         Me.GridLoan.TabIndex = 0
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Yu Gothic", 22.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Image = CType(resources.GetObject("Label5.Image"), System.Drawing.Image)
-        Me.Label5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Label5.Location = New System.Drawing.Point(53, 9)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(154, 48)
-        Me.Label5.TabIndex = 41
-        Me.Label5.Text = "    Loan"
-        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'FormLoan
         '

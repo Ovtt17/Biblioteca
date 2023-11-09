@@ -47,7 +47,7 @@ Public Class LoanDAO
                     ' Specify command type
                     command.CommandType = CommandType.StoredProcedure
                     ' Add Parameters for modificar_prestamo
-                    command.Parameters.AddWithValue("@_cod_prestamo", loanEditable.BookId)
+                    command.Parameters.AddWithValue("@_cod_prestamo", loanEditable.LoanId)
                     command.Parameters.AddWithValue("@_cod_libro", loanEditable.BookId)
                     command.Parameters.AddWithValue("@_fecha_pres", loanEditable.LoanDate)
                     command.Parameters.AddWithValue("@_fecha_ent", loanEditable.DueDate)
