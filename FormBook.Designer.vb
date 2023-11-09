@@ -24,6 +24,7 @@ Partial Class FormBook
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormBook))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.BtnExcel = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.RemoveAuthorBtn = New System.Windows.Forms.Button()
@@ -51,7 +52,6 @@ Partial Class FormBook
         Me.BtnSave = New System.Windows.Forms.Button()
         Me.BtnNew = New System.Windows.Forms.Button()
         Me.GridBook = New System.Windows.Forms.DataGridView()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -72,6 +72,20 @@ Partial Class FormBook
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1589, 582)
         Me.Panel1.TabIndex = 0
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Yu Gothic", 22.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.Image = CType(resources.GetObject("Label2.Image"), System.Drawing.Image)
+        Me.Label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Label2.Location = New System.Drawing.Point(38, 9)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(155, 48)
+        Me.Label2.TabIndex = 24
+        Me.Label2.Text = "    Book"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'BtnExcel
         '
@@ -119,26 +133,34 @@ Partial Class FormBook
         '
         'RemoveAuthorBtn
         '
+        Me.RemoveAuthorBtn.BackColor = System.Drawing.Color.Crimson
         Me.RemoveAuthorBtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.RemoveAuthorBtn.FlatAppearance.BorderSize = 0
+        Me.RemoveAuthorBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.RemoveAuthorBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RemoveAuthorBtn.ForeColor = System.Drawing.Color.White
         Me.RemoveAuthorBtn.Location = New System.Drawing.Point(1038, 137)
         Me.RemoveAuthorBtn.Name = "RemoveAuthorBtn"
         Me.RemoveAuthorBtn.Size = New System.Drawing.Size(45, 45)
         Me.RemoveAuthorBtn.TabIndex = 38
         Me.RemoveAuthorBtn.Text = "-"
-        Me.RemoveAuthorBtn.UseVisualStyleBackColor = True
+        Me.RemoveAuthorBtn.UseVisualStyleBackColor = False
         '
         'AddAuthorBtn
         '
         Me.AddAuthorBtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.AddAuthorBtn.BackColor = System.Drawing.Color.Green
         Me.AddAuthorBtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.AddAuthorBtn.FlatAppearance.BorderSize = 0
+        Me.AddAuthorBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.AddAuthorBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.AddAuthorBtn.ForeColor = System.Drawing.Color.White
         Me.AddAuthorBtn.Location = New System.Drawing.Point(1038, 74)
         Me.AddAuthorBtn.Name = "AddAuthorBtn"
         Me.AddAuthorBtn.Size = New System.Drawing.Size(45, 45)
         Me.AddAuthorBtn.TabIndex = 37
         Me.AddAuthorBtn.Text = "+"
-        Me.AddAuthorBtn.UseVisualStyleBackColor = True
+        Me.AddAuthorBtn.UseVisualStyleBackColor = False
         '
         'AuthorsList
         '
@@ -430,20 +452,6 @@ Partial Class FormBook
         Me.GridBook.RowTemplate.Height = 24
         Me.GridBook.Size = New System.Drawing.Size(1496, 132)
         Me.GridBook.TabIndex = 0
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Yu Gothic", 22.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Image = CType(resources.GetObject("Label2.Image"), System.Drawing.Image)
-        Me.Label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Label2.Location = New System.Drawing.Point(38, 9)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(155, 48)
-        Me.Label2.TabIndex = 24
-        Me.Label2.Text = "    Book"
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'FormBook
         '

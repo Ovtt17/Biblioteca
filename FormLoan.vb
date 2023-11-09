@@ -7,8 +7,10 @@
         Try
             Dim loanDao As New LoanDAO()
             loanDao.ConsultLoan()
-            GridLoan.DataSource = loanDao.dataSet.Tables(0)
+            GridLoan.DataSource = loanDao.dataSet.Tables("loans")
             GridLoan.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+
+            LoadComboboxes(loanDao.dataSet)
 
             RemoveEventHandlers()
             Dim monthAgo As Date = Date.Now.AddMonths(-12)
@@ -18,8 +20,46 @@
             AddEventHandlers()
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message)
+            Exit Sub
         End Try
     End Sub
+
+    Private Sub LoadComboboxes(dataSet As DataSet)
+        If dataSet.Tables("bookId").Rows.Count > 0 Then
+            ' Configure the ComboBox with the query results
+            With Me.BookIdCmb
+                .DataSource = Nothing
+                .Items.Clear()
+                .DataSource = dataSet.Tables("bookId")
+                .DisplayMember = "cod_libro"
+                .ValueMember = "cod_libro"
+                .SelectedIndex = -1
+            End With
+        End If
+        If dataSet.Tables("userId").Rows.Count > 0 Then
+            ' Configure the ComboBox with the query results
+            With Me.UserIdCmb
+                .DataSource = Nothing
+                .Items.Clear()
+                .DataSource = dataSet.Tables("userId")
+                .DisplayMember = "cod_ident"
+                .ValueMember = "cod_ident"
+                .SelectedIndex = -1
+            End With
+        End If
+        If dataSet.Tables("librarianId").Rows.Count > 0 Then
+            ' Configure the ComboBox with the query results
+            With Me.LibrarianIdCmb
+                .DataSource = Nothing
+                .Items.Clear()
+                .DataSource = dataSet.Tables("librarianId")
+                .DisplayMember = "cod_bibliotecario"
+                .ValueMember = "cod_bibliotecario"
+                .SelectedIndex = -1
+            End With
+        End If
+    End Sub
+
     Private Sub RemoveEventHandlers()
         RemoveHandler DateEndFilter.ValueChanged, AddressOf DateEndFilter_ValueChanged
         RemoveHandler DateStartFilter.ValueChanged, AddressOf DateEndFilter_ValueChanged
@@ -33,12 +73,12 @@
     End Sub
 
     Private Sub CleanFields()
-        IdBookTxt.Text = ""
+        BookIdCmb.SelectedIndex = -1
         DateLoan.Value = Date.Now
         DateDue.Value = Date.Now
-        IdUserTxt.Text = ""
+        UserIdCmb.SelectedIndex = -1
         TypeLoanCmb.SelectedIndex = -1
-        IdLibrarianTxt.Text = ""
+        LibrarianIdCmb.SelectedIndex = -1
         DeliveredCmb.SelectedIndex = -1
         TicketTxt.Text = ""
         BtnSave.Text = "Save"
@@ -46,7 +86,7 @@
 
     Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
         If Not ValidateInputs() Then
-            Exit Sub ' or return False if this is a Function
+            Exit Sub
         End If
         If MessageBox.Show("Do you want to save the record?", "Library System",
             MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) =
@@ -56,15 +96,10 @@
 
         Try
             Dim loanDao As New LoanDAO()
-            Dim bookId As Integer
-            Dim userId As Integer
-            Dim librarianId As Integer
-            Dim validatedValues = ValidateIntegers(IdBookTxt, IdUserTxt, IdLibrarianTxt)
-            If validatedValues IsNot Nothing Then
-                bookId = validatedValues.Item1
-                userId = validatedValues.Item2
-                librarianId = validatedValues.Item3
-            End If
+
+            Dim bookId As Integer = CInt(BookIdCmb.SelectedValue)
+            Dim userId As Integer = CInt(UserIdCmb.SelectedValue)
+            Dim librarianId As Integer = CInt(LibrarianIdCmb.SelectedValue)
 
             Dim loanDate As Date = DateLoan.Value.Date
             Dim dueDate As Date = DateDue.Value.Date
@@ -104,10 +139,10 @@
 
     Private Function ValidateInputs() As Boolean
         Dim controls As New Dictionary(Of Control, String) From {
-        {IdBookTxt, "Enter the book id"},
-        {IdUserTxt, "Enter the user id"},
+        {BookIdCmb, "Select a Book Id"},
+        {UserIdCmb, "Select an User Id"},
+        {LibrarianIdCmb, "Select a Librarian Id"},
         {TypeLoanCmb, "Select a Loan Type"},
-        {IdLibrarianTxt, "Enter the librarian id"},
         {DeliveredCmb, "Select delivered value"}
     }
 
@@ -125,38 +160,10 @@
                     comboBox.Focus()
                     Return False
                 End If
-            ElseIf TypeOf control.Key Is DateTimePicker Then
-                If control.Key.Text = "" Then
-                    MessageBox.Show(control.Value)
-                    control.Key.Focus()
-                    Return False
-                End If
             End If
         Next
 
         Return True
-    End Function
-    Private Function ValidateIntegers(ByVal txtBook As TextBox, ByVal txtUser As TextBox, ByVal txtLibrarian As TextBox) As Tuple(Of Integer, Integer, Integer)
-        Dim bookId As Integer
-        If Not Integer.TryParse(txtBook.Text, bookId) OrElse bookId < 1 Then
-            MessageBox.Show("The book id must be an integer greater than 0.")
-            Return Nothing
-        End If
-
-        Dim userId As Integer
-        If Not Integer.TryParse(txtUser.Text, userId) OrElse userId < 1 Then
-            MessageBox.Show("The user id must be an integer greater than 0.")
-            Return Nothing
-        End If
-
-        Dim librarianId As Integer
-        If Not Integer.TryParse(txtLibrarian.Text, librarianId) OrElse librarianId < 1 Then
-            MessageBox.Show("The librarian id must be an integer greater than 0.")
-            Return Nothing
-        End If
-
-        ' Devuelve los valores validados.
-        Return New Tuple(Of Integer, Integer, Integer)(bookId, userId, librarianId)
     End Function
 
     Private Sub BtnNew_Click(sender As Object, e As EventArgs) Handles BtnNew.Click
@@ -169,12 +176,12 @@
             Dim loanDao As New LoanDAO()
             loanEditable = loanDao.GetLoanById(currentRow)
             If loanEditable IsNot Nothing Then
-                IdBookTxt.Text = loanEditable.BookId.ToString()
+                BookIdCmb.SelectedValue = loanEditable.BookId
                 DateLoan.Value = loanEditable.LoanDate
                 DateDue.Value = loanEditable.DueDate
-                IdUserTxt.Text = loanEditable.UserId.ToString()
+                UserIdCmb.SelectedValue = loanEditable.UserId
                 TypeLoanCmb.SelectedItem = loanEditable.LoanType
-                IdLibrarianTxt.Text = loanEditable.LibrarianId.ToString()
+                LibrarianIdCmb.SelectedValue = loanEditable.LibrarianId
 
                 Dim valorBuscado As String = loanEditable.Delivered
                 ' Busca el índice del ítem en el ComboBox
@@ -189,6 +196,7 @@
             BtnSave.Text = "Edit"
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message)
+            Exit Sub
         End Try
     End Sub
 
@@ -212,6 +220,7 @@
             CleanFields()
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Exit Sub
         End Try
     End Sub
 
@@ -235,6 +244,7 @@
             GridLoan.DataSource = dao.dataSet.Tables(0)
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Exit Sub
         End Try
     End Sub
 

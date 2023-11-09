@@ -81,13 +81,13 @@ Public Class FormEditorial
             Dim editorialDao As New EditorialDAO()
             ' Verify if editorial is editable or not
             If (BtnSave.Text = "Edit") Then
-                editorialEditable.Name = Me.NameTxt.Text
-                editorialEditable.Country = Me.CountryCmb.SelectedIndex + 1
+                editorialEditable.Name = Me.NameTxt.Text.Trim()
+                editorialEditable.Country = CInt(Me.CountryCmb.SelectedValue)
                 editorialDao.ModifyEditorial(editorialEditable)
                 rot = "Modified"
             Else
                 ' In Case it's not editable, insert a new one
-                editorialDao.InsertEditorial(New Editorial(NameTxt.Text, CountryCmb.SelectedIndex + 1))
+                editorialDao.InsertEditorial(New Editorial(NameTxt.Text.Trim(), CInt(Me.CountryCmb.SelectedValue)))
                 rot = "Saved"
             End If
             MessageBox.Show($"Editorial {rot} Corretly.")
