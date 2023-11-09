@@ -1,4 +1,5 @@
-﻿Imports Microsoft.Office.Interop
+﻿Imports Excel = Microsoft.Office.Interop.Excel
+
 Public Class ExportToExcel
     Public Sub ExportData(ByVal dataGridView As DataGridView)
         Dim xlApp As Excel.Application
@@ -16,7 +17,15 @@ Public Class ExportToExcel
             For j = 0 To dataGridView.ColumnCount - 1
                 For k As Integer = 1 To dataGridView.Columns.Count
                     xlWorkSheet.Cells(1, k) = dataGridView.Columns(k - 1).HeaderText
-                    xlWorkSheet.Cells(i + 2, j + 1) = dataGridView.Rows(i).Cells(j).Value.ToString()
+                    ' Verifica si el valor de la celda es una fecha
+                    Dim dateValue As Date
+                    If DateTime.TryParse(dataGridView.Rows(i).Cells(j).Value.ToString(), dateValue) Then
+                        ' Si es una fecha, formatea el valor como una fecha sin hora
+                        xlWorkSheet.Cells(i + 2, j + 1) = dateValue.ToString("yyyy/MM/dd")
+                    Else
+                        ' Si no es una fecha, asigna el valor tal cual
+                        xlWorkSheet.Cells(i + 2, j + 1) = dataGridView.Rows(i).Cells(j).Value.ToString()
+                    End If
                 Next
             Next
         Next
