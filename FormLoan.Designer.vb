@@ -24,6 +24,7 @@ Partial Class FormLoan
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormLoan))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.BtnExcel = New System.Windows.Forms.Button()
         Me.BtnCleanFilters = New System.Windows.Forms.Button()
         Me.OverdueLoanCheck = New System.Windows.Forms.CheckBox()
@@ -35,14 +36,11 @@ Partial Class FormLoan
         Me.TicketTxt = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.DeliveredCmb = New System.Windows.Forms.ComboBox()
-        Me.IdLibrarianTxt = New System.Windows.Forms.TextBox()
         Me.DateDue = New System.Windows.Forms.DateTimePicker()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DateLoan = New System.Windows.Forms.DateTimePicker()
         Me.DeliveredLbl = New System.Windows.Forms.Label()
         Me.TypeLoanCmb = New System.Windows.Forms.ComboBox()
-        Me.IdUserTxt = New System.Windows.Forms.TextBox()
-        Me.IdBookTxt = New System.Windows.Forms.TextBox()
         Me.TypeLoanLbl = New System.Windows.Forms.Label()
         Me.LibrarianLbl = New System.Windows.Forms.Label()
         Me.UserLbl = New System.Windows.Forms.Label()
@@ -54,7 +52,9 @@ Partial Class FormLoan
         Me.BtnSave = New System.Windows.Forms.Button()
         Me.BtnNew = New System.Windows.Forms.Button()
         Me.GridLoan = New System.Windows.Forms.DataGridView()
-        Me.Label5 = New System.Windows.Forms.Label()
+        Me.BookIdCmb = New System.Windows.Forms.ComboBox()
+        Me.UserIdCmb = New System.Windows.Forms.ComboBox()
+        Me.LibrarianIdCmb = New System.Windows.Forms.ComboBox()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -81,6 +81,20 @@ Partial Class FormLoan
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1589, 582)
         Me.Panel1.TabIndex = 1
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Yu Gothic", 22.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.Image = CType(resources.GetObject("Label5.Image"), System.Drawing.Image)
+        Me.Label5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Label5.Location = New System.Drawing.Point(53, 9)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(154, 48)
+        Me.Label5.TabIndex = 41
+        Me.Label5.Text = "    Loan"
+        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'BtnExcel
         '
@@ -175,17 +189,17 @@ Partial Class FormLoan
         'Panel2
         '
         Me.Panel2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Panel2.Controls.Add(Me.LibrarianIdCmb)
+        Me.Panel2.Controls.Add(Me.UserIdCmb)
+        Me.Panel2.Controls.Add(Me.BookIdCmb)
         Me.Panel2.Controls.Add(Me.TicketTxt)
         Me.Panel2.Controls.Add(Me.Label2)
         Me.Panel2.Controls.Add(Me.DeliveredCmb)
-        Me.Panel2.Controls.Add(Me.IdLibrarianTxt)
         Me.Panel2.Controls.Add(Me.DateDue)
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Controls.Add(Me.DateLoan)
         Me.Panel2.Controls.Add(Me.DeliveredLbl)
         Me.Panel2.Controls.Add(Me.TypeLoanCmb)
-        Me.Panel2.Controls.Add(Me.IdUserTxt)
-        Me.Panel2.Controls.Add(Me.IdBookTxt)
         Me.Panel2.Controls.Add(Me.TypeLoanLbl)
         Me.Panel2.Controls.Add(Me.LibrarianLbl)
         Me.Panel2.Controls.Add(Me.UserLbl)
@@ -221,19 +235,11 @@ Partial Class FormLoan
         Me.DeliveredCmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.DeliveredCmb.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DeliveredCmb.FormattingEnabled = True
-        Me.DeliveredCmb.Items.AddRange(New Object() {"Yes", "No"})
+        Me.DeliveredCmb.Items.AddRange(New Object() {"yes", "no"})
         Me.DeliveredCmb.Location = New System.Drawing.Point(779, 28)
         Me.DeliveredCmb.Name = "DeliveredCmb"
         Me.DeliveredCmb.Size = New System.Drawing.Size(145, 28)
         Me.DeliveredCmb.TabIndex = 42
-        '
-        'IdLibrarianTxt
-        '
-        Me.IdLibrarianTxt.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.IdLibrarianTxt.Location = New System.Drawing.Point(127, 270)
-        Me.IdLibrarianTxt.Name = "IdLibrarianTxt"
-        Me.IdLibrarianTxt.Size = New System.Drawing.Size(216, 27)
-        Me.IdLibrarianTxt.TabIndex = 41
         '
         'DateDue
         '
@@ -281,28 +287,11 @@ Partial Class FormLoan
         Me.TypeLoanCmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.TypeLoanCmb.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TypeLoanCmb.FormattingEnabled = True
-        Me.TypeLoanCmb.Items.AddRange(New Object() {"Individual", "Interlibrary", "Intercampus", "Network", "Collective"})
+        Me.TypeLoanCmb.Items.AddRange(New Object() {"Normal", "Interlibrary", "Intercampus", "Network", "Collective"})
         Me.TypeLoanCmb.Location = New System.Drawing.Point(127, 220)
         Me.TypeLoanCmb.Name = "TypeLoanCmb"
         Me.TypeLoanCmb.Size = New System.Drawing.Size(216, 28)
         Me.TypeLoanCmb.TabIndex = 28
-        '
-        'IdUserTxt
-        '
-        Me.IdUserTxt.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.IdUserTxt.Location = New System.Drawing.Point(127, 172)
-        Me.IdUserTxt.Name = "IdUserTxt"
-        Me.IdUserTxt.Size = New System.Drawing.Size(216, 27)
-        Me.IdUserTxt.TabIndex = 27
-        '
-        'IdBookTxt
-        '
-        Me.IdBookTxt.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.IdBookTxt.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.IdBookTxt.Location = New System.Drawing.Point(127, 20)
-        Me.IdBookTxt.Name = "IdBookTxt"
-        Me.IdBookTxt.Size = New System.Drawing.Size(216, 27)
-        Me.IdBookTxt.TabIndex = 26
         '
         'TypeLoanLbl
         '
@@ -470,19 +459,44 @@ Partial Class FormLoan
         Me.GridLoan.Size = New System.Drawing.Size(1496, 86)
         Me.GridLoan.TabIndex = 0
         '
-        'Label5
+        'BookIdCmb
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Yu Gothic", 22.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Image = CType(resources.GetObject("Label5.Image"), System.Drawing.Image)
-        Me.Label5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Label5.Location = New System.Drawing.Point(53, 9)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(154, 48)
-        Me.Label5.TabIndex = 41
-        Me.Label5.Text = "    Loan"
-        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.BookIdCmb.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.BookIdCmb.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.BookIdCmb.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.BookIdCmb.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BookIdCmb.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BookIdCmb.FormattingEnabled = True
+        Me.BookIdCmb.Location = New System.Drawing.Point(127, 19)
+        Me.BookIdCmb.Name = "BookIdCmb"
+        Me.BookIdCmb.Size = New System.Drawing.Size(216, 28)
+        Me.BookIdCmb.TabIndex = 45
+        '
+        'UserIdCmb
+        '
+        Me.UserIdCmb.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.UserIdCmb.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.UserIdCmb.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.UserIdCmb.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.UserIdCmb.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.UserIdCmb.FormattingEnabled = True
+        Me.UserIdCmb.Location = New System.Drawing.Point(127, 172)
+        Me.UserIdCmb.Name = "UserIdCmb"
+        Me.UserIdCmb.Size = New System.Drawing.Size(216, 28)
+        Me.UserIdCmb.TabIndex = 46
+        '
+        'LibrarianIdCmb
+        '
+        Me.LibrarianIdCmb.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.LibrarianIdCmb.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.LibrarianIdCmb.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.LibrarianIdCmb.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.LibrarianIdCmb.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LibrarianIdCmb.FormattingEnabled = True
+        Me.LibrarianIdCmb.Location = New System.Drawing.Point(127, 274)
+        Me.LibrarianIdCmb.Name = "LibrarianIdCmb"
+        Me.LibrarianIdCmb.Size = New System.Drawing.Size(216, 28)
+        Me.LibrarianIdCmb.TabIndex = 47
         '
         'FormLoan
         '
@@ -509,8 +523,6 @@ Partial Class FormLoan
     Friend WithEvents DateLoan As DateTimePicker
     Friend WithEvents DeliveredLbl As Label
     Friend WithEvents TypeLoanCmb As ComboBox
-    Friend WithEvents IdUserTxt As TextBox
-    Friend WithEvents IdBookTxt As TextBox
     Friend WithEvents TypeLoanLbl As Label
     Friend WithEvents LibrarianLbl As Label
     Friend WithEvents UserLbl As Label
@@ -524,7 +536,6 @@ Partial Class FormLoan
     Friend WithEvents GridLoan As DataGridView
     Friend WithEvents DateDue As DateTimePicker
     Friend WithEvents Label1 As Label
-    Friend WithEvents IdLibrarianTxt As TextBox
     Friend WithEvents DeliveredCmb As ComboBox
     Friend WithEvents TicketTxt As TextBox
     Friend WithEvents Label2 As Label
@@ -536,4 +547,7 @@ Partial Class FormLoan
     Friend WithEvents BtnCleanFilters As Button
     Friend WithEvents BtnExcel As Button
     Friend WithEvents Label5 As Label
+    Friend WithEvents BookIdCmb As ComboBox
+    Friend WithEvents LibrarianIdCmb As ComboBox
+    Friend WithEvents UserIdCmb As ComboBox
 End Class

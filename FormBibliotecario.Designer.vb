@@ -24,6 +24,7 @@ Partial Class FormBibliotecario
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormBibliotecario))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.BtnExcel = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.AddressTxt = New System.Windows.Forms.TextBox()
@@ -40,7 +41,6 @@ Partial Class FormBibliotecario
         Me.BtnSave = New System.Windows.Forms.Button()
         Me.BtnNew = New System.Windows.Forms.Button()
         Me.GridBibliotecario = New System.Windows.Forms.DataGridView()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -63,6 +63,20 @@ Partial Class FormBibliotecario
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1589, 582)
         Me.Panel1.TabIndex = 2
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Yu Gothic", 22.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.Image = CType(resources.GetObject("Label5.Image"), System.Drawing.Image)
+        Me.Label5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Label5.Location = New System.Drawing.Point(19, 9)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(229, 48)
+        Me.Label5.TabIndex = 10
+        Me.Label5.Text = "    Librarian"
+        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'BtnExcel
         '
@@ -93,10 +107,10 @@ Partial Class FormBibliotecario
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Controls.Add(Me.FNameTxt)
         Me.Panel2.Controls.Add(Me.AuthorLbl)
-        Me.Panel2.Location = New System.Drawing.Point(21, 287)
+        Me.Panel2.Location = New System.Drawing.Point(79, 272)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1224, 267)
+        Me.Panel2.Size = New System.Drawing.Size(938, 267)
         Me.Panel2.TabIndex = 5
         '
         'AddressTxt
@@ -106,7 +120,7 @@ Partial Class FormBibliotecario
         Me.AddressTxt.Location = New System.Drawing.Point(152, 144)
         Me.AddressTxt.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.AddressTxt.Name = "AddressTxt"
-        Me.AddressTxt.Size = New System.Drawing.Size(1003, 30)
+        Me.AddressTxt.Size = New System.Drawing.Size(717, 30)
         Me.AddressTxt.TabIndex = 20
         '
         'Label3
@@ -128,7 +142,7 @@ Partial Class FormBibliotecario
         Me.PositionTxt.Location = New System.Drawing.Point(152, 197)
         Me.PositionTxt.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.PositionTxt.Name = "PositionTxt"
-        Me.PositionTxt.Size = New System.Drawing.Size(1003, 30)
+        Me.PositionTxt.Size = New System.Drawing.Size(717, 30)
         Me.PositionTxt.TabIndex = 18
         '
         'Label2
@@ -150,7 +164,7 @@ Partial Class FormBibliotecario
         Me.LNameTxt.Location = New System.Drawing.Point(152, 93)
         Me.LNameTxt.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.LNameTxt.Name = "LNameTxt"
-        Me.LNameTxt.Size = New System.Drawing.Size(1003, 30)
+        Me.LNameTxt.Size = New System.Drawing.Size(717, 30)
         Me.LNameTxt.TabIndex = 16
         '
         'Label1
@@ -172,7 +186,7 @@ Partial Class FormBibliotecario
         Me.FNameTxt.Location = New System.Drawing.Point(152, 38)
         Me.FNameTxt.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.FNameTxt.Name = "FNameTxt"
-        Me.FNameTxt.Size = New System.Drawing.Size(1002, 30)
+        Me.FNameTxt.Size = New System.Drawing.Size(716, 30)
         Me.FNameTxt.TabIndex = 14
         '
         'AuthorLbl
@@ -189,7 +203,8 @@ Partial Class FormBibliotecario
         '
         'GroupBox1
         '
-        Me.GroupBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox1.Controls.Add(Me.BtnClose)
         Me.GroupBox1.Controls.Add(Me.BtnDelete)
         Me.GroupBox1.Controls.Add(Me.BtnSave)
@@ -295,20 +310,6 @@ Partial Class FormBibliotecario
         Me.GridBibliotecario.RowTemplate.Height = 24
         Me.GridBibliotecario.Size = New System.Drawing.Size(1541, 166)
         Me.GridBibliotecario.TabIndex = 1
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Yu Gothic", 22.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Image = CType(resources.GetObject("Label5.Image"), System.Drawing.Image)
-        Me.Label5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Label5.Location = New System.Drawing.Point(19, 9)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(229, 48)
-        Me.Label5.TabIndex = 10
-        Me.Label5.Text = "    Librarian"
-        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'FormBibliotecario
         '

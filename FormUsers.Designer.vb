@@ -24,6 +24,7 @@ Partial Class FormUsers
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormUsers))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.BtnExcel = New System.Windows.Forms.Button()
         Me.FinedUsersCheck = New System.Windows.Forms.CheckBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -51,7 +52,6 @@ Partial Class FormUsers
         Me.BtnSave = New System.Windows.Forms.Button()
         Me.BtnNew = New System.Windows.Forms.Button()
         Me.GridUser = New System.Windows.Forms.DataGridView()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -73,8 +73,22 @@ Partial Class FormUsers
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1387, 582)
+        Me.Panel1.Size = New System.Drawing.Size(1589, 582)
         Me.Panel1.TabIndex = 1
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Yu Gothic", 22.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.Image = CType(resources.GetObject("Label2.Image"), System.Drawing.Image)
+        Me.Label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Label2.Location = New System.Drawing.Point(17, 9)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(150, 48)
+        Me.Label2.TabIndex = 42
+        Me.Label2.Text = "    User"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'BtnExcel
         '
@@ -86,7 +100,7 @@ Partial Class FormUsers
         Me.BtnExcel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnExcel.ForeColor = System.Drawing.SystemColors.Window
         Me.BtnExcel.Image = CType(resources.GetObject("BtnExcel.Image"), System.Drawing.Image)
-        Me.BtnExcel.Location = New System.Drawing.Point(1288, 14)
+        Me.BtnExcel.Location = New System.Drawing.Point(1490, 14)
         Me.BtnExcel.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnExcel.Name = "BtnExcel"
         Me.BtnExcel.Size = New System.Drawing.Size(76, 42)
@@ -108,8 +122,7 @@ Partial Class FormUsers
         '
         'Panel2
         '
-        Me.Panel2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Panel2.Controls.Add(Me.DateTimePicker1)
         Me.Panel2.Controls.Add(Me.codidenttxt)
         Me.Panel2.Controls.Add(Me.codIdetlb)
@@ -128,10 +141,10 @@ Partial Class FormUsers
         Me.Panel2.Controls.Add(Me.NameTxt)
         Me.Panel2.Controls.Add(Me.lastnamelb)
         Me.Panel2.Controls.Add(Me.namelb)
-        Me.Panel2.Location = New System.Drawing.Point(72, 231)
+        Me.Panel2.Location = New System.Drawing.Point(25, 231)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(955, 316)
+        Me.Panel2.Size = New System.Drawing.Size(1049, 316)
         Me.Panel2.TabIndex = 28
         '
         'DateTimePicker1
@@ -140,7 +153,7 @@ Partial Class FormUsers
         Me.DateTimePicker1.Location = New System.Drawing.Point(617, 90)
         Me.DateTimePicker1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(258, 26)
+        Me.DateTimePicker1.Size = New System.Drawing.Size(352, 26)
         Me.DateTimePicker1.TabIndex = 61
         '
         'codidenttxt
@@ -175,7 +188,7 @@ Partial Class FormUsers
         Me.statuscmb.Location = New System.Drawing.Point(643, 185)
         Me.statuscmb.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.statuscmb.Name = "statuscmb"
-        Me.statuscmb.Size = New System.Drawing.Size(210, 33)
+        Me.statuscmb.Size = New System.Drawing.Size(304, 33)
         Me.statuscmb.TabIndex = 58
         '
         'sexcmb
@@ -188,7 +201,7 @@ Partial Class FormUsers
         Me.sexcmb.Location = New System.Drawing.Point(643, 134)
         Me.sexcmb.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.sexcmb.Name = "sexcmb"
-        Me.sexcmb.Size = New System.Drawing.Size(210, 33)
+        Me.sexcmb.Size = New System.Drawing.Size(304, 33)
         Me.sexcmb.TabIndex = 57
         '
         'studytxt
@@ -198,7 +211,7 @@ Partial Class FormUsers
         Me.studytxt.Location = New System.Drawing.Point(643, 242)
         Me.studytxt.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.studytxt.Name = "studytxt"
-        Me.studytxt.Size = New System.Drawing.Size(210, 30)
+        Me.studytxt.Size = New System.Drawing.Size(304, 30)
         Me.studytxt.TabIndex = 56
         '
         'studylb
@@ -268,7 +281,7 @@ Partial Class FormUsers
         Me.addrtxt.Location = New System.Drawing.Point(643, 44)
         Me.addrtxt.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.addrtxt.Name = "addrtxt"
-        Me.addrtxt.Size = New System.Drawing.Size(210, 30)
+        Me.addrtxt.Size = New System.Drawing.Size(304, 30)
         Me.addrtxt.TabIndex = 50
         '
         'phonetxt
@@ -345,7 +358,7 @@ Partial Class FormUsers
         Me.GroupBox1.Controls.Add(Me.BtnDelete)
         Me.GroupBox1.Controls.Add(Me.BtnSave)
         Me.GroupBox1.Controls.Add(Me.BtnNew)
-        Me.GroupBox1.Location = New System.Drawing.Point(1085, 231)
+        Me.GroupBox1.Location = New System.Drawing.Point(1287, 231)
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
@@ -445,28 +458,14 @@ Partial Class FormUsers
         Me.GridUser.ReadOnly = True
         Me.GridUser.RowHeadersWidth = 51
         Me.GridUser.RowTemplate.Height = 24
-        Me.GridUser.Size = New System.Drawing.Size(1339, 138)
+        Me.GridUser.Size = New System.Drawing.Size(1541, 138)
         Me.GridUser.TabIndex = 24
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Yu Gothic", 22.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Image = CType(resources.GetObject("Label2.Image"), System.Drawing.Image)
-        Me.Label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Label2.Location = New System.Drawing.Point(17, 9)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(150, 48)
-        Me.Label2.TabIndex = 42
-        Me.Label2.Text = "    User"
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'FormUsers
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1387, 582)
+        Me.ClientSize = New System.Drawing.Size(1589, 582)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)

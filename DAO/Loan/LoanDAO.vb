@@ -47,7 +47,7 @@ Public Class LoanDAO
                     ' Specify command type
                     command.CommandType = CommandType.StoredProcedure
                     ' Add Parameters for modificar_prestamo
-                    command.Parameters.AddWithValue("@_cod_prestamo", loanEditable.BookId)
+                    command.Parameters.AddWithValue("@_cod_prestamo", loanEditable.LoanId)
                     command.Parameters.AddWithValue("@_cod_libro", loanEditable.BookId)
                     command.Parameters.AddWithValue("@_fecha_pres", loanEditable.LoanDate)
                     command.Parameters.AddWithValue("@_fecha_ent", loanEditable.DueDate)
@@ -107,7 +107,22 @@ Public Class LoanDAO
             Using cx As MySqlConnection = Me.Connect()
                 ' fill table using results from database
                 Using da As New MySqlDataAdapter(sql, cx)
-                    da.Fill(dataSet)
+                    da.Fill(dataSet, "loans")
+                End Using
+
+                sql = "select cod_libro from libro order by cod_libro;"
+                Using da As New MySqlDataAdapter(sql, cx)
+                    da.Fill(dataSet, "bookId")
+                End Using
+
+                sql = "select cod_ident from usuario order by cod_ident;"
+                Using da As New MySqlDataAdapter(sql, cx)
+                    da.Fill(dataSet, "userId")
+                End Using
+
+                sql = "select cod_bibliotecario from bibliotecario order by cod_bibliotecario;"
+                Using da As New MySqlDataAdapter(sql, cx)
+                    da.Fill(dataSet, "librarianId")
                 End Using
             End Using
         Catch ex As MySqlException
