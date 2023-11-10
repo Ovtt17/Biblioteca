@@ -29,7 +29,7 @@ Public Class FormBibliotecario
         Me.LNameTxt.Text = ""
         Me.AddressTxt.Text = ""
         Me.PositionTxt.Text = ""
-        Me.BtnSave.Text = "Guardar"
+        Me.BtnSave.Text = "Save"
         Me.FNameTxt.Focus()
     End Sub
 
