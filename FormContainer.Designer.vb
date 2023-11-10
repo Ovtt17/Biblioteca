@@ -215,7 +215,7 @@ Partial Class FormContainer
         Me.IsMdiContainer = True
         Me.Name = "FormContainer"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "FormContainer"
+        Me.Text = "Library System"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.PanelOptions.ResumeLayout(False)
         Me.PanelOptions.PerformLayout()
