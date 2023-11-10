@@ -51,7 +51,7 @@ Public Class FormEditorial
     Private Sub CleanField()
         Me.NameTxt.Text = ""
         Me.CountryCmb.SelectedIndex = -1
-        Me.BtnSave.Text = "Guardar"
+        Me.BtnSave.Text = "Save"
         Me.NameTxt.Focus()
     End Sub
 

@@ -50,7 +50,7 @@ Public Class FormUsers
         Me.codidenttxt.Text = ""
         Me.NameTxt.Text = ""
         'e.CountryCmb.SelectedIndex = -1
-        Me.BtnSave.Text = "Guardar"
+        Me.BtnSave.Text = "Save"
         Me.NameTxt.Focus()
         Me.name2txt.Text = ""
         Me.phonetxt.Text = ""
@@ -87,10 +87,10 @@ Public Class FormUsers
         Try
             Dim userDao As New UserDAO()
             Dim codeident As Integer = CInt(codidenttxt.Text)
-            Dim Name As String = NameTxt.Text
-            Dim LastName As String = name2txt.Text
-            Dim Phone As String = phonetxt.Text
-            Dim Address As String = addrtxt.Text
+            Dim Name As String = NameTxt.Text.Trim()
+            Dim LastName As String = name2txt.Text.Trim()
+            Dim Phone As String = phonetxt.Text.Trim()
+            Dim Address As String = addrtxt.Text.Trim()
             Dim BirthDate As Date = DateTimePicker1.Value.Date
 
             Dim Sex As String = sexcmb.SelectedItem.ToString
@@ -101,7 +101,7 @@ Public Class FormUsers
 
             ' Verificar si el autor es editable o no
             If (BtnSave.Text = "Edit") Then
-                userEditable.codeIdent = CInt(Me.codidenttxt.Text)
+                userEditable.CodeIdentNew = CInt(Me.codidenttxt.Text)
                 userEditable.Name = Name
                 userEditable.LastName = LastName
                 userEditable.Phone = Phone

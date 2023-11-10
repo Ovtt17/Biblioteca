@@ -62,7 +62,8 @@ Public Class UserDAO
                     command.CommandType = CommandType.StoredProcedure
 
                     ' Parámetros para el procedimiento almacenado
-                    command.Parameters.AddWithValue("@cod_ident_usuario", user.codeIdent)
+                    command.Parameters.AddWithValue("@cod_ident_viejo", user.CodeIdent)
+                    command.Parameters.AddWithValue("@cod_ident_nuevo", user.CodeIdentNew)
                     command.Parameters.AddWithValue("@nuevo_nombre", user.Name)
                     command.Parameters.AddWithValue("@nuevo_apellido", user.LastName)
                     command.Parameters.AddWithValue("@nuevo_telefono", user.Phone)

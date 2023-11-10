@@ -55,8 +55,13 @@
     Private Sub BtnCleanFields_Click(sender As Object, e As EventArgs) Handles BtnCleanFields.Click
         RemoveHandlers()
         TitleCmb.SelectedIndex = -1
+        TitleCmb.Text = ""
         AuthorCmb.SelectedIndex = -1
+        AuthorCmb.Text = ""
         EditorialCmb.SelectedIndex = -1
+        EditorialCmb.Text = ""
+        LanguageCmb.SelectedIndex = -1
+        LanguageCmb.Text = ""
         AddHandlers()
         ShowData()
     End Sub
